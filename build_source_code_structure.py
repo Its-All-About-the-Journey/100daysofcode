@@ -60,9 +60,6 @@ def build():
         
         # Create README.md file
         filename = f'{directory}/{readme_filename}'
-
-        # Add padding
-        padded_day = f'{day:{padding}}'
         create_file(filename, readme_contents.format(day))   
 
 if __name__ == '__main__':
