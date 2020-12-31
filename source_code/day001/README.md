@@ -11,7 +11,7 @@ handle generator. Mine is: Fullerton StorageWorks
 Overall day 1 was very easy for me since I am not a beginner.  I did have to
 google to find out the creator of the term 'bug'.  I thought the person was a
 'she' but the video said a "he" invented the term bug.  Apparently Thomas Edison
-was the first and not Grace Hooper.
+was the first and not Grace Hopper.
 
 # Environment
 OS: OS X
