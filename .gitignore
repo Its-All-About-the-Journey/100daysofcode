@@ -130,3 +130,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#bin directory for venv
+bin/
+lib64
+pyvenv.cfg
