@@ -9,14 +9,16 @@ padding = '03' # Max 3 digits or padd with 0
 readme_filename = "README.md"
 
 readme_contents = '''
-# DAY {}
+# DAY {1}
 
 # Description
+Initial Commit
 
 # Environment
-OS:
+OS: Mac OSX
 
 Python version:
+Python 3.9.0
 
 # Dependencies
 
