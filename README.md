@@ -3,55 +3,48 @@ A group of us will be following https://www.udemy.com/course/100-days-of-code an
 
 If you want to join us visit: https://artofneteng.com/iaatj and let us know in the #100daysofcode channel.
 
-# Setting up environment
+# First Time Setup
 ```
-git clone https://github.com/Its-All-About-the-Journey/100daysofcode.git
-
-cd 100daysofcode
-
-python3 -m venv venv
-
-source venv/bin/activate
+c:\>git clone https://github.com/Its-All-About-the-Journey/100daysofcode.git
+c:\>cd 100daysofcode
+c:\100daysofcode>git checkout -b avholloway
+c:\100daysofcode>git push --set-upstream origin avholloway
 ```
 
-Each of us will build our own branch by executing the following git command:
-
+# Day to Day Setup
+Enter the day folder:
 ```
-git checkout -b your_discord_name
+c:\>cd 100daysofcode\source_code\day001
 ```
-
-You can use build_source_code_structure.py to update README.md file specific to your environment.  In particular you should edit the readme_contents variable in the script.
-
-````markdown
-readme_contents = '''
-# DAY {}
-
-# Description
-
-# Environment
-OS:
-
-Python version:
-
-# Dependencies
-
-# How to run script
+Setup the Python virtual environment for the day:
 ```
-enter instructions here
+c:\100daysofcode\source_code\day001>python -m venv venv
+c:\100daysofcode\source_code\day001>.venv\Scripts\activate
+(venv) c:\100daysofcode\source_code\day001>
 ```
-
-# Sample output
+Install the required Python packages:
 ```
-paste output here
+(venv) c:\100daysofcode\source_code\day001>pip install rich
 ```
-'''
-````
-
-Afterwards, you can edit README.md specifics for the day such as description,
-howto, and sample output.  It is not mandatory.  The purpose of the script is
-to standarize our structure.  Improvements are welcomed.
-
+Open VS Code and start coding:
 ```
-python build_source_code_structure.py
+(venv) c:\100daysofcode\source_code\day001>code
 ```
-
+Commit often:
+```
+(venv) c:\100daysofcode\source_code\day001>git add .
+(venv) c:\100daysofcode\source_code\day001>git commit -m "i made something work!"
+```
+Freeze your pip packages into the requirements file:
+```
+(venv) c:\100daysofcode\source_code\day001>pip freeze > requirements.txt
+```
+Deactivate the Python virtual environment:
+```
+(venv) c:\100daysofcode\source_code\day001>deactivate
+c:\100daysofcode\source_code\day001>
+```
+Push to github:
+```
+git push
+```
