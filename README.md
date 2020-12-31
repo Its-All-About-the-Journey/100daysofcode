@@ -22,7 +22,7 @@ git checkout -b your_discord_name
 
 You can use build_source_code_structure.py to update README.md file specific to your environment.  In particular you should edit the readme_contents variable in the script.
 
-```
+````markdown
 readme_contents = '''
 # DAY {}
 
@@ -36,22 +36,20 @@ Python version:
 # Dependencies
 
 # How to run script
-````markdown
 ```
 enter instructions here
 ```
-````
 
 # Sample output
-````markdown
 ```
 paste output here
 ```
-````
 '''
-```
+````
 
-Afterwards, you can edit README.md specifics for the day such as description, howto, and sample output.  It is not mandatory.  The purpose of the script is to standarize our structure.  Improvements are welcomed.
+Afterwards, you can edit README.md specifics for the day such as description,
+howto, and sample output.  It is not mandatory.  The purpose of the script is
+to standarize our structure.  Improvements are welcomed.
 
 ```
 python build_source_code_structure.py
