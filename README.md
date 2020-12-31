@@ -36,14 +36,18 @@ Python version:
 # Dependencies
 
 # How to run script
+````markdown
 ```
 enter instructions here
 ```
+````
 
 # Sample output
+````markdown
 ```
 paste output here
 ```
+````
 '''
 ```
 
