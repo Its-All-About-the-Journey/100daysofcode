@@ -1,7 +1,7 @@
 # 100daysofcode
 A group of us will be following https://www.udemy.com/course/100-days-of-code and meet up once a week to have open discussions.  Day/Time TBD.
 
-If you want to join us visit: https://artofneteng.com/iaatj and let us know in the #devnetasc channel.
+If you want to join us visit: https://artofneteng.com/iaatj and let us know in the #100daysofcode channel.
 
 # Setting up environment
 ```
