@@ -14,9 +14,9 @@ readme_contents = '''
 # Description
 
 # Environment
-OS:
+OS: OS X
 
-Python version:
+Python version: 3.7.6
 
 # Dependencies
 
