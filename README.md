@@ -19,7 +19,7 @@ c:\>cd 100daysofcode\source_code\day001
 Setup the Python virtual environment for the day:
 ```
 c:\100daysofcode\source_code\day001>python -m venv venv
-c:\100daysofcode\source_code\day001>.venv\Scripts\activate
+c:\100daysofcode\source_code\day001>.\venv\Scripts\activate
 (venv) c:\100daysofcode\source_code\day001>
 ```
 Install the required Python packages:
