@@ -7,8 +7,10 @@ tip = float(input("What percentage tip would you like to give? 10, 12, or 15: ")
 #How many ways should the bill be split?
 split = int(input("How many ways do you want to split the bill?: "))
 
-pay = (bill * (1 + (tip / 100))) / split 
+total_bill = (bill * (1 + (tip / 100)))
 
-pay_rounded = round(pay, 2)
+per_person = total_bill / split
 
-print(f"Each person should pay: ${pay_rounded}")
+per_person_rounded = round(per_person, 2)
+
+print(f"Each person should pay: ${per_person_rounded}")
