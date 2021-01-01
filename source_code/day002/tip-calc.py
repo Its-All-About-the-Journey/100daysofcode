@@ -13,4 +13,5 @@ per_person = total_bill / split
 
 per_person_rounded = round(per_person, 2)
 
+#Print the final result
 print(f"Each person should pay: ${per_person_rounded}")
