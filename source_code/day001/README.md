@@ -7,9 +7,8 @@ I took the quiz and couldn't answer the last two questions.  Said I was placed i
 Looks like we'll be creating a band name generator.
 
 # Environment
-OS: Windows 10
-Python version: 3.9.0
-IDE: VS Code
+Using repl.it
+Python version: 3.8.2
 
 # Dependencies
 
