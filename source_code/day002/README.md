@@ -3,18 +3,19 @@
 
 # Description
 On this day the videos went over primitive data types, type error, type
-checking, type conversion, math operatores, PEMDAS, and f-strings.
+checking, type conversion, math operators, PEMDAS, and f-strings.
 
-What I found interesting was the image showing the months we have to
-live.  Each month is pictured as a tiny square.  Life is even shorter 
-when looking at it from an image timeline. lmao
+What I found interesting was the image depicting the months to live.
+The image is showing the months in tiny squares.  The image as a whole
+is the months we usually have to live before we pass away.  Life is even
+more shorter when looking at it from that image. lmao
 
 ![90 years of life](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/NetworkPistolero/source_code/day002/image/Months1.png)
 
 Source: [Your Life in Weeks](https://waitbutwhy.com/2014/05/life-weeks.html)
 
-Additionaly, my BMI says I am obese!  A 2021 goal is to drop my BMI and
-revist this script. lol
+Additionaly, the BMI script revealed that my BMI is high and I am obese!
+A 2021 goal is to drop my BMI and revist this script. lol
 
 # Environment
 OS: OS X
