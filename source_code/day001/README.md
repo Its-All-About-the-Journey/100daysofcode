@@ -24,9 +24,12 @@ Press 'Enter' after typing in each response.
 # Sample output
 ```
 Ayo, what's up? Let's create a dope name for your new band.
-What's the name of the city you grew up in?
+
+Where'd you grow up? Tell me the name of the city or town you grew up in.
 Cheektowaga
-What's your pet's name?
-Murphy
-Your band name could be: Cheektowaga Murphy
+
+What's the name of your favorite pet, or movie animal?
+Shamu
+
+Your new hot band name could be: Cheektowaga Shamu
 ```
