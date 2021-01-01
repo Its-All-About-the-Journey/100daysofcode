@@ -11,6 +11,7 @@ Using repl.it
 Python version: 3.8.2
 
 # Dependencies
+repl.it account
 
 # How to run script
 ```
