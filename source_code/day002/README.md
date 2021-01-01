@@ -9,7 +9,7 @@ What I found interesting was the image showing the months we have to
 live.  Each month is pictured as a tiny square.  Life is even shorter 
 when looking at it from an image timeline. lmao
 
-![90 years of life](/image/Months1.png)
+![90 years of life](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/NetworkPistolero/source_code/day002/image/Months1.png)
 
 Source: [Your Life in Weeks](https://waitbutwhy.com/2014/05/life-weeks.html)
 
