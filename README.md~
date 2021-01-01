@@ -27,14 +27,11 @@ readme_contents = '''
 # DAY {}
 
 # Description
-Keep track of 100 days to code Python course from beginner to professional. My focus is to become proficient in python for personal and professional reason.
-I want to learn Python with the primary focus on performing automation tasks. I have procrastrinated for a long time and I have finally decided to make this decision.
 
 # Environment
-OS: Mac OS Big Sur V11.1 (20C69)
+OS:
 
 Python version:
-3.9.1
 
 # Dependencies
 
