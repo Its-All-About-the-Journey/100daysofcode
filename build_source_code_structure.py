@@ -4,6 +4,7 @@ import os
 root_path = './source_code'
 directory_prefix = 'day'
 days = 100
+padding = '03' # Max 3 digits or padd with 0
 
 readme_filename = "README.md"
 
@@ -13,9 +14,9 @@ readme_contents = '''
 # Description
 
 # Environment
-OS:
+OS: OS X
 
-Python version:
+Python version: 3.9.1
 
 # Dependencies
 
@@ -34,7 +35,7 @@ paste output here
 def create_directory(dir):
     # Create directory if does not exist
     if not os.path.isdir(dir):
-        os.mkdir(directory)
+        os.mkdir(dir)
 
 def create_file(filename, content):
 
@@ -51,9 +52,10 @@ def build():
     # Create root path if does not exist
     create_directory(root_path)
 
-    for day in range(days):
+    for day in range(1, days+1): # Start on 1
         # Create directory
-        directory = f'{root_path}/{directory_prefix}{day}'       
+        padded_day = f'{day:{padding}}'
+        directory = f'{root_path}/{directory_prefix}{padded_day}'       
         create_directory(directory)
         
         # Create README.md file
