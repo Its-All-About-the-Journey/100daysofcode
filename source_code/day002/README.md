@@ -2,11 +2,11 @@
 # DAY 2
 
 # Description
-
+Today was about understanding data types and how to manipulate strings
 # Environment
-OS:
+OS: Ubuntu 20.04 running PyCharm
 
-Python version:
+Python version: 3.8
 
 # Dependencies
 
