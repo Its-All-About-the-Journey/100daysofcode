@@ -2,7 +2,7 @@
 # DAY 3
 
 # Description
-Found the lost treasure in the islande!
+Find the lost treasure in the islande!
 # Environment
 OS: OS X
 
