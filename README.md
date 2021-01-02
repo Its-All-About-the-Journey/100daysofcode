@@ -29,9 +29,9 @@ readme_contents = '''
 # Description
 
 # Environment
-OS:
+OS: Windows 20H2
 
-Python version:
+Python version: 3.9.2
 
 # Dependencies
 
