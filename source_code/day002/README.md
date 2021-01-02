@@ -21,10 +21,14 @@ repl.it account
 
 # How to run script
 ```
-c:>python calc.py
+c:>python tip-calc.py
 ```
 
 # Sample output
 ```
-
+Welcome to the tip calc  
+What was the total bill? 124.56
+What percentage tip would you liket to give? 12
+How many people to split the bill? 7
+A 12% tip on $124.56 split 7 ways, yeilds $19.93
 ```
