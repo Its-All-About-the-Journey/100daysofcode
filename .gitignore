@@ -115,6 +115,7 @@ venv.bak/
 /Users/robinc/100daysofcode/myvenv
 myvenv/
 .myvenv
+myvenv
 
 # Spyder project settings
 .spyderproject
