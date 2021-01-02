@@ -9,14 +9,14 @@ padding = '03' # Max 3 digits or padd with 0
 readme_filename = "README.md"
 
 readme_contents = '''
-# DAY {}
+# DAY {1}
 
 # Description
 
 # Environment
-OS:
+OS: Windows 10
 
-Python version:
+Python version: 3.9.1
 
 # Dependencies
 
