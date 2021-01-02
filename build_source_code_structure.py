@@ -1,7 +1,7 @@
 import os
 import shutil
 
-username = 'test'  # <----------------------CHANGE THIS
+username = 'CHANGEME'  # <----------------------CHANGE THIS
 
 root_path = './source_code'
 directory_prefix = 'day'
