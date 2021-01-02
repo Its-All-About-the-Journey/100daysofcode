@@ -4,9 +4,10 @@
 # Description
 
 # Environment
-OS:
+OS: macOS Big Sur Version 11.1
 
 Python version:
+Python 3.9.1
 
 # Dependencies
 
