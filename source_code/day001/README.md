@@ -4,18 +4,20 @@
 # Description
 
 # Environment
-OS:
+OS: Windows 10
 
-Python version:
+Python version: 3.9.1
 
 # Dependencies
 
 # How to run script
 ```
-enter instructions here
+python main.py
 ```
 
 # Sample output
 ```
-paste output here
+Day 1 - Python Print Function
+The function is declared like this:
+print('what to print')
 ```
