@@ -1,23 +1,4 @@
-
-# DAY 3
-
-# Description
-In this section we're learning about if statements and logical operators. I was reminded about the modulus operator (%), as well as implementing exit() into my final game project to terminate it at the "game over" sections.
-
-# Environment
-OS: Windows 10
-
-Python version: 3.9.1
-
-# Dependencies
-
-# How to run script
-```
-python treasure-island.py
-```
-
-# Sample output
-```
+print('''
 *******************************************************************************
           |                   |                  |                     |
  _________|________________.=""_;=.______________|_____________________|_______
@@ -38,13 +19,36 @@ ____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
 ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 /______/______/______/______/______/______/______/______/______/______/_____ /
 *******************************************************************************
+''')
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.")
 
-Welcome to Treasure Island.
-Your mission is to find the treasure.
-You're at a cross road. Where do you want to go? Type "left" or "right"
-left
-You come to a lake. There is an island in the middle of the lake. Type "wait" to wait for a boat, or "swim" to swim across.
-swim
-You are attacked by a trout and drown.
-Game Over.
-```
+choice = input('You\'re at a cross road. Where do you want to go? Type "left" or "right"\n').lower()
+if choice == "right":
+    print("You fall in a hole almost immediately.\nGame Over.")
+    exit()
+elif choice == "left":
+    choice = input('You come to a lake. There is an island in the middle of the lake. Type "wait" to wait for a boat, or "swim" to swim across.\n').lower()
+    if choice == "swim":
+        print("You are attacked by a trout and drown.\nGame Over.")
+        exit()
+    elif choice == "wait":
+        choice = input('You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow, one blue. Which color do you choose?\n').lower()
+        if choice == "red":
+            print("You open the door and are consumed by fire.\nGame Over.")
+            exit()
+        elif choice == "blue":
+            print("You open the door and are eaten by the beasts inside.\nGame Over.")
+            exit()
+        elif choice == "yellow":
+            print("You found the treasure! Congratulations!")
+            exit()
+        else:
+            print("You chose poorly...\nGame Over.")
+            exit()
+    else:
+        print("You chose poorly...\nGame Over.")
+        exit()
+else:
+    print("You chose poorly...\nGame Over.")
+    exit()
