@@ -33,3 +33,24 @@ elif bmi < 35:
   print("you are obese.")
 else:
   print("you are clinically obese.")
+
+# 3.3 - leap year
+# ---------------------------------------------------------
+# 🚨 Don't change the code below 👇
+year = int(input("Which year do you want to check? "))
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+
+# evenly divisible by 4
+# except if also evenly divisible by 100
+# unless if also evenly divisible by 400
+
+evenly_divisible_by_4 = not year % 4
+evenly_divisible_by_100 = not year % 100
+evenly_divisible_by_400 = not year % 400
+
+if not evenly_divisible_by_4 or (evenly_divisible_by_100 and not evenly_divisible_by_400) :
+  print(f"Not leap year.")
+else:
+  print("Leap year.")
