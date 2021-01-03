@@ -31,4 +31,4 @@ tip = total * (tip_percent/100)
 total += tip
 
 # Print payment per-person in 2-decimal format.
-print("Each person should pay: $" + str(format(total / people, '.2f')))
+print(f"Each person should pay: ${format(round(total) / people, '.2f')}")
