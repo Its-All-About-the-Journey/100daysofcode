@@ -12,10 +12,17 @@ Python version: 3.9.1
 
 # How to run script
 ```
-enter instructions here
+python tip-calculator-start.py
 ```
 
 # Sample output
 ```
-paste output here
+Welcome to the tip calculator.
+What was the total bill?: $250.4
+What percentage tip would you like to give in percentage?: 12
+How many pople to split the bill?: 7
+
+Calculating...
+
+Each person have to pay: $40.06
 ```
