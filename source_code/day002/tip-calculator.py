@@ -16,12 +16,8 @@ while True:
     except ValueError:
         print("Please enter a whole number.")
 
-# Set valid values and boolean.
-percentageOptions = [10, 12, 15]
-validPercentage = False
-
 # Get the tip percentage, check for valid input (10, 12, or 15).
-while not validPercentage:
+while True:
     try:        
         tip_percent  = int(input("What percentage tip would you like to give: 10, 12, or 15? "))
         if tip_percent == 10 or tip_percent == 12 or tip_percent == 15:
