@@ -73,3 +73,34 @@ cost = {"S": 15, "M": 20, "L": 25}.get(size, 0)
 cost += {"YS": 2, "YM": 3, "YL": 3}.get(add_pepperoni + size, 0)
 cost += {"YS": 1, "YM": 1, "YL": 1}.get(extra_cheese + size, 0)
 print(f"Your final bill is: ${cost}.")
+
+# 3.5 - Love calc
+# ---------------------------------------------------------
+# 🚨 Don't change the code below 👇
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+
+name1 = name1.lower()
+name2 = name2.lower()
+
+true_score = 0
+for letter in "true":
+  true_score += name1.count(letter) + name2.count(letter)
+
+love_score = 0
+for letter in "love":
+  love_score += name1.count(letter) + name2.count(letter)
+
+score = int(f"{true_score}{love_score}")
+print(f"Your score is {score}", end="")
+
+if score < 10 or score > 90:
+  print(", you go together like coke and mentos", end="")
+elif score > 40 and score < 50:
+  print(", you are alright together", end="")
+
+print(".")
