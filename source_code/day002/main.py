@@ -19,10 +19,7 @@ tip_percentage = int(input("\nChoose: "))
 total_gratuity = round(tip_percentage * total_bill / 100, 2)
 individual_contribution = round(total_gratuity / number_of_diners, 2)
 
+print(total_gratuity)
+
 print(f"""\nIt has been decided. Your party will leave a {tip_percentage}% tip, resulting in a ${"{:.2f}".format(total_gratuity)} gratuity.""")
 print(f"""Each of the {number_of_diners} members should contribute ${individual_contribution}, or more.""")
-
-
-
-
-
