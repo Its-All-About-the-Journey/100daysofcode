@@ -24,15 +24,15 @@ bmi = round(float(weight) / (float(height) ** 2))
 print(f"Your BMI is {bmi}, ", end="")
 
 if bmi < 18.5:
-print("you are underweight.")
+  print("you are underweight.")
 elif bmi < 25:
-print("you have a normal weight.")
+  print("you have a normal weight.")
 elif bmi < 30:
-print("you are slightly overweight.")
+  print("you are slightly overweight.")
 elif bmi < 35:
-print("you are obese.")
+  print("you are obese.")
 else:
-print("you are clinically obese.")
+  print("you are clinically obese.")
 
 # 3.3 - leap year
 # ---------------------------------------------------------
@@ -54,9 +54,9 @@ evenly_divisible_by_100 = not year % 100
 evenly_divisible_by_400 = not year % 400
 
 if evenly_divisible_by_4 and (not evenly_divisible_by_100 or evenly_divisible_by_400) :
-print("Leap year.")
+  print("Leap year.")
 else:
-print("Not leap year.")
+  print("Not leap year.")
 
 # 3.4 - pizza order
 # ---------------------------------------------------------
