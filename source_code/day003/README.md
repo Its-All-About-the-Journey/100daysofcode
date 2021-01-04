@@ -3,6 +3,7 @@
 
 # Description
 Looks like we're making an adventure game on the command line.
+Lots of good exercises on this day.
 
 # Environment
 Using repl.it
