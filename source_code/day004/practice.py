@@ -15,3 +15,17 @@ for _ in range(1_000_000):
 print(f"Heads ({heads}) {'○' * (heads//10_000)}")
 print(f"Tails ({tails}) {'●' * (tails//10_000)}")
 
+# 4.2 - who pays?
+# ---------------------------------------
+# Split string method
+names_string = input("Give me everybody's names, separated by a comma. ")
+names = names_string.split(", ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+
+from random import randint
+
+who = randint(0, len(names))
+
+print(f"{names[who]} pays")
