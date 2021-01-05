@@ -4,18 +4,26 @@
 # Description
 
 # Environment
-OS:
+OS: Windows 10
 
-Python version:
+Python version: 3.8
 
 # Dependencies
+None
 
 # How to run script
 ```
-enter instructions here
+No special instructions
 ```
 
 # Sample output
 ```
-paste output here
+Welcome to the Band Name Generator!
+Enter the city you grew up in:
+Las Vegas
+Enter the name of a pet:
+Coco
+Band name: Las Vegas Coco
+
+Process finished with exit code 0
 ```

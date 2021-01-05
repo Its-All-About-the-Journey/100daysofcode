@@ -14,11 +14,12 @@ readme_contents = '''
 # Description
 
 # Environment
-OS:
+OS: Windows 10
 
-Python version:
+Python version: 3.8
 
 # Dependencies
+None
 
 # How to run script
 ```
