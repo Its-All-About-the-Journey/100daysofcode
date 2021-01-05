@@ -50,8 +50,9 @@ print("====================================")
 #pc = Piedra, papel, tijera
 row1 = ["Tied", "Won", "Lost"]
 row2 = ["Lost", "Tied", "Won"]
-row3 = ["Lost", "Won", "Tied"]
+row3 = ["Won", "Lost", "Tied"]
 mapping = [row1, row2, row3]
+print(mapping[pc_choice][choice_int])
 print(f"++++++++++++++++++++")
-print(f"++++++++++++++++++++    You {mapping[choice_int][pc_choice]} !!")
+print(f"++++++++++++++++++++    You {mapping[pc_choice][choice_int]} !!")
 print(f"++++++++++++++++++++")
