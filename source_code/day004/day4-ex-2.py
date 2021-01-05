@@ -12,5 +12,5 @@ shake = random.randint(0,x)
 
 who_pays = names[shake]
 
-print(who_pays)
+print(f"{who_pays} is going to buy the meal today.")
 
