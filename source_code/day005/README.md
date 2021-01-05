@@ -2,6 +2,7 @@
 # DAY 5
 
 # Description
+Random Password Generator - "Hard Mode"
 
 # Environment
 OS: Windows 10
@@ -13,10 +14,19 @@ None
 
 # How to run script
 ```
-enter instructions here
+No special instructions
 ```
 
 # Sample output
 ```
-paste output here
+Welcome to the PyPassword Generator!
+How many letters would you like in your password?
+10
+How many symbols would you like?
+4
+How many numbers would you like?
+4
+Here is your password: pO%rR2XK&54*IMe2P)
+
+Process finished with exit code 0
 ```
