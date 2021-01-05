@@ -34,24 +34,29 @@ if choice_int == 0:
     print(rock)
 elif choice_int == 1:
     print(paper)
-else:
+elif choice_int == 2:
     print(scissors)
-print("====================================")
-print("PC Choise is:")
-pc_choice = random.randint(0,2)
-if pc_choice == 0:
-    print(rock)
-elif pc_choice == 1:
-    print(paper)
 else:
-    print(scissors)
-print("====================================")
-#user = Piedra, papel, tijera
-#pc = Piedra, papel, tijera
-row1 = ["Tied", "Won", "Lost"]
-row2 = ["Lost", "Tied", "Won"]
-row3 = ["Won", "Lost", "Tied"]
-mapping = [row1, row2, row3]
-print(f"++++++++++++++++++++")
-print(f"++++++++++++++++++++    You {mapping[pc_choice][choice_int]} !!")
-print(f"++++++++++++++++++++")
+    print("Wrong Selection, try again.")
+if choice_int == 0 or choice_int == 1 or choice_int == 2:
+    print("====================================")
+    print("PC Choise is:")
+    pc_choice = random.randint(0,2)
+    if pc_choice == 0:
+        print(rock)
+    elif pc_choice == 1:
+        print(paper)
+    elif pc_choice == 2:
+        print(scissors)
+    print("====================================")
+    #user = Piedra, papel, tijera
+    #pc = Piedra, papel, tijera
+    row1 = ["Tied", "Won", "Lost"]
+    row2 = ["Lost", "Tied", "Won"]
+    row3 = ["Won", "Lost", "Tied"]
+    mapping = [row1, row2, row3]
+    print("++++++++++++++++++++")
+    print(f"++++++++++++++++++++    You {mapping[pc_choice][choice_int]} !!")
+    print("++++++++++++++++++++")
+else:
+    print("You lose this time!!")
