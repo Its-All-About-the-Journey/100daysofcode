@@ -26,6 +26,6 @@ names = names_string.split(", ")
 
 from random import randint
 
-who = randint(0, len(names))
+who = randint(0, len(names) - 1)
 
 print(f"{names[who]} pays")
