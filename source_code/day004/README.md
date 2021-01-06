@@ -12,20 +12,21 @@ Python version: 3.7.6
 # Dependencies
 
 # Scripts
-sec3.39 - Random numbers
+sec4.39 - Random numbers
 
-sec3.40 - Heads or Tails
+sec4.40 - Heads or Tails
 
-sec3.42 - Banker Roulette
+sec4.42 - Banker Roulette
 
-sec3.44 - Treasure Map
+sec4.44 - Treasure Map
 
-sec3.45 - Rock Paper Scissors
+sec4.45 - Rock Paper Scissors
 
 # How to run script
 ```
-enter instructions here
+python sec4.xx.py 
 ```
+where xx is the sub section
 
 # Sample output
 
