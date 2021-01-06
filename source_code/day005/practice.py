@@ -33,3 +33,13 @@ for score in student_scores:
   if score > high_score:
     high_score = score
 print(f"The highest score in the class is: {high_score}")
+
+# 5.3 - adding evens
+# --------------------------------------
+#Write your code below this row 👇
+
+total = 0
+for i in range(1, 101):
+  if i % 2 == 0:
+    total += i
+print(total)
