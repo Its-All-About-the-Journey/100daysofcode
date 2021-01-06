@@ -14,10 +14,18 @@ repl.it account
 
 # How to run script
 ```
-enter instructions here
+c:\>python pwgen.py
 ```
 
 # Sample output
 ```
-paste output here
+Welcome to the PyPassword Generator!
+How many letters would you like in your password?
+3
+How many symbols would you like?
+3
+How many numbers would you like?
+3
+Easy Level Passowrd: QId349$#%
+Hard Level Passowrd: #9Q34%I$d
 ```
