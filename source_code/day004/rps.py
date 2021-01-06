@@ -58,16 +58,16 @@ if computer_choice == 2:
 if your_choice == 0 and computer_choice == 1:
   print("Paper covers rock - YOU LOSE!")
 elif your_choice == 0 and computer_choice == 2:
-  print("Rock beats Scissors - YOU WIN!")
+  print("Rock crushes scissors - YOU WIN!")
 elif your_choice == 1 and computer_choice == 0:
   print("Paper covers rock - YOU WIN!")
 elif your_choice == 1 and computer_choice == 2:
   print("Scissors cuts paper - YOU LOSE!")
 elif your_choice == 2 and computer_choice == 0:
-  print("Rock cruches scissors - YOU LOSE!")
+  print("Rock crushes scissors - YOU LOSE!")
 elif your_choice == 2 and computer_choice == 1:
   print("Scissors cuts paper - YOU WIN!")
 elif your_choice == computer_choice:
   print("IT\'S A TIE!")
 else:
-    print("You typed an invalid number!")
+    print("You typed an invalid number - YOU LOSE!")
