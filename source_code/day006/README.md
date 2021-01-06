@@ -55,7 +55,7 @@ section 6.63 - Escaping Maze
 Results:
 - problem_world: 60
 - problem_world2: 34
-- problem_world: 60
+- problem_world3: 45
 
 ```
 def turn_right():
