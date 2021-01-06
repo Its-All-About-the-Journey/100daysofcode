@@ -10,4 +10,3 @@ for object in student_heights:
   total_height += object
   i += 1
 print(round(total_height / i))
-#156 178 165 171 187
