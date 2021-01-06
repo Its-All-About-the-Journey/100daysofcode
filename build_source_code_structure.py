@@ -46,23 +46,8 @@ def create_directory(dir):
         os.mkdir(dir)
 
 def create_file(filename, content, overwrite=False):
-
-    if not os.path.isfile(filename):
-        mode = 'w+' # Non existing file
-        file_exists = False
-    else:
-        mode = 'w' # Exists
-        file_exists = True
-    
-    # file_exists |  overwrite
-    #-----------------------
-    #   T         |   T          <- Overwrite file
-    #   T         |   F          <- Do not touch file
-    #   F         |   T          <- Create file
-    #   F         |   F          <- Create file
-    if not file_exists & ~overwrite:
-        with open(filename, mode) as file:
-            file.write(content)
+    with open(filename, 'w') as file:
+        file.write(content)
 
 
 def build(overwrite_readme):
