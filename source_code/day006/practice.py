@@ -1,6 +1,1 @@
-# 6.1 - user defined functions
-# -------------------------------------
-def myfunction():
-    print("hello day 6")
-
-    
+# I didn't save any of the practice code
