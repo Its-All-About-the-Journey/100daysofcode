@@ -52,7 +52,7 @@ while not end_of_game:
             print("You lose.")
 
     #Join all the elements in the list and turn it into a String.
-    #print(f"{' '.join(display)}")
+    print(f"{' '.join(display)}")
 
     #Check if user has got all letters.
     if "_" not in display:
