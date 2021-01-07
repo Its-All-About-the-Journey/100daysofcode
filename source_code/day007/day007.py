@@ -19,7 +19,7 @@ while '_' in display_word and lives > 0:
 	# Print as much of the word as the player has guessed
 	print(' '.join(display_word), '\n')
 	# Display the characters the player has already guessed, but only if he's already made a guess
-	print(f"So far, you have guessed the following letter(s): {' '.join(guess_list)}\n" if guess_list else '\n')
+	print(f"So far, you have guessed the following letter(s): {', '.join(guess_list)}\n" if guess_list else '')
 	# Ask for the guess
 	guess = input("Guess a letter: ").lower()
 	# Run some validation to ensure it was a single letter entered - restart loop if input isn't valid
@@ -34,16 +34,19 @@ while '_' in display_word and lives > 0:
 	for i, char in enumerate(chosen):
 		# What happens if guess isn't in word
 		if guess not in chosen:
-			print(termcolor.colored(f'\n"{guess}" is not found in the word!\n', 'red'))
+			print(termcolor.colored(f'"{guess}" is not found in the word!\n', 'red'))
+			# Add the word to the already guessed list, if it isn't already in there
 			if guess not in guess_list:
 				guess_list.append(guess)
+			# Subtract a life since they guessed wrong
 			lives -= 1
+			# Break out of the for loop because there's no need to continue testing conditions
 			break
 		# What happens if guess is in word
 		elif guess == char:
 			# Use if statement so message only printed 1x even if letter found > 1 in the word
 			if guess not in guess_list:
-				print(termcolor.colored(f'\n"{guess}" is found in the word!\n', 'green'))
+				print(termcolor.colored(f'"{guess}" is found in the word!\n', 'green'))
 			# Fill in display word with the guess character
 			display_word[i] = guess
 			# Add the guess character to the guess list if it doesn't already exist in it
@@ -53,7 +56,7 @@ while '_' in display_word and lives > 0:
 # Final printout of winning/losing message with fancy coloring
 if lives == 0:
 	lose_word = termcolor.colored(chosen, 'green', 'on_red')
-	print(f'{art.stages[lives]}\n The word was {lose_word}... You have been hung. Sorry for your loss')
+	print(f'{art.stages[lives]}\n The word was {lose_word}... You have been hung. Sorry for your loss.')
 else:
 	win_word = termcolor.colored(chosen, 'red', 'on_green')
 	print(f'{win_word} is correct! You WIN!')
