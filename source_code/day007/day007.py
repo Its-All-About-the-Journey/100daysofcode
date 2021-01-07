@@ -7,7 +7,7 @@ import words
 word_list = words.word_list
 chosen = random.choice(word_list).lower()
 display_word = list('_' * len(chosen))  # Easier method of creating the display word _ _ _ _ format
-lives = 6
+lives = 7
 guess_list = []
 allowed_characters = 'abcdefghijklmnopqrstuvwxyz'
 

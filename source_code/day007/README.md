@@ -2,7 +2,7 @@
 # DAY 7
 
 # Description
-Hangman Game
+Hangman Game (Added an extra life)
 
 # Environment
 OS: Windows 10
