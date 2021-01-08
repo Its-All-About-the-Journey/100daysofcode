@@ -35,7 +35,7 @@ while '_' in display_word and lives > 0:
 		# What happens if guess isn't in word
 		if guess not in chosen:
 			print(termcolor.colored(f'"{guess}" is not found in the word!\n', 'red'))
-			# Add the word to the already guessed list, if it isn't already in there
+			# Add the letter to the guess_list, if it isn't already in there
 			if guess not in guess_list:
 				guess_list.append(guess)
 			# Subtract a life since they guessed wrong
