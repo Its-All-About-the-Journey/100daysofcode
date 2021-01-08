@@ -2,13 +2,14 @@
 # DAY 8
 
 # Description
+parameters are to variables as arguments are to values
 
 # Environment
-OS:
-
-Python version:
+Using repl.it
+Python version: 3.8.2
 
 # Dependencies
+repl.it account
 
 # How to run script
 ```
