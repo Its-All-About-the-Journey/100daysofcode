@@ -25,7 +25,7 @@ sec7.75 - Improoving the User Experience
 
 # How to run script
 ```
-python sec4.xx.py 
+python sec7.xx.py 
 ```
 where xx is the sub section
 
