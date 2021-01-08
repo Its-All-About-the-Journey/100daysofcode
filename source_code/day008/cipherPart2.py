@@ -15,7 +15,7 @@ def encrypt(plain_text, shift_amount):
     return ''.join(codex)
 
 #TODO-1: Create a different function called 'decrypt' that takes the 'text' and 'shift' as inputs.
-def decrypt(plain_text, shift_amount):
+def decrypt(cipher_text, shift_amount):
     codex = []
     for letter in plain_text:
         newPosition = alphabet.index(letter)-shift
@@ -37,5 +37,5 @@ if direction == "encode":
     codex = encrypt(plain_text=text, shift_amount=shift)
     print(f"The encoded message is {codex}")
 else:
-    codex = decrypt(plain_text=text, shift_amount=shift)
+    codex = decrypt(cipher_text=text, shift_amount=shift)
     print(f"The decoded text is {codex}")
