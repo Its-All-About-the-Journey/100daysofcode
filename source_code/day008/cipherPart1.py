@@ -8,7 +8,10 @@ shift = int(input("Type the shift number:\n"))
 def encrypt(text, shift):
     codex = []
     for i in text:
-        codex += alphabet[alphabet.index(i)+shift]
+        newPosition = alphabet.index(i)+shift
+        if newPosition > 25:
+            newPosition = abs(25-newPosition)-1
+        codex += alphabet[newPosition]
     #print(f"The encoded text is {codex}.")
     return ''.join(codex)
 
