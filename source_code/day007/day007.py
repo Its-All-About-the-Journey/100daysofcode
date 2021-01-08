@@ -44,7 +44,8 @@ while '_' in display_word and lives > 0:
 			break
 		# What happens if guess is in word
 		elif guess == char:
-			# Use if statement so message only printed 1x even if letter found > 1 in the word
+			# Only print message once, even if character exists more than once in the word -
+			# Do this by checking if the guess is in the guess list already
 			if guess not in guess_list:
 				print(termcolor.colored(f'"{guess}" is found in the word!\n', 'green'))
 			# Fill in display word with the guess character

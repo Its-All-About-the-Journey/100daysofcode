@@ -12,6 +12,7 @@ Python version: 3.8
 # Dependencies
 words.py
 art.py
+termcolor module
 
 # How to run script
 ```
