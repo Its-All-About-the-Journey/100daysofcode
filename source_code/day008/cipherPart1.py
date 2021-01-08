@@ -9,8 +9,8 @@ def encrypt(text, shift):
     codex = []
     for i in text:
         newPosition = alphabet.index(i)+shift
-        if newPosition > 25:
-            newPosition = abs(25-newPosition)-1
+        if newPosition > len(alphabet):
+            newPosition = abs(len(alphabet)-newPosition)
         codex += alphabet[newPosition]
     #print(f"The encoded text is {codex}.")
     return ''.join(codex)
