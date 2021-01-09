@@ -15,10 +15,44 @@ None
 
 # How to run script
 ```
+Launch the program, and follow the prompts to receive your encoded message, or decode a message which has already been encoded.
 ```
 
 # Sample output
 ```
+
+ ,adPPYba, ,adPPYYba,  ,adPPYba, ,adPPYba, ,adPPYYba, 8b,dPPYba,
+a8"     "" ""     `Y8 a8P_____88 I8[    "" ""     `Y8 88P'   "Y8
+8b         ,adPPPPP88 8PP"'"'"'"  `"Y8ba,  ,adPPPPP88 88
+"8a,   ,aa 88,    ,88 "8b,   ,aa aa    ]8I 88,    ,88 88
+ `"Ybbd8"' `"8bbdP"Y8  `"Ybbd8"' `"YbbdP"' `"8bbdP"Y8 88
+            88             88
+           ""             88
+                          88
+ ,adPPYba, 88 8b,dPPYba,  88,dPPYba,   ,adPPYba, 8b,dPPYba,
+a8"     "" 88 88P'    "8a 88P'    "8a a8P_____88 88P'   "Y8
+8b         88 88       d8 88       88 8PP"'""'"" 88
+"8a,   ,aa 88 88b,   ,a8" 88       88 "8b,   ,aa 88
+ `"Ybbd8"' 88 88`YbbdP"'  88       88  `"Ybbd8"' 88
+              88
+              88
+
+Type 'encode' to encrypt, type 'decode' to decrypt:
+encode
+Type your message:
+asdfwxyz
+Type the shift number:
+5
+The encoded text is fxikbcde
+Give 'er another go? Type 'yes' to try again. :yes
+Type 'encode' to encrypt, type 'decode' to decrypt:
+decode
+Type your message:
+fxikbcde
+Type the shift number:
+5
+The decoded text is asdfwxyz
+Give 'er another go? Type 'yes' to try again. :n
 ```
 
 # Other Exercises
