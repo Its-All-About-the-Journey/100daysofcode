@@ -4,6 +4,8 @@ Caesar Cipher
 
 # Description
 
+Use this program to employ a rotational alphabetic cipher to a message, or return it back to its original state.
+
 # Environment
 OS: Ubuntu Bionic
 
