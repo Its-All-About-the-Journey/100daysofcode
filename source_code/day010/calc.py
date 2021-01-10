@@ -52,7 +52,7 @@ while True:
         continue
 
     if choice == "new":
-        num1 = int(input("n1: "))
+        num1 = float(input("n1: "))
         continue
     
     # if choice == "no" or really anything else, we're done here
