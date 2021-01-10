@@ -33,7 +33,7 @@ def caesar(text, shift, direction):
                 adjusted_unicode = 123 - (97 - (ord(char) - shift))
                 text_list.append(chr(adjusted_unicode))
     code_text = ''.join(text_list)
-    print(f'The {direction}ed text is: {code_text}')
+    print(f'The {direction}d text is: {code_text}')
 
 
 def run_caesar():
@@ -47,7 +47,15 @@ def run_caesar():
             continue
 
     text_input = input("Type your message:\n").lower()
-    shift_input = int(input("Type the shift number:\n"))
+
+    while True:
+        try:
+            shift_input = int(input("Type the shift number:\n"))
+            break
+        except ValueError:
+            print("Invalid format. Must be an integer.")
+            continue
+
     caesar(text_input, shift_input, direction_input)
 
 
