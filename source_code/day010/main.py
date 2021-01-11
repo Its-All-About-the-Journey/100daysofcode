@@ -58,6 +58,7 @@ def get_operation():
   """
   operation = None
   while not operation in operations:
+    print(f"""Operations: {' '.join(operations)}""")
     operation = input("Pick an operation: ")
 
   return operations.index(operation)
