@@ -58,7 +58,7 @@ while more_operations:
     print(f'{num1} {op} {num2} = {answer}')
     update_calc_screen(answer)
  
-    next_step = input(f"Type 'y' to continue with {num1}, 'r' to restart, or 'n' to exit.: ")
+    next_step = input(f"Type 'y' to continue with {answer}, 'r' to restart, or 'n' to exit.: ")
 
     if next_step == 'y':  # Continue
         num1 = answer
@@ -66,6 +66,7 @@ while more_operations:
     elif next_step == 'r': # Restart
         update_calc_screen()
         num1 = get_num("What's the first number?: ")
+        update_calc_screen(num1)
 
     else: # Exit
         for _ in range(1000):
