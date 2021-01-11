@@ -17,13 +17,9 @@ def clear():
 
 # Function to get the highest bid and that bidders name
 def get_highest_bid(bidders_dict):
-	highest_bid = 0
-	highest_bidder = ''
-	for key, value in bidders_dict.items():
-		if value > highest_bid:
-			highest_bid = value
-			highest_bidder = key
-	print(f'The winner is {highest_bidder} with a bid of ${highest_bid:,.2f}')
+	highest_bid = max(bidders_dict.values())
+	highest_bidder = [k for k, v in bidders_dict.items() if v == highest_bid]
+	print(f'The winner is {highest_bidder[0]} with a bid of ${highest_bid:,.2f}')
 
 
 # Function asks for bidder name and amount and adds to bidders list as dictionary item
