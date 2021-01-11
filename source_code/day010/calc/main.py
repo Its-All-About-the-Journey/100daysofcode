@@ -1,6 +1,6 @@
 from art import logo
 
-print(logo)
+
 
 # calculator
 
@@ -28,6 +28,7 @@ operations = {
 }
 
 def calculator():
+    print(logo)
     num1 = float(input("What's the first number?: "))
     # num2 = int(input("What's the second number?: "))
 
