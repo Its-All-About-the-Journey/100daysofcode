@@ -1,3 +1,5 @@
+import random
+
 rock = '''
     _______
 ---'   ____)
@@ -24,8 +26,6 @@ scissors = '''
       (____)
 ---.__(___)
 '''
-
-import random
 
 game_images = [rock, paper, scissors]
 
