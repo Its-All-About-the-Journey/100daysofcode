@@ -4,9 +4,9 @@
 # Description
 
 # Environment
-OS:
+OS: Windows 10
 
-Python version:
+Python version: 2.9.1
 
 # Dependencies
 
