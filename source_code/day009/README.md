@@ -17,10 +17,31 @@ None
 
 # How to run script
 ```
+Execute the script, and follow the prompts.
 ```
 
 # Sample output
 ```
+
+                         ___________
+                         \         /
+                          )_______(
+                          |"""""""|_.-._,.---------.,_.-._
+                          |       | | |               | | ''-.
+                          |       |_| |_             _| |_..-'
+                          |_______| '-' `'---------'` '-'
+                          )"""""""(
+                         /_________\
+                       .-------------.
+                      /_______________\
+
+Welcome to the secret auction program.
+What is your name?: Postulio
+What's your bid?: $12345
+Are there any other bidders? Type 'yes' or 'no'. no
+
+The auction has been won by Postulio, with a high bid of $12345.
+
 ```
 
 # Other Exercises
