@@ -25,6 +25,6 @@ sec10.104 - Final calculator
 
 # How to run script
 ```
-python sec8.xx.py 
+python sec10.xxx.py 
 ```
 where xx is the sub section

@@ -21,6 +21,6 @@ sec9.93 - Secret auction program
 
 # How to run script
 ```
-python sec8.xx.py 
+python sec9.xx.py 
 ```
 where xx is the sub section
