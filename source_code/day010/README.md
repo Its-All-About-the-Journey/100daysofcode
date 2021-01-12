@@ -11,6 +11,7 @@ Python version: 3.8
 
 # Dependencies
 os module
+operator module
 
 # How to run script
 ```
