@@ -4,6 +4,7 @@
 
 from art import logo
 import os
+import operator
 
 
 # Function will clear command prompt window on Linux and Windows machines
@@ -13,14 +14,8 @@ def clear():
 
 # Function will perform the calculation based on user inputs
 def calculate(n1, n2, symbol):
-	if symbol == '+':
-		return n1 + n2
-	if symbol == '-':
-		return n1 - n2
-	if symbol == '*':
-		return n1 * n2
-	if symbol == '/':
-		return n1 / n2
+	ops = {"+": operator.add, "-": operator.sub, "*": operator.mul, "/": operator.truediv}
+	return ops[symbol](n1, n2)
 
 
 # Function handles the logic behind running the calculate function
