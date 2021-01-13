@@ -97,13 +97,6 @@ display = {'ace': card_faces[0], 'two': card_faces[1], 'three': card_faces[2], '
            'nine': card_faces[8], 'ten': card_faces[9], 'jack': card_faces[10], 'queen': card_faces[11],
            'king': card_faces[12]}
 
-# blank = blank.split("\n")
-# nine = cards[8].split("\n")
-# ace = cards[0].split('\n')
-#
-# for row in zip(blank, nine, ace):
-#     print(row[0], row[1], row[2])
-
 
 # Function to display full card hands as ASCII graphics
 def display_all_cards(hand):
