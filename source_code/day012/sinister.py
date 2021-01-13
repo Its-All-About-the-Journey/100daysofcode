@@ -25,7 +25,7 @@ print(f"\nyou will have {attempts} attemps...let's go...\n")
 attempt = 1
 
 guessed = False
-while attempts > attempt:
+while attempt <= attempts:
     attempt += 1
     guess = int(input("guess: "))
     if guess == target:
