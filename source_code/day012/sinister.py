@@ -1,4 +1,6 @@
-logo = """
+from random import randint
+
+print("""
 
   ██████  ██▓ ███▄    █  ██▓  ██████ ▄▄▄█████▓▓█████  ██▀███  
 ▒██    ▒ ▓██▒ ██ ▀█   █ ▓██▒▒██    ▒ ▓  ██▒ ▓▒▓█   ▀ ▓██ ▒ ██▒
@@ -8,35 +10,28 @@ logo = """
 ▒ ▒▓▒ ▒ ░░▓  ░ ▒░   ▒ ▒ ░▓  ▒ ▒▓▒ ▒ ░  ▒ ░░   ░░ ▒░ ░░ ▒▓ ░▒▓░
 ░ ░▒  ░ ░ ▒ ░░ ░░   ░ ▒░ ▒ ░░ ░▒  ░ ░    ░     ░ ░  ░  ░▒ ░ ▒░
 ░  ░  ░   ▒ ░   ░   ░ ░  ▒ ░░  ░  ░    ░         ░     ░░   ░ 
-      ░   ░           ░  ░        ░              ░  ░   ░     
-                                                              
+ ███▄ ░  █░ █    ██  ███▄░▄███▓ ▄▄▄▄   ▓█████  ██▀███   ░██████ 
+ ██ ▀█   █  ██  ▓██▒▓██▒▀█▀ ██▒▓█████▄ ▓█   ▀ ▓██ ▒ ██▒▒██    ▒ 
+▓██  ▀█ ██▒▓██  ▒██░▓██    ▓██░▒██▒ ▄██▒███   ▓██ ░▄█ ▒░ ▓██▄   
+▓██▒  ▐▌██▒▓▓█  ░██░▒██    ▒██ ▒██░█▀  ▒▓█  ▄ ▒██▀▀█▄    ▒   ██▒
+▒██░   ▓██░▒▒█████▓ ▒██▒   ░██▒░▓█  ▀█▓░▒████▒░██▓ ▒██▒▒██████▒▒
+░ ▒░   ▒ ▒ ░▒▓▒ ▒ ▒ ░ ▒░   ░  ░░▒▓███▀▒░░ ▒░ ░░ ▒▓ ░▒▓░▒ ▒▓▒ ▒ ░
+░ ░░   ░ ▒░░░▒░ ░ ░ ░  ░      ░▒░▒   ░  ░ ░  ░  ░▒ ░ ▒░░ ░▒  ░ ░
+   ░   ░ ░  ░░░ ░ ░ ░      ░    ░    ░    ░     ░░   ░ ░  ░  ░  
+         ░    ░            ░    ░         ░  ░   ░           ░  
+                                     ░                          
+""")
 
-"""
+goal = randint(lower := 1, upper := 100)
+print(f"i am thinking of a number between {lower} and {upper}.\n")
 
-print(logo)
+attempts = 10 if input("would you like it hard or easy? ") == "easy" else 5
+print(f"\nyou will have {attempts} attempts...let's go...\n")
 
-from random import randint
-target = randint(1, 100)
-
-print("sinister is thinking of a number between 1 and 100.\n")
-difficulty = input("hard or easy: ")
-attempts = 10 if difficulty == "easy" else 5
-print(f"\nyou will have {attempts} attemps...let's go...\n")
-attempt = 1
-
-guessed = False
-while attempt <= attempts:
-    attempt += 1
-    guess = int(input("guess: "))
-    if guess == target:
-        guessed = True
+attempt = 0
+while (attempt := attempt + 1) <= attempts:
+    guess = int(input(f"guess #{attempt}: "))
+    if guessed := guess == goal:
         break
-    elif guess < target:
-        print(f"{guess} is too low")
-    else:
-        print(f"{guess} is too high")
-
-if guessed:
-    print("you guessed it!")
-else:
-    print(f"you failed it! it was {target}!")
+    print(f"{guess} is too {'low' if guess < goal else 'high'}\n")
+print(f"{'you failed' if not guessed else 'you win'}! it was {goal}!")
