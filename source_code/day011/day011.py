@@ -4,20 +4,13 @@
 
 import os
 import random
+import time
+from termcolor import colored
 from art import logo
-from cards import *
-
-deck = ['ace', 'ace', 'ace', 'ace', 'two', 'two', 'two', 'two', 'three', 'three', 'three', 'three', 'four', 'four',
-        'four', 'four', 'five', 'five', 'five', 'five', 'six', 'six', 'six', 'six', 'seven', 'seven', 'seven', 'seven',
-        'eight', 'eight', 'eight', 'eight', 'nine', 'nine', 'nine', 'nine', 'ten', 'ten', 'ten', 'ten', 'jack', 'jack',
-        'jack', 'jack', 'queen', 'queen', 'queen', 'queen', 'king', 'king', 'king', 'king']
+import cards
 
 points = {'ace': 11, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9,
           'ten': 10, 'jack': 10, 'queen': 10, 'king': 10}
-
-display = {'ace': cards[0], 'two': cards[1], 'three': cards[2], 'four': cards[3], 'five': cards[4], 'six': cards[5],
-           'seven': cards[6], 'eight': cards[7], 'nine': cards[8], 'ten': cards[9], 'jack': cards[10],
-           'queen': cards[11], 'king': cards[12]}
 
 
 # Function will clear command prompt window on Linux and Windows machines
@@ -35,7 +28,6 @@ def deal_card(current_deck):
 # Function returns the total score of the handed that is passed in (returns multiple scores if hand includes an Ace)
 def score_hand(hand):
     hand_sum = 0
-    low_sum = 0
     high_sum = 0
     # Return sum of hand that doesn't contain an Ace
     if 'ace' not in hand:
@@ -69,74 +61,174 @@ def score_final_hand(hand):
 
 # Function to display computers partial hand
 def display_visible_cards(computers_hand):
-    print(f"Computer's visible card(s): {computer_hand[0:len(computer_hand) - 1]}\n")
+    print(f"Dealers visible card(s): {computers_hand[0:len(computers_hand) - 1]}")
 
 
-# Function to display the final scores
+# Function to display the final cards and scores
 def display_final_scores(players_hand, computers_hand):
-    print(f'\nYour final cards: {player_hand} - Final Score: {score_final_hand(player_hand)}')
-    print(f"Computer's final cards: {computer_hand} - Final Score: {score_final_hand(computer_hand)}")
+    cards.display_all_cards(players_hand)
+    print('Players Final Cards')
+    print(f'Players Final Score: {score_final_hand(players_hand)}')
+
+    cards.display_all_cards(computers_hand)
+    print('Dealers Final Cards')
+    print(f'Dealers Final Score: {score_final_hand(computers_hand)}')
 
 
+# Function that checks if hand is Blackjack or not
+def is_blackjack(hand):
+    if score_final_hand(hand) == 21 and len(hand) == 2:
+        return True
+    else:
+        return False
+
+
+# Function to print winning messages
+def print_msg(message, category):
+    if category == 'w':
+        print(colored(message, 'green', attrs=['blink', 'bold']))
+    elif category == 'l':
+        print(colored(message, 'red', attrs=['blink', 'bold']))
+    elif category == 't':
+        print(colored(message, 'yellow', attrs=['blink', 'bold']))
+    elif category == 'g':
+        print(colored(message, 'white', attrs=['bold']))
+
+
+
+# Flags
 playing = 'y'
+answered = False
+no_math = 'no'
 
 while playing.lower() in ['y', 'yes']:
     clear()
     print(logo, '\n')
 
-    player_hand = [deal_card(deck), deal_card(deck)]
-    computer_hand = [deal_card(deck), deal_card(deck)]
+    # Ask user how many decks and if they want their score auto-displayed for them
+    # Validate the answer
+    while not answered:
+        num_decks = int(input("Enter many decks of cards would you like to play with (1-5): "))
+        no_math = input("Do you want the system to auto-calculate your score? Type 'y' or 'n': ")
+        if num_decks in [1, 2, 3, 4, 5] and no_math in ['y', 'yes', 'n', 'no']:
+            game_deck = cards.deck * num_decks
+            random.shuffle(game_deck)
+            answered = True
+            print('\n')
+        else:
+            print("Invalid answer(s). Please try again...")
 
-    print(f'Your cards: {player_hand} - Current Score: {score_hand(player_hand)}')
-    display_visible_cards(computer_hand)  # Only show part of the computers hand
+    # Check that there is a sufficient number of cards left in the deck to finish the round
+    if len(game_deck) < 8:
+        print("There are insufficient cards remaining in the deck to start a new round.")
+        print("Please start a new game!")
+        exit()
 
+    # Deal the computer and player their initial hands from the game deck
+    player_hand = [deal_card(game_deck), deal_card(game_deck)]
+    computer_hand = [deal_card(game_deck), deal_card(game_deck)]
+
+    # Display the player and dealers starting hands - only show part of the dealers hand
+    cards.display_all_cards(player_hand)
+    print("Your Cards")
+
+    # Only print the player score if they asked for that
+    if no_math in ['y', 'yes']:
+        print(f'Current Score: {score_hand(player_hand)}')
+
+    cards.display_visible_cards(computer_hand)  # Only show part of the computers hand
+    print("Dealers Cards")
+
+    # Loop that will run if the player decides to hit
     hitting = True
     while hitting:
-        hit = input("Type 'hit' to get another card, type 'stay' to pass: ")
+
+        # If either the player or the dealer has Blackjack right away, grant them the win
+        if is_blackjack(player_hand) and not is_blackjack(computer_hand):
+            display_final_scores(player_hand, computer_hand)
+            print_msg('Blackjack! You win the round! Much fast, so wow.', 'w')
+            break
+        elif not is_blackjack(player_hand) and is_blackjack(computer_hand):
+            display_final_scores(player_hand, computer_hand)
+            print_msg('Dealer has Blackjack. You lost! That was fast...', 'l')
+            break
+        elif is_blackjack(player_hand) and is_blackjack(computer_hand):
+            display_final_scores(player_hand, computer_hand)
+            print_msg('Both you and the dealer have Blackjack! The round is a push!', 't')
+            break
+
+        # Ask the player if they wish to hit or stay
+        hit = input("\nType 'hit' to get another card, type 'stay' to pass: ")
+
         # If the player decides to hit, append another card to their hand
         if hit.lower() in ['hit', 'yes', 'y']:
-            player_hand.append(deal_card(deck))
-            print(f'Your cards: {player_hand} - Current Score: {score_hand(player_hand)}')
+            player_hand.append(deal_card(game_deck))
+            print_msg("Hitting...", 'g')
+            time.sleep(1.5)
+            cards.display_all_cards(player_hand)
+            print("Your Cards")
+            # Only print the player score if they asked for that
+            if no_math in ['y', 'yes']:
+                print(f'Current Score: {score_hand(player_hand)}')
+            time.sleep(3)
 
-            # If the user immediately busts... tell them they lost
+            # If the user busts they lose immediately
             if score_final_hand(player_hand) > 21:
                 display_final_scores(player_hand, computer_hand)
-                print('You went over. You lose!')
+                print_msg('You went over. You lose!', 'l')
                 break
 
             # If the player decides to hit, have the computer check if its 17 or over and hit if they're not
             if score_final_hand(computer_hand) < 17:
-                computer_hand.insert(0, deal_card(deck))  # Want to insert card at start to keep last card hidden
-                display_visible_cards(computer_hand)
+                print_msg('The dealer decided to hit...', 'g')
+                time.sleep(1.5)
+                computer_hand.insert(0, deal_card(game_deck))  # Insert card at start to keep last card hidden
+                cards.display_visible_cards(computer_hand)
+                print("Dealers Cards")
             else:
-                display_visible_cards(computer_hand)
+                print_msg('\nThe dealer has decided to stay...', 'g')
+                time.sleep(1.5)
+                cards.display_visible_cards(computer_hand)
+                print("Dealers Cards")
 
         # The sequence if the player chooses to stay
         elif hit.lower() in ['stay', 'no', 'n']:
+            stay_message = random.choice(["That's a bold strategy Cotton. Let's see if it pays off...",
+            "You have chosen to stay...", "You are staying..."])
+            if score_final_hand(player_hand) <= 15:
+                stay_message = f"Staying on {score_final_hand(player_hand)}, eh? Good luck..."
+            print_msg(stay_message, 'g')
+            time.sleep(1.5)
             # Let the computer hit until its satisfied with its hand (17 or over)
             while score_final_hand(computer_hand) < 17:
-                print("The computer has hit...")
-                computer_hand.insert(0, deal_card(deck))
-                display_visible_cards(computer_hand)
-            print("The computer is staying...")
+                print_msg("\nThe dealer has hit...", 'g')
+                computer_hand.insert(0, deal_card(game_deck))
+                time.sleep(1.5)
+                cards.display_visible_cards(computer_hand)
+                print("Dealers Cards")
+                time.sleep(3)
+            print_msg("\nThe dealer is staying...", 'g')
+            time.sleep(1.5)
 
             # Finally, compare the computers hand to the players hand and report outcome
             player_final_score = score_final_hand(player_hand)
             computer_final_score = score_final_hand(computer_hand)
             display_final_scores(player_hand, computer_hand)
+
             if player_final_score <= 21 >= computer_final_score:
                 if player_final_score == computer_final_score:
-                    print("You have tied. House rules, dealer wins!")
-                elif player_final_score == 21:
-                    print("Blackjack! You win!")
+                    print_msg("\nYou have tied. The round is a push!", 't')
+                elif player_final_score > computer_final_score:
+                    print_msg('\nYou beat the dealer!', 'w')
                 else:
-                    print('You beat the dealer!' if player_final_score > computer_final_score else 'The dealer wins!')
+                    print_msg('\nThe dealer wins!', 'l')
                 break
+
             elif player_final_score <= 21 < computer_final_score:
-                print('The dealer busted! You win!')
+                print_msg('\nThe dealer busted! You win!', 'w')
                 break
             elif computer_final_score <= 21 < player_final_score:
-                print('You busted! The dealer wins!')
+                print_msg('\nYou busted! The dealer wins!', 'l')
                 break
 
     playing = input("\nDo you want to play another game of Blackjack? Type 'y' or 'n': ")
