@@ -80,6 +80,12 @@ def bust(hand):
         return True
 
 
+# Function to display the final scores
+def display_final_scores(player_hand, computer_hand):
+    print(f'\n\nYour final cards: {player_hand} - Final Score: {score_final_hand(player_hand)}')
+    print(f"Computer's final cards: {computer_hand} - Final Score: {score_final_hand(computer_hand)}")
+
+
 playing = 'y'
 
 while playing.lower() in ['y', 'yes']:
@@ -90,7 +96,7 @@ while playing.lower() in ['y', 'yes']:
     computer_hand = [deal_card(deck), deal_card(deck)]
 
     print(f'Your cards: {player_hand} - Current Score: {score_hand(player_hand)}')
-    print(f"Computer's visible cards: {computer_hand[0:len(computer_hand)-1]}")
+    print(f"Computer's visible cards: {computer_hand[0:len(computer_hand)-1]}")  # Only show part of the computers hand
 
     hitting = True
     while hitting:
@@ -102,8 +108,7 @@ while playing.lower() in ['y', 'yes']:
 
             # If the user immediately busts... tell them they lost
             if score_final_hand(player_hand) > 21:
-                print(f'Your final cards: {player_hand} - Final Score: {score_hand(player_hand)}')
-                print(f"Computer's final cards: {computer_hand} - Final Score: {score_hand(computer_hand)}")
+                display_final_scores(player_hand, computer_hand)
                 print('You went over. You lose!')
                 break
 
@@ -126,18 +131,15 @@ while playing.lower() in ['y', 'yes']:
             player_final_score = score_final_hand(player_hand)
             computer_final_score = score_final_hand(computer_hand)
             if player_final_score <= 21 >= computer_final_score:
-                print(f'\n\nYour final cards: {player_hand} - Final Score: {score_final_hand(player_hand)}')
-                print(f"Computer's final cards: {computer_hand} - Final Score: {score_final_hand(computer_hand)}")
-                print('You beat the dealer!' if player_final_score > computer_final_score else 'The dealer beat you!')
+                display_final_scores(player_hand, computer_hand)
+                print('You beat the dealer!' if player_final_score > computer_final_score else 'The dealer wins!')
                 break
             elif player_final_score <= 21 < computer_final_score:
-                print(f'\n\nYour final cards: {player_hand} - Final Score: {score_final_hand(player_hand)}')
-                print(f"Computer's final cards: {computer_hand} - Final Score: {score_final_hand(computer_hand)}")
-                print('You beat the dealer! You win!')
+                display_final_scores(player_hand, computer_hand)
+                print('The dealer busted! You win!')
                 break
             elif computer_final_score <= 21 < player_final_score:
-                print(f'\n\nYour final cards: {player_hand} - Final Score: {score_final_hand(player_hand)}')
-                print(f"Computer's final cards: {computer_hand} - Final Score: {score_final_hand(computer_hand)}")
+                display_final_scores(player_hand, computer_hand)
                 print('You busted! The dealer wins!')
                 break
 
