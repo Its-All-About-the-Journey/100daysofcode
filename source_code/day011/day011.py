@@ -124,6 +124,9 @@ while playing.lower() in ['y', 'yes']:
         print("Please start a new game!")
         exit()
 
+    print_msg('Dealing...', 'g')
+    time.sleep(1.5)
+
     # Deal the computer and player their initial hands from the game deck
     player_hand = [deal_card(game_deck), deal_card(game_deck)]
     computer_hand = [deal_card(game_deck), deal_card(game_deck)]
@@ -145,14 +148,20 @@ while playing.lower() in ['y', 'yes']:
 
         # If either the player or the dealer has Blackjack right away, grant them the win
         if is_blackjack(player_hand) and not is_blackjack(computer_hand):
+            print_msg('\nSomeone got lucky...\n', 'g')
+            time.sleep(3)
             display_final_scores(player_hand, computer_hand)
             print_msg('Blackjack! You win the round! Much fast, so wow.', 'w')
             break
         elif not is_blackjack(player_hand) and is_blackjack(computer_hand):
+            print_msg('\nSomeone got lucky...\n', 'g')
+            time.sleep(3)
             display_final_scores(player_hand, computer_hand)
             print_msg('Dealer has Blackjack. You lost! That was fast...', 'l')
             break
         elif is_blackjack(player_hand) and is_blackjack(computer_hand):
+            print_msg("\nAs luck would have it...\n")
+            time.sleep(3)
             display_final_scores(player_hand, computer_hand)
             print_msg('Both you and the dealer have Blackjack! The round is a push!', 't')
             break
@@ -163,7 +172,7 @@ while playing.lower() in ['y', 'yes']:
         # If the player decides to hit, append another card to their hand
         if hit.lower() in ['hit', 'yes', 'y']:
             player_hand.append(deal_card(game_deck))
-            print_msg("Hitting...", 'g')
+            print_msg("\nHitting...", 'g')
             time.sleep(1.5)
             cards.display_all_cards(player_hand)
             print("Your Cards")
@@ -174,37 +183,33 @@ while playing.lower() in ['y', 'yes']:
 
             # If the user busts they lose immediately
             if score_final_hand(player_hand) > 21:
+                print_msg('\n Uh oh...', 'g')
+                time.sleep(3)
                 display_final_scores(player_hand, computer_hand)
                 print_msg('You went over. You lose!', 'l')
                 break
 
-            # If the player decides to hit, have the computer check if its 17 or over and hit if they're not
-            if score_final_hand(computer_hand) < 17:
-                print_msg('The dealer decided to hit...', 'g')
-                time.sleep(1.5)
-                computer_hand.insert(0, deal_card(game_deck))  # Insert card at start to keep last card hidden
-                cards.display_visible_cards(computer_hand)
-                print("Dealers Cards")
-            else:
-                print_msg('\nThe dealer has decided to stay...', 'g')
-                time.sleep(1.5)
-                cards.display_visible_cards(computer_hand)
-                print("Dealers Cards")
-
         # The sequence if the player chooses to stay
         elif hit.lower() in ['stay', 'no', 'n']:
-            stay_message = random.choice(["That's a bold strategy Cotton. Let's see if it pays off...",
-            "You have chosen to stay...", "You are staying..."])
+            stay_message = random.choice(["\nThat's a bold strategy Cotton. Let's see if it pays off...",
+            "\nYou have chosen to stay...", "You are staying..."])
             if score_final_hand(player_hand) <= 15:
                 stay_message = f"Staying on {score_final_hand(player_hand)}, eh? Good luck..."
             print_msg(stay_message, 'g')
             time.sleep(1.5)
+
+            # Suspensefully reveal the computers hand
+            print_msg('\nThe dealer reveals his hand...', 'g')
+            time.sleep(2)
+            cards.display_all_cards(computer_hand)
+            time.sleep(3)
+
             # Let the computer hit until its satisfied with its hand (17 or over)
             while score_final_hand(computer_hand) < 17:
-                print_msg("\nThe dealer has hit...", 'g')
+                print_msg("\nThe dealer hits...", 'g')
                 computer_hand.insert(0, deal_card(game_deck))
                 time.sleep(1.5)
-                cards.display_visible_cards(computer_hand)
+                cards.display_all_cards(computer_hand)
                 print("Dealers Cards")
                 time.sleep(3)
             print_msg("\nThe dealer is staying...", 'g')
