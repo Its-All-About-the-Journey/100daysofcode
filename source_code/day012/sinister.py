@@ -34,4 +34,5 @@ while (attempt := attempt + 1) <= attempts:
     if guessed := guess == goal:
         break
     print(f"{guess} is too {'low' if guess < goal else 'high'}\n")
+    
 print(f"{'you failed' if not guessed else 'you win'}! it was {goal}!")
