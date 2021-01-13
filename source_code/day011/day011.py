@@ -6,7 +6,6 @@ import os
 import random
 import time
 from termcolor import colored
-from art import logo
 import cards
 
 points = {'ace': 11, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9,
@@ -59,11 +58,6 @@ def score_final_hand(hand):
         return high_sum if high_sum <= 21 else low_sum
 
 
-# Function to display computers partial hand
-def display_visible_cards(computers_hand):
-    print(f"Dealers visible card(s): {computers_hand[0:len(computers_hand) - 1]}")
-
-
 # Function to display the final cards and scores
 def display_final_scores(players_hand, computers_hand):
     cards.display_all_cards(players_hand)
@@ -95,7 +89,6 @@ def print_msg(message, category):
         print(colored(message, 'white', attrs=['bold']))
 
 
-
 # Flags
 playing = 'y'
 answered = False
@@ -103,7 +96,7 @@ no_math = 'no'
 
 while playing.lower() in ['y', 'yes']:
     clear()
-    print(logo, '\n')
+    print(cards.logo, '\n')
 
     # Ask user how many decks and if they want their score auto-displayed for them
     # Validate the answer
@@ -183,7 +176,7 @@ while playing.lower() in ['y', 'yes']:
 
             # If the user busts they lose immediately
             if score_final_hand(player_hand) > 21:
-                print_msg('\n Uh oh...', 'g')
+                print_msg('\nUh oh...', 'g')
                 time.sleep(3)
                 display_final_scores(player_hand, computer_hand)
                 print_msg('You went over. You lose!', 'l')
@@ -198,7 +191,7 @@ while playing.lower() in ['y', 'yes']:
             print_msg(stay_message, 'g')
             time.sleep(1.5)
 
-            # Suspensefully reveal the computers hand
+            # Suspenseful reveal of the computers hand
             print_msg('\nThe dealer reveals his hand...', 'g')
             time.sleep(2)
             cards.display_all_cards(computer_hand)
@@ -207,12 +200,13 @@ while playing.lower() in ['y', 'yes']:
             # Let the computer hit until its satisfied with its hand (17 or over)
             while score_final_hand(computer_hand) < 17:
                 print_msg("\nThe dealer hits...", 'g')
-                computer_hand.insert(0, deal_card(game_deck))
+                computer_hand.append(deal_card(game_deck))
                 time.sleep(1.5)
                 cards.display_all_cards(computer_hand)
                 print("Dealers Cards")
                 time.sleep(3)
-            print_msg("\nThe dealer is staying...", 'g')
+            if score_final_hand(computer_hand) <= 21:
+                print_msg("\nThe dealer is staying...", 'g')
             time.sleep(1.5)
 
             # Finally, compare the computers hand to the players hand and report outcome

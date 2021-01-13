@@ -1,3 +1,14 @@
+logo = """
+.------.            _     _            _    _            _    
+|A_  _ |.          | |   | |          | |  (_)          | |   
+|( \/ ).-----.     | |__ | | __ _  ___| | ___  __ _  ___| | __
+| \  /|K /\  |     | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
+|  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   < 
+`-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\\
+      |  \/ K|                            _/ |                
+      `------'                           |__/           
+"""
+
 deck = ['ace', 'ace', 'ace', 'ace', 'two', 'two', 'two', 'two', 'three', 'three', 'three', 'three', 'four', 'four',
         'four', 'four', 'five', 'five', 'five', 'five', 'six', 'six', 'six', 'six', 'seven', 'seven', 'seven', 'seven',
         'eight', 'eight', 'eight', 'eight', 'nine', 'nine', 'nine', 'nine', 'ten', 'ten', 'ten', 'ten', 'jack', 'jack',
@@ -104,8 +115,7 @@ def display_all_cards(hand):
         card1 = display[hand[0]].split('\n')
         card2 = display[hand[1]].split('\n')
         for row in zip(card1, card2):
-            if row != " ":
-                print(row[0], row[1])
+            print(row[0], row[1])
     elif len(hand) == 3:
         card1 = display[hand[0]].split('\n')
         card2 = display[hand[1]].split('\n')
