@@ -78,20 +78,20 @@ def do_lost_game(game_score):
   clear_screen()
   print(f"""Sorry, that's not correct. Your score was: {game_score}""")
 
-def game(game_data_list, game_score):
+def game(game_data_list, game_score, champion = None):
   """
   Main Game Loop
   """
 
-  if not len(game_data_list) >= 2:
-    print("Error, insufficient game data.")
-    exit()
+  if not len(game_data_list):
+    clear_screen()
+    print(logo)
+    print("Conglaturation, Your Winner!")
+    return False, game_score, None
 
-  # Initial Champion
-  champion = get_competitor(game_data_list)
-
+  if not champion:
+    champion = get_competitor(game_data_list)
   correct = False
-
   combatant = get_competitor(game_data_list)
   print_display(champion, combatant, game_score)
   winner = get_winner(champion, combatant)
@@ -101,20 +101,26 @@ def game(game_data_list, game_score):
     correct = True
   elif selection == "B" and winner:
     correct = True
+    champion = combatant
 
   if not correct:
     do_lost_game(game_score)
-    return False, game_score
+    return False, game_score, champion
   else:
     game_score += 1
-    return True, game_score
+    return True, game_score, champion
 
 if __name__ == '__main__':
+  if not len(data) >= 2:
+    print("Error, insufficient game data.")
+    exit()
+
   while True:
     game_data_list, game_score = setup(data)
     game_state = True
+    champion = None
     while game_state:
-      game_state, game_score = game(game_data_list, game_score)
+      game_state, game_score, champion = game(game_data_list, game_score, champion)
     if game_score > high_score:
       high_score = game_score
       print("You've got the high score!")
