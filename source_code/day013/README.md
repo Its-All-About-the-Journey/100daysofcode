@@ -4,6 +4,14 @@ Debugging
 
 # Description
 
+Various debugging techniques are discussed in the course:
+* Read your code again, and maybe take a break first.
+* Read the output from the interpreter
+* See if your IDE has any help
+* Isolate the error and review variables or details with the "print" statement
+* Set static values to reproduce or test behaviour
+* Search the internet
+
 # Environment
 OS: Ubuntu Bionic
 
@@ -15,10 +23,12 @@ None
 
 # How to run script
 ```
+Don't
 ```
 
 # Sample output
 ```
+None
 ```
 
 # Other Exercises
