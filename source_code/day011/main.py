@@ -105,9 +105,11 @@ def print_hand(player, computer):
 # Add up all the cards
 def compute_hand_value(hand):
 
-  this_hand = hand
+  this_hand = hand[:]
 
-  this_hand.sort()
+#  print(f"""Hand in: {this_hand}""")
+
+#  this_hand.sort()
   aces = []
 
   while 14 in this_hand:
@@ -217,6 +219,8 @@ def play_game():
 
   # Get the starting hand
   deck, hand_player = deal(deck, hand_player)
+#  hand_player['comp'].append(14)
+#  hand_player['print'].append('AA')
   deck, hand_computer = deal(deck, hand_computer)
   deck, hand_player = deal(deck, hand_player)
 
