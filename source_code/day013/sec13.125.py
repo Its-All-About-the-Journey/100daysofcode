@@ -6,8 +6,8 @@ word_per_page = int(input("Number of words per page: "))
 total_words = pages * word_per_page
 print(total_words)
 
-# Line 5 is an comparison.
-# Fix: remove an = from ==
+# Line 5 is a comparison.
+# Fix: remove a = from ==
 
 
 # STARTING CODE - UNTOUCHED
