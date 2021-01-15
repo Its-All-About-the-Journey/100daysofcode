@@ -32,4 +32,4 @@ resources = {
 
 
 class msg:
-   ASK = "What would you like?\n{}\n"
+   ASK_FOR_SELECTION = "What would you like? "
