@@ -1,7 +1,7 @@
 import random
 import os
 from game_data import data
-from art import logo, versus
+from source_code.day014.art import logo, versus
 
 
 # Function will clear command prompt window on Linux and Windows machines
