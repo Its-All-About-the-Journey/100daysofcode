@@ -27,15 +27,16 @@ guesses = 10 if difficulty == 'easy' else 5
 
 # Loop that handles game execution
 while True:
+	# Exit game if player has no guesses left
+	if not guesses:
+		exit()
+
 	# Print remaining guesses and request new guess
 	print(f"You have {guesses} attempts remaining to guess the number.")
 	player_guess = int(input("Make a guess: "))
 
-	# Exit game if player has no guesses left
-	if not guesses:
-		exit()
 	# Print winning message and exit if player guesses correctly
-	elif player_guess == number:
+	if player_guess == number:
 		print(f"You got it! The answer was {number}")
 		exit()
 
