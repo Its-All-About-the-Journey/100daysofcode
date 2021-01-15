@@ -46,8 +46,10 @@ def print_display(a, b, game_score):
   print(logo)
   if game_score:
     print(f"""You're right! Current score: {game_score}.""")
+#  print(f"""Compare A: {a['name']}, {a['description']}, from {a['country']} ({a['follower_count']}).""")
   print(f"""Compare A: {a['name']}, {a['description']}, from {a['country']}.""")
   print(vs)
+#  print(f"""Compare B: {b['name']}, {b['description']}, from {b['country']} ({b['follower_count']}).""")
   print(f"""Compare B: {b['name']}, {b['description']}, from {b['country']}.""")
 
 def get_selection():
@@ -99,6 +101,7 @@ def game(game_data_list, game_score, champion = None):
 
   if selection == "A" and not winner:
     correct = True
+    champion = combatant
   elif selection == "B" and winner:
     correct = True
     champion = combatant
