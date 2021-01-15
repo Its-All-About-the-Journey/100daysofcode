@@ -26,13 +26,10 @@ player_guess = None
 
 while True:
 	if not guesses:
-		print("You've run out of guesses, you lose")
 		exit()
 	elif player_guess == number:
 		print(f"You got it! The answer was {number}")
 		exit()
-	else:
-		print("Guess again.")
 
 	print(f"You have {guesses} attempts remaining to guess the number.")
 	player_guess = int(input("Make a guess: "))
@@ -41,6 +38,8 @@ while True:
 		print("Too high.")
 	elif player_guess < number:
 		print("Too low.")
+
 	guesses -= 1
+	print("Guess again." if guesses != 0 else "You've run out of guesses, you lose")
 	continue
 
