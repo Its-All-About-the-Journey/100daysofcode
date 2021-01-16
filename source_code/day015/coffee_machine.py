@@ -5,7 +5,7 @@ from coffee import MENU, msg, resources
 
 CLEAR = "cls" if os.name == 'nt' else "clear"
 
-def prompt(live_menu) -> None:
+def prompt(live_menu: dict) -> str:
     print_menu(live_menu)
 
     return input(f"{msg.ASK_FOR_SELECTION}")
@@ -22,7 +22,7 @@ def print_report() -> None:
     # Await on user input so he can view report
     input(msg.PRESS_ANY_KEY)
 
-def print_menu(menu) -> None:
+def print_menu(menu: dict) -> None:
     print(msg.WELCOME_TO_MENU + '\n')
 
     for item in menu:
@@ -88,7 +88,7 @@ def process_order(resource: dict, menu: dict, item: str) -> None:
     # Update money
     resources["money"] += menu[item]["cost"]
 
-def run():
+def run() -> None:
     # Brains of the coffee machine
 
     # Initial money resources
