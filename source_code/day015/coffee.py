@@ -32,4 +32,6 @@ resources = {
 
 
 class msg:
-   ASK_FOR_SELECTION = "What would you like? "
+   ASK_FOR_SELECTION = "\nWhat would you like? "
+   REPORT = "=" * 80 + "\nResources\n" + "=" * 80
+   PRESS_ANY_KEY = "\nPress any 'return' back to prompt. "

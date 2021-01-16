@@ -14,13 +14,22 @@ def prompt():
 
 def print_report():
     # Print current resource values
-    #
-    # Resources: from coffee import resources
-    pass
+    
+    os.system(CLEAR)
+    print(msg.REPORT)
+    print(f"{'Water':<8}  {resources['water']:>5} ml")
+    print(f"{'Milk':<8}  {resources['milk']:>5} ml")
+    print(f"{'Coffee':<8}  {resources['coffee']:>5} g")
+    print(f"{'Money':<8}  ${resources['money']:>.2f}")
+
+    # Await on user input so he can view report
+    input(msg.PRESS_ANY_KEY)
 
 def menu() -> str:
     # Return menu based on current resources
     menu = "Here is our current menu:"
+
+    menu_items = dict()
 
     # Build menu based on inventory availability
     for item in MENU:
@@ -60,12 +69,19 @@ def process_order():
 
 def run():
     # Brains of the coffee machine
-    while True:
 
+    # Add and Initial money on the resources
+    resources['money'] = 0
+
+    while True:
+        os.system(CLEAR)
         user_selection = prompt()
 
         if user_selection == 'off':
             break
+        
+        elif user_selection == 'report':
+            print_report()
 
 
 if __name__ == "__main__":
