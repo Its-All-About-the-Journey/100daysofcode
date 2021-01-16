@@ -2,6 +2,7 @@
 # DAY 15
 
 # Description
+Today's video went over the Pycharm IDE and a coffee machine project.
 
 # Environment
 OS: OS X
@@ -9,13 +10,9 @@ OS: OS X
 Python version: 3.7.6
 
 # Dependencies
+None
 
 # How to run script
 ```
-enter instructions here
-```
-
-# Sample output
-```
-paste output here
+python coffee_machine.py
 ```
