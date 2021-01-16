@@ -34,4 +34,9 @@ resources = {
 class msg:
    ASK_FOR_SELECTION = "\nWhat would you like? "
    REPORT = "=" * 80 + "\nResources\n" + "=" * 80
-   PRESS_ANY_KEY = "\nPress any 'return' back to prompt. "
+   PRESS_ANY_KEY = "\nPress the enter key to return to prompt. "
+   ITEM_NOT_IN_MENU = "\nSorry, the item is not in menu."
+   ENTER_COINS = "\nPlease insert coins."
+   ENTER_QUARTERS = "  How many quarters? "
+   ENTER_DIMES = "  How many dimes? "
+   PAY_OR_CANCEL = "\nPress 'p' to pay or 'c' to cancel. "
