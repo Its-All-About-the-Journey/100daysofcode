@@ -5,17 +5,13 @@ from coffee import MENU, msg, resources
 
 CLEAR = "cls" if os.name == 'nt' else "clear"
 
-def update_prompt():
-    pass
+def prompt(live_menu) -> None:
+    print_menu(live_menu)
 
-def prompt() -> None:
-    # Get the user's input
-    print( menu() )
     return input(f"{msg.ASK_FOR_SELECTION}")
 
 def print_report() -> None:
     # Print current resource values
-    
     os.system(CLEAR)
     print(msg.REPORT)
     print(f"{'Water':<8}  {resources['water']:>5} ml")
@@ -26,36 +22,32 @@ def print_report() -> None:
     # Await on user input so he can view report
     input(msg.PRESS_ANY_KEY)
 
-def menu() -> str:
-    # Return menu based on current resources
-    menu = "Here is our current menu:"
+def print_menu(menu) -> None:
+    print(msg.WELCOME_TO_MENU + '\n')
 
-    menu_items = dict()
+    for item in menu:
+        print(f"   {item:<10} - $ {menu[item]['cost']:.2f}")
 
-    # Build menu based on inventory availability
+def update_menu() -> dict:
+
+    menu = dict()
+
+    # Build menu based on resource availability
     for item in MENU:
         add_item = True
+
         for key, value in MENU[item]["ingredients"].items():
             if value > resources[key]:
                 add_item = False
                 break
 
         if add_item:
-            menu = menu + f"\n   {item:<10} - $ {MENU[item]['cost']:.2f}"
-
+            menu[item] = deepcopy(MENU[item])
+    
     return menu
-
-
-def currency_balance():
-    # Return the currency balance
-    #
-    # - A negative number means insuffient currency
-    # - A positive number means currency owed
-    pass
 
 def register(amount: float) -> bool:
     # Prompt user for cash
-    #
     quarters = dimes = registered_amount = 0
     owes = amount
 
@@ -65,9 +57,12 @@ def register(amount: float) -> bool:
         print(f"Amount needed $ {owes:.2f}")        
         print(msg.ENTER_COINS)
 
-        quarters = int( input(msg.ENTER_QUARTERS) )
-        
-        dimes = int( input(msg.ENTER_DIMES) )
+        try:
+            quarters = int( input(msg.ENTER_QUARTERS) )
+            dimes = int( input(msg.ENTER_DIMES) )
+        except ValueError:
+            # Lazy validation
+            pass
 
         registered_amount +=  quarters * .25 + dimes * .10
 
@@ -76,55 +71,68 @@ def register(amount: float) -> bool:
         if owes > 0:
             print(f"\nYou are short, you still need $ {owes:.2f}")
         else:
-            return True 
+            change = registered_amount - amount
+            print(f"\nYou have $ {change:.2f} change.")
+            return True
     
+    # Order cancelled return money
+    print(f"\nYou have $ {registered_amount:.2f} change.")
+
     return False
 
-
-
-def process_order():
-    # Update inventory of resources
-    #
-    # Resources: from coffee import resources
-    pass
+def process_order(resource: dict, menu: dict, item: str) -> None:
+    # Update resources
+    for ingredient in menu[item]["ingredients"]:
+        resources[ingredient] -= menu[item]["ingredients"][ingredient]
+    
+    # Update money
+    resources["money"] += menu[item]["cost"]
 
 def run():
     # Brains of the coffee machine
 
-    # Initial live menu and resources
-    menu = deepcopy(MENU)
+    # Initial money resources
     resources['money'] = 0
 
     while True:
-        os.system(CLEAR)
-        user_selection = prompt()
+        # Update live menu
+        live_menu = update_menu()
 
-        if user_selection == 'off':
+        if not live_menu:
+            # Shut off, no items to offer
+            print_report()
+            print("\nOut of Stock")
+            break
+
+        os.system(CLEAR)
+        user_selection = prompt(live_menu)
+
+        if (user_selection == 'off'):
             # Shut off system
             break
         
-        elif user_selection == 'report':
+        if user_selection == 'report':
             # Print resource report
             print_report()
         
+        elif user_selection in live_menu.keys():
+            # User selection is in live menu
+
+            # register purchase
+            amount = live_menu[user_selection]['cost']
+
+            if register(amount):
+                # User paid, process order
+                process_order(resources, MENU, user_selection)
+                print("\nThank you for the order.")
+                print(f"Here is your {user_selection}.")
+        
+            input(msg.PRESS_ANY_KEY)
+
         else:
-            # is selection valid
-            if user_selection in menu.keys():
-                # register purchase
-                amount = menu[user_selection]['cost']
-
-                if register(amount):
-                    print('yes')
-                    # eject change
-                    # process order
-
-                input(msg.PRESS_ANY_KEY)
-            else:
-                print(msg.ITEM_NOT_IN_MENU)
-                input(msg.PRESS_ANY_KEY)
-                continue
-
-
+            # Invalid selection
+            print(msg.ITEM_NOT_IN_MENU)
+            input(msg.PRESS_ANY_KEY)
 
 if __name__ == "__main__":
     run()

@@ -39,4 +39,5 @@ class msg:
    ENTER_COINS = "\nPlease insert coins."
    ENTER_QUARTERS = "  How many quarters? "
    ENTER_DIMES = "  How many dimes? "
-   PAY_OR_CANCEL = "\nPress 'p' to pay or 'c' to cancel. "
+   PAY_OR_CANCEL = "\nPress 'p' to pay or 'enter' to cancel. "
+   WELCOME_TO_MENU = "\nWelcome, this is our current menu."
