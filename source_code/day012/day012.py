@@ -1,6 +1,6 @@
 # Grant Armstrong
 # 01/15/2021
-# Day 12 Number Guessing Game
+# Day 12 Number Guessing App
 
 
 from art import logo
