@@ -49,5 +49,4 @@ while True:
 	# Subtract a guess and print either "Guess Again" or tell the player they've lost
 	guesses -= 1
 	print("Guess again." if guesses != 0 else "You've run out of guesses, you lose")
-	continue
 
