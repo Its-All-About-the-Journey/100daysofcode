@@ -9,11 +9,13 @@ An object oriented version of the Coffee Pot.
 # Environment
 OS: Ubuntu Bionic
 
-Python version: 3.6.9
+Python version: 3.8.7
 
 # Dependencies
 
-Machine Data Dictionary
+Coffee Maker
+Menu
+Money Machine
 
 # How to run script
 ```
@@ -29,21 +31,23 @@ Type 'off' to turn the machine off.
 
 # Sample output
 ```
-What would you like? (espresso/latte/cappuccino): espresso
-Espresso costs $1.50
-Give me your money
-How many pennies?: 0
-How many nickels?: 0
+What would you like? (espresso/latte/cappuccino): latte
+Please insert coins.
+How many quarters?: 99
 How many dimes?: 0
-How many quarters?: 999999999
-Here is $249999998.25 in change.
-Here is your espresso ☕. Enjoy!
+How many nickles?: 0
+How many pennies?: 0
+Here is $22.25 in change.
+Here is your latte ☕️. Enjoy!
+What would you like? (espresso/latte/cappuccino): cappuccino
+Sorry there is not enough water.
 What would you like? (espresso/latte/cappuccino): report
-Coffee Machine Supply Status:
-* Water: 250ml
-* Milk: 200ml
-* Coffee: 82g
-* Money: $1.50
+Machine Report:
+Water: 100ml
+Milk: 50ml
+Coffee: 76g
+Money: $2.5
+What would you like? (espresso/latte/cappuccino): iff
 What would you like? (espresso/latte/cappuccino): off
 ```
 
