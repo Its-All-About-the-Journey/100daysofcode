@@ -14,10 +14,10 @@ None
 
 # How to run script
 ```
-enter instructions here
+n/a
 ```
 
 # Sample output
 ```
-paste output here
+n/a
 ```
