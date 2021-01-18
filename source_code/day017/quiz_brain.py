@@ -9,7 +9,7 @@ class QuizBrain:
         self.num_questions = len(question_list)
         self.score = 0
     
-    def check_answer(self, user_answer, correct_answer) -> bool:
+    def check_answer(self, user_answer, correct_answer) -> None:
         if user_answer.lower() == correct_answer.lower():
             print("You got it right!")
             self.score += 1
