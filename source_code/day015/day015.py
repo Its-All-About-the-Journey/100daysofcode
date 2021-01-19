@@ -13,15 +13,15 @@ def report():
 	print(f"Money: ${resources['money']:,.2f}")
 
 
-# TODO: Make it so that all insufficient ingredients print, instead of just the first
 # Function to check if there are sufficient resources
 def check_resources(selection):
 	drink = MENU[selection]
+	flag = True
 	for ingredient, quantity in drink['ingredients'].items():
 		if quantity > resources[ingredient]:
 			print(f"Sorry there is not enough {ingredient}")
-			return False
-	return True
+			flag = False
+	return flag
 
 
 # Function to deduct resources after making coffee
