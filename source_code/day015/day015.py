@@ -30,7 +30,7 @@ def deduct_resources(selection):
 		resources[ingredient] -= quantity
 
 
-# Function to prompt user for payment - returns amount user paid
+# Function to prompt user for payment - calls deduct_resources if there's enough monies
 def payment(selection):
 	drink = MENU[selection]
 	print("Please insert coins...")
