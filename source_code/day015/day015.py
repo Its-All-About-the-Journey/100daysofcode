@@ -13,6 +13,7 @@ def report():
 	print(f"Money: ${resources['money']:,.2f}")
 
 
+# TODO: Make it so that all insufficient ingredients print, instead of just the first
 # Function to check if there are sufficient resources
 def check_resources(selection):
 	drink = MENU[selection]
@@ -37,7 +38,7 @@ def payment(selection):
 	quarters = 0.25 * int(input("Enter total number of quarters: "))
 	dimes = 0.10 * int(input("Enter total number of dimes: "))
 	nickels = 0.05 * int(input("Enter total number of nickels: "))
-	pennies = 0.01 * int(input("Enter total number of pennies]: "))
+	pennies = 0.01 * int(input("Enter total number of pennies: "))
 	total = quarters + dimes + nickels + pennies
 	cost = drink["cost"]
 	change = total - cost
