@@ -57,25 +57,23 @@ def run_machine():
 	while True:
 		user_selection = input("What would you like? Enter espresso/latte/cappuccino: ").lower()
 
-		# Check to make sure the user entered a proper selection
-		if user_selection not in ['espresso', 'latte', 'cappuccino', 'report', 'exit']:
-			print("Invalid selection. Please try again...")
-			continue
+
 		# If the user selected report, show them a report
-		elif user_selection == 'report':
+		if user_selection == 'report':
 			report()
 			continue
 		# If the user selected exit, exit the application
-		elif user_selection == 'exit':
+		elif user_selection in ['off', 'exit']:
 			print("Powering down...")
 			exit()
+		# Check to make sure the user entered a proper selection
+		elif user_selection not in MENU.keys():
+			print("Invalid selection. Please try again...")
+			continue
 
 		# Check to see if there are available resources for the users selection - run payment function if there are
 		if check_resources(user_selection):
-			payment(user_selection)  # payment function also runs the deduct_resources() function
-		# If there are insufficient resources, continue to the next iteration of the loop
-		else:
-			continue
+			payment(user_selection)  # payment function also runs the deduct_resources() function\
 
 
 run_machine()
