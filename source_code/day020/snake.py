@@ -1,6 +1,6 @@
 from time import sleep
 from turtle import Turtle, Screen
-
+import math
 
 class Snake:
     
@@ -15,19 +15,18 @@ class Snake:
         self.RIGHT = 0
         
         # body segments
-        self.SEGWIDTH = 20
+        self.SEGWIDTH = 21
         self.segments = []
     
         # create the head and two additional segments
-        for i in range(3):
+        for i in range(30):
             segment = Turtle(shape="square")
             segment.penup()
-            segment.color("white")
             segment.setx(i * self.SEGWIDTH * -1)  # shift left to make a snake
             self.segments.append(segment)
     
         self.head = self.segments[0]
-        self.head.color("coral")
+        self.update_color()
         return None
     
         
@@ -41,6 +40,15 @@ class Snake:
         # now move the head
         self.head.forward(self.SEGWIDTH)
         return self
+    
+    
+    def update_color(self):
+        for i in range(len(self.segments)):
+            self.segments[i].color(
+                int((math.sin((.3 * i) + 0) * 127) + 127.5),
+                int((math.sin((.3 * i) + 2) * 127) + 127.5),
+                int((math.sin((.3 * i) + 4) * 127) + 127.5)
+            )
     
         
     def face_up(self):
@@ -69,6 +77,7 @@ class Snake:
     
 screen = Screen()
 screen.setup(width = 600, height = 600)
+screen.colormode(255)
 screen.bgcolor("black")
 screen.title("Snake")
 screen.tracer(0)
