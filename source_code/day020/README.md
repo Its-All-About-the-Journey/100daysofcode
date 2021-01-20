@@ -2,20 +2,22 @@
 # DAY 20
 
 # Description
+Awe yeah! Sneks!
 
 # Environment
-OS:
-
-Python version:
+OS: Windows 10
+Editor: PyCharm
+Python version: 3.9.1
 
 # Dependencies
+None
 
 # How to run script
 ```
-enter instructions here
+n/a
 ```
 
 # Sample output
 ```
-paste output here
+n/a
 ```
