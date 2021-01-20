@@ -35,17 +35,16 @@ def deduct_resources(selection):
 def payment(selection):
 	drink = MENU[selection]
 	print("Please insert coins...")
-	quarters = 0.25 * int(input("Enter total number of quarters: "))
-	dimes = 0.10 * int(input("Enter total number of dimes: "))
-	nickels = 0.05 * int(input("Enter total number of nickels: "))
-	pennies = 0.01 * int(input("Enter total number of pennies: "))
-	total = quarters + dimes + nickels + pennies
+	total = 0.25 * int(input("Enter total number of quarters: "))
+	total += 0.10 * int(input("Enter total number of dimes: "))
+	total += 0.05 * int(input("Enter total number of nickels: "))
+	total += 0.01 * int(input("Enter total number of pennies: "))
 	cost = drink["cost"]
 	change = total - cost
 	if total < cost:
 		print("Sorry that's not enough money. Money refunded.")
 		return
-	elif total >= cost:
+	else:
 		resources["money"] += cost
 		deduct_resources(selection)
 		print(f"Here is ${change:,.2f} in change.\nHere is your {selection} ☕ Enjoy!")
@@ -56,7 +55,6 @@ def payment(selection):
 def run_machine():
 	while True:
 		user_selection = input("What would you like? Enter espresso/latte/cappuccino: ").lower()
-
 
 		# If the user selected report, show them a report
 		if user_selection == 'report':
