@@ -2,7 +2,7 @@ from random import randint
 
 from turtle import Turtle
 
-class TurtleModel():
+class TurtleModel:
     
     def __init__(self, color: str, home: tuple) -> None:
         self.color = color
