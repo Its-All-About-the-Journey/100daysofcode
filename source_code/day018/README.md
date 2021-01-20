@@ -24,7 +24,7 @@ NUM_COLORS - how large the color palette should be
 ```
 
 # Sample output
-![Sample of Artwork][dotart.png]
+![Sample of Artwork](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/day018/dotart.png)
 
 # Other Exercises
 
