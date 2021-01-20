@@ -2,7 +2,7 @@ from turtle import Screen
 
 class TurtleRaceView:
     
-    def __init__(self, background: str):
+    def __init__(self, background: str) -> None:
         self.width = 500
         self.height = 400
         self.view_border = 10
@@ -10,7 +10,7 @@ class TurtleRaceView:
         self.view = Screen()
         self.setup_view()
     
-    def setup_view(self):
+    def setup_view(self) -> None:
         self.view.setup(
             width=self.width + self.view_border,
             height=self.height + self.view_border
@@ -19,7 +19,7 @@ class TurtleRaceView:
         self.view.colormode(255)
         self.view.bgcolor(self.background)
 
-    def exitonclick(self):
+    def exitonclick(self) -> None:
         self.view.exitonclick()
 
     def text_input(self, title: str, prompt: str) -> str:

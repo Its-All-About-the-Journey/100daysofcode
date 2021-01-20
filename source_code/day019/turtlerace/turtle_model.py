@@ -4,25 +4,25 @@ from turtle import Turtle
 
 class TurtleModel():
     
-    def __init__(self, color: str, home: tuple):
+    def __init__(self, color: str, home: tuple) -> None:
         self.color = color
         self.home = home
         self.turtle = Turtle(shape="turtle")
         self.turtle.color(color)
     
-    def clear(self):
+    def clear(self) -> None:
         self.turtle.clear()
     
-    def forward(self):
+    def forward(self) -> None:
         self.turtle.forward( randint(1,10) )
     
     def home(self) -> tuple:
         return self.home
     
-    def pendown(self):
+    def pendown(self) -> None:
         self.turtle.pendown()
     
-    def penup(self):
+    def penup(self) -> None:
         self.turtle.penup()
     
     def position(self) -> tuple:

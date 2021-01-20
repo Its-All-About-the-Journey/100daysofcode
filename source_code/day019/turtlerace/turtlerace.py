@@ -3,7 +3,7 @@ from turtlerace import turtle_view as tr_view
 
 class TurtleRace:
     
-    def __init__(self):
+    def __init__(self) -> None:
         self.colors = ["blue", "brown", "green", "orange", "red", "yellow"]
         self.num_turtles = 0
         self.view_offset = 10, 30
@@ -11,7 +11,7 @@ class TurtleRace:
         self.race_view = tr_view.TurtleRaceView("black")
         self.setup_turtles()
 
-    def setup_turtles(self):
+    def setup_turtles(self) -> None:
         self.num_turtles = len(self.colors)
         y_offset = self.race_view.height / self.num_turtles
         x_pos = self.view_offset[0] - self.race_view.width / 2
@@ -31,7 +31,7 @@ class TurtleRace:
             if self.turtles[turtle].position()[0] >= self.race_view.width / 2:
                 return self.turtles[turtle].color
 
-    def rehome(self):
+    def rehome(self) -> None:
         for turtle in self.turtles:
             self.turtles[turtle].clear()
             self.turtles[turtle].penup()
@@ -47,7 +47,7 @@ class TurtleRace:
         
         return winner
 
-    def run(self):
+    def run(self) -> None:
         
         title = "Turtle power, Cowabunga Dude!"
         prompt = "Choose your color: "
@@ -70,9 +70,5 @@ class TurtleRace:
             play_again = user_choice = self.race_view.text_input(title, new_prompt)
 
             player_quit = not (play_again == 'y')
-
-
-
-        
-        
+            
         self.race_view.exitonclick()
