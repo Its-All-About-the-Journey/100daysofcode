@@ -112,7 +112,7 @@ class Snake(Turtle):
         return self.head.distance(food) < 7
     
     def has_crashed(self):
-        return self.has_collided_with_wall() or self.has_collided_with_wall()
+        return self.has_collided_with_wall() or self.has_collided_with_tail()
     
     def has_collided_with_wall(self):
         return (self.head.ycor() >= 273
