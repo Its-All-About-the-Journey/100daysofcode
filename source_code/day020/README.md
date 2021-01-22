@@ -2,6 +2,7 @@
 # DAY 20
 
 # Description
+Today's videos went over the Snake Game part 1
 
 # Environment
 OS: OS X
@@ -9,13 +10,10 @@ OS: OS X
 Python version: 3.7.6
 
 # Dependencies
+None
 
 # How to run script
 ```
-enter instructions here
+python sec20.xxx.py
 ```
-
-# Sample output
-```
-paste output here
-```
+where xx is the sub section
