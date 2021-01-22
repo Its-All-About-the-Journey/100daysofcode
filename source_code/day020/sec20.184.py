@@ -3,12 +3,6 @@ import time
 from snaketail.snake_model import Snake
 from snaketail.snake_view import SnakeView
 
-def init_screen():
-    self.screen.setup(width=600, height=600)
-    self.screen.bgcolor("black")
-    self.screen.title("The Python Game")
-    self.screen.tracer(0)
-
 if __name__ == "__main__":
     snake = Snake()
     screen = SnakeView()
