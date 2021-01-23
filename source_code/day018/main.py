@@ -52,8 +52,8 @@ def draw_spiro():
 
 
 draw_spiro()
-# draw_shapes()
-# random_walk()
+draw_shapes()
+random_walk()
 
 
 screen.exitonclick()
