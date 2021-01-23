@@ -3,7 +3,7 @@ from turtle import Turtle
 
 class SnakeFood(Turtle):
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.shape("turtle")
         self.penup()
@@ -12,5 +12,5 @@ class SnakeFood(Turtle):
         self.speed("fastest")
         self.respawn()
     
-    def respawn(self):
+    def respawn(self) -> None:
         self.goto(random.randint(-280, 280), random.randint(-280, 280))

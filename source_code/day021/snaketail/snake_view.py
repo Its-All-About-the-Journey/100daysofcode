@@ -2,16 +2,16 @@ from turtle import Screen
 
 from snaketail.snake_defaults import SnakeDefaults as CFG
 
-class SnakeView():
+class SnakeView:
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.screen = Screen()
         self.init_screen()
 
     def exitonclick(self) -> None:
         self.screen.exitonclick()
 
-    def init_screen(self):
+    def init_screen(self) -> None:
         self.screen.setup(width=CFG.SCREEN["width"], height=CFG.SCREEN["height"])
         self.screen.bgcolor(CFG.SCREEN["bgcolor"])
         self.screen.title(CFG.SCREEN["title"])
