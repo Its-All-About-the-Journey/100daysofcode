@@ -19,7 +19,11 @@ print(display)
 # for _ in chosen_word:
 #     display += "_"
 
-# for _ in range(len(chose_word)):
+# for _ in range(len(chosen_word)):
+#     display += "_"
+
+# word_length = len(chosen_word)
+# for _ in range(word_length):
 #     display += "_"
 
 guess = input("Guess a letter: ").lower()
@@ -33,6 +37,7 @@ for position in range(len(chosen_word)):
     if letter == guess:
         display[position] = letter
 
+# for position in range(word_length)
         
 
 #TODO-3: - Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".
