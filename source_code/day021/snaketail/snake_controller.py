@@ -73,6 +73,7 @@ class SnakeController:
         game_is_on = True
 
         while game_is_on:
+            start = time.time()
             self.scoreboard.refresh()
             self.screen.update()
             self.snake.move()
@@ -86,6 +87,10 @@ class SnakeController:
                 self.food.respawn()
                 self.snake.extend_snake()
 
+            lapse = (time.time() - start) * 1000
+            
+            print(f"Time lapse: {lapse:0.4f} msec")
+            
             time.sleep(CFG.TURTLE["speed"])
 
         self.screen.exitonclick()
