@@ -91,7 +91,7 @@ class Racer:
 
     def walk(self, distance: int):
         self.race_car.pd()
-        for _ in range(0, 1):
+        for _ in range(0, 2):
             if _ == 0:
                 self.turn_right()
             else:
