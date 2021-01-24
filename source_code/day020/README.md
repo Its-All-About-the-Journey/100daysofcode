@@ -1,21 +1,37 @@
 
 # DAY 20
 
+Snake Game Foundation
+
 # Description
 
-# Environment
-OS:
+A "snake" game wherein the snake has no purpose to exist and only patience to live a limited time.
 
-Python version:
+How long will the snake go on? You decide.
+
+# Environment
+OS: Ubuntu Bionic
+
+Python version: 3.8.7
 
 # Dependencies
 
+Core
+
 # How to run script
 ```
-enter instructions here
+Call the script
+
+Use W A S D to move the snake around until you determine it has lived long enough
+
+Collide the snake
 ```
 
 # Sample output
+
+![Sample of Game](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/day020/snake.png
+
 ```
-paste output here
+Game Over: Snake has hit the wall.
+Snake is no longer alive
 ```
