@@ -1,7 +1,7 @@
 """
 Day 020 of the 100 Days of Code course
 Author: Wayne Kwiat
-Date: 1/22/2021
+Date: 1/22/2021, 1/23/2021
 """
 from turtle import Screen
 from snake import Snake
@@ -47,7 +47,5 @@ while game_is_on:
         if snake.head.distance(segment) < 10:
             game_is_on = False
             scoreboard.game_over()
-
-
 
 screen.exitonclick()
