@@ -54,7 +54,7 @@ my_board.screen.onkeypress(key="w", fun=player_paddle_up)
 my_board.screen.onkeypress(key="s", fun=player_paddle_down)
 
 while is_game_playing:
-    sleep(0.01)
+    sleep(0.09)
     my_board.screen.update()
     computer_paddle.move_self(my_ball.ycor())
     if check_ball_collide_paddle(my_ball, computer_paddle) or check_ball_collide_paddle(my_ball, player_paddle):
