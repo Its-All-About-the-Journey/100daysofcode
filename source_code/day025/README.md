@@ -2,6 +2,7 @@
 # DAY 25
 
 # Description
+Today's videos went over how to use the Pandas package.
 
 # Environment
 OS: OS X
@@ -9,13 +10,11 @@ OS: OS X
 Python version: 3.7.6
 
 # Dependencies
+pandas
 
 # How to run script
 ```
-enter instructions here
+python sec25.xxx
 ```
+where xx is the sub section
 
-# Sample output
-```
-paste output here
-```
