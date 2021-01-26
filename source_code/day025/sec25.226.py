@@ -1,6 +1,7 @@
 import pandas
 
-FILENAME = "weather_data.csv"
+FILENAME = "./data/weather_data.csv"
+FILENAME_OUT = './data/new_data.csv'
 
 if __name__ == "__main__":
     # Reads csv file
@@ -59,4 +60,4 @@ if __name__ == "__main__":
     print("=" * 79)
 
     # Output data to a csv file
-    data.to_csv("new_data.csv")
+    data.to_csv(FILENAME_OUT)
