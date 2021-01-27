@@ -2,6 +2,7 @@
 # DAY 27
 
 # Description
+Today's videos went over args, kwargs, and tkinter GUI's
 
 # Environment
 OS: OS X
@@ -9,13 +10,10 @@ OS: OS X
 Python version: 3.7.6
 
 # Dependencies
+None
 
 # How to run script
 ```
-enter instructions here
+python sec27.xxx
 ```
-
-# Sample output
-```
-paste output here
-```
+where xxx is the section number
