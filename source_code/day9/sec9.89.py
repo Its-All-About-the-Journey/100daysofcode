@@ -13,7 +13,7 @@ print(programming_dictionary["Bug"])
 programming_dictionary["Python"] = "Python is an interpreted, high-level and general-purpose programming language."
 print(programming_dictionary)
 
-# Empty Dictionary
+# Create an Empty Dictionary
 empty_dictionary = {}
 
 # Add items to an Empty Dictionary
