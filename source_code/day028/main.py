@@ -58,7 +58,7 @@ def timer_count_down(count):
 
     # Convert count to minutes and seconds
     seconds = count % 60
-    minutes = int(count / 60)
+    minutes = count // 60
     canvas.itemconfig(timer_count_down_text, text=f"{minutes:02d}:{seconds:02d}")
 
     # Set callback, if count is greater than 0
