@@ -1,8 +1,10 @@
 # 100 Days of Code : Python
-# Pong Game : Pong Paddle 
+# Pong Game : Pong Paddle
 # Adam Pawlowski (@hypermanganate)
 
 from turtle import Turtle
+
+# Turtle Size is 20x20 by default
 
 
 class Paddle(Turtle):
@@ -11,7 +13,7 @@ class Paddle(Turtle):
         self.shape("square")
         self.color("white")
         self.resizemode("user")
-        self.shapesize(1, 5, 1)
+        self.shapesize(1, 5, 1)  # Scale to 20x100
         self.setheading(90)
         self.pu()
         self.goto(start_position_x, start_position_y)
@@ -22,7 +24,7 @@ class Paddle(Turtle):
         if board_y:
             self.y_val = board_y
 
-    def move_self(self, ball_y:int = None):
+    def move_self(self, ball_y: int = None):
         """
         Move paddle along Y axis between bounds
 
@@ -65,13 +67,12 @@ class Paddle(Turtle):
                         self.setheading(360 - self.heading())
                         self.forward(self.paddle_speed)
 
-
     def move(self, direction):
         """
         Move paddle
         """
 
-        heading = 0 
+        heading = 0
 
         if direction == "up":
             heading = 90
@@ -84,3 +85,9 @@ class Paddle(Turtle):
         if (heading == 270 and (self.ycor() > (0 - (self.y_val - 50)))):
             self.setheading(heading)
             self.forward(self.paddle_speed)
+
+    def move_up(self):
+        self.move("up")
+
+    def move_down(self):
+        self.move("down")

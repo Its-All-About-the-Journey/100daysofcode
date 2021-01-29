@@ -7,7 +7,7 @@ from random import choice
 
 
 class Ball(Turtle):
-    def __init__(self, ball_speed: int = 20, board_y: int = None) -> None:
+    def __init__(self, ball_speed: float = 20.0, board_y: int = None) -> None:
         super().__init__()
         self.shape("square")
         self.color((255, 255, 255))
@@ -21,8 +21,14 @@ class Ball(Turtle):
     def move_ball(self, collide: bool = False):
         """
         Move ball along its path unless it's collided with something.
+
+        In the video, headings and angles were not a concern which removed
+        most of the agony surrounding this.
+
+        Instead, based on which "direction" it was going, and how it collided,
+        we either add or subtract from the x/y value depending to steer it.
+
         """
-        #print(f"Ball X: {self.xcor()} Y: {self.ycor()} Heading: {self.heading()}")
         collide_wall = False
 
         if abs(self.ycor()) >= self.board_y - 20:
@@ -41,9 +47,21 @@ class Ball(Turtle):
 
         self.forward(self.ball_speed)
 
-    def reset(self):
+    def reset(self, direction: str = None):
         """
         Return ball to home, and select a new angle to start from.
+
+        If specfiying a start direction, left or right,
+        angles are limited to those directions.
+
         """
+
+        angles = []
+
+        if not direction or direction == "left":
+            angles += ['135', '225']
+        if not direction or direction == "right":
+            angles += ['45', '315']
+
         self.home()
-        self.setheading(int(choice(['45','135','225','315'])))
+        self.setheading(int(choice(angles)))
