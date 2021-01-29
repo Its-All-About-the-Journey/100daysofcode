@@ -2,18 +2,25 @@ from tkinter import *
 
 
 # ---------------------------- CONSTANTS ------------------------------- #
-GREEN = "#61b15a"
-WHITE = "#ffffff"
+# Colors and font
 BG_COLOR = "#351f39"
 FG_COLOR = "#827397"
+GREEN = "#61b15a"
+WHITE = "#ffffff"
 FONT_NAME = "Courier"
-WORK_MIN = 25
-SHORT_BREAK_MIN = 5
+
+# Timer duration
 LONG_BREAK_MIN = 20
+SHORT_BREAK_MIN = 5
+WORK_MIN = 25
+
+# Checkmark constants
+CHECKMARK = "✔"
 
 # Sequence will start at index 1
 TIMER_SEQ = [LONG_BREAK_MIN, WORK_MIN, SHORT_BREAK_MIN, WORK_MIN, SHORT_BREAK_MIN, WORK_MIN]
 TIMER_SEQ_TEXT = ["L. Break", "Work", "Break", "Work", "Break", "Work"]
+SEQ_START = 1
 
 # Globals variables
 reps = 0
@@ -36,25 +43,36 @@ def timer_reset():
     lbl_checks["text"] = ""
     lbl_timer["text"] = "Timer"
 
+    # Set button state
+    btn_start["state"] = NORMAL
+    btn_reset["state"] = DISABLED
+
 
 def timer_start():
     global reps, timer
 
-    # If timer is on, ignore button click
-    if not timer:
-        reps += 1
+    # After completing all pomodoro cycles, set reps to the sequence start so the number doesn't grow to infinity. =)
+    reps = reps + 1 if reps != len(TIMER_SEQ) else SEQ_START
 
-        # Select next rep minutes
-        index = reps % len(TIMER_SEQ)
-        update_timer_label(TIMER_SEQ_TEXT[index])
-        minutes = TIMER_SEQ[index]
+    # Select next rep minutes
+    index = reps % len(TIMER_SEQ)
+    update_timer_label(TIMER_SEQ_TEXT[index])
+    minutes = TIMER_SEQ[index]
 
-        # Start timer count down
-        timer_count_down(minutes * 60)
+    # Set button state
+    btn_start["state"] = DISABLED
+    btn_reset["state"] = NORMAL
+
+    # If timer sequence cycles is restarting, set checks label to nothing 
+    if index == SEQ_START:
+        lbl_checks["text"] = ""
+
+    # Start timer count down in seconds
+    timer_count_down(minutes * 60)
 
 
 def timer_count_down(count):
-    global timer
+    global reps, timer
 
     # Convert count to minutes and seconds
     seconds = count % 60
@@ -68,8 +86,9 @@ def timer_count_down(count):
         # Timer has expired
         timer = None
 
-        # On every 2 reps add a checkmark
-        if not reps % 2:
+        # On every work rep add a checkmark
+        # Work reps are odd numbers
+        if reps % 2:
             update_check_mark_label()
 
         # Start the next timer cycle
@@ -77,7 +96,7 @@ def timer_count_down(count):
 
 
 def update_check_mark_label():
-    lbl_checks["text"] += "✔"
+    lbl_checks["text"] += CHECKMARK
 
 
 def update_timer_label(text: str) -> None:
@@ -103,7 +122,8 @@ if __name__ == '__main__':
 
     # Setup buttons
     btn_start = Button(text="Start", command=timer_start, font=(FONT_NAME, 12, "bold"), highlightthickness=0)
-    btn_reset = Button(text="reset", command=timer_reset,  font=(FONT_NAME, 12, "bold"), highlightthickness=0)
+    btn_reset = Button(text="reset", command=timer_reset,  font=(FONT_NAME, 12, "bold"), highlightthickness=0, 
+                        state=DISABLED)
 
     # Setup GUI grid layout
     lbl_timer.grid(row=0, column=1)
