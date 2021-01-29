@@ -3,19 +3,20 @@
 
 # Description
 
+Today's video went over exercise on creating a password manager.
+
 # Environment
+
 OS: OS X
 
 Python version: 3.7.6
 
 # Dependencies
+None
 
 # How to run script
+
 ```
-enter instructions here
+python main.py
 ```
 
-# Sample output
-```
-paste output here
-```
