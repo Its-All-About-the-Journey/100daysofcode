@@ -27,5 +27,5 @@ Use 'w' and 's' to move up and down.
 
 # Sample output
 ```
-![Sample of Game](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/day022/pong.png)
+![Sample of Game](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/hypermanganate/day022/pong.png)
 ```

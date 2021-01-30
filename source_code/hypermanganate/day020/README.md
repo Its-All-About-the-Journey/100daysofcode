@@ -29,7 +29,7 @@ Collide the snake
 
 # Sample output
 
-![Sample of Game](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/day020/snake.png)
+![Sample of Game](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/hypermanganate/day020/snake.png)
 
 ```
 Game Over: Snake has hit the wall.

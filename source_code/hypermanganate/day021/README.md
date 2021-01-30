@@ -37,8 +37,8 @@ Try not to collide the snake (new game mechanic!)
 
 # Sample output
 
-![Sample of Game](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/day021/snake1.png)
-![Sample of Game](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/day021/snake2.png)
+![Sample of Game](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/hypermanganate/day021/snake1.png)
+![Sample of Game](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_codehypermanganate/day021/snake2.png)
 
 ```
 Game Over: Snake has hit the wall.

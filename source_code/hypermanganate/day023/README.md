@@ -1,21 +1,34 @@
 
 # DAY 23
 
+Sort of Frogger
+
 # Description
 
-# Environment
-OS:
+Play not Frogger and cross the expanse with your turtle.
 
-Python version:
+Make it to the other side if you can.
+
+Watch out, the challenge increases!
+
+# Environment
+OS: Ubuntu Bionic
+
+Python version: 3.8.7
 
 # Dependencies
 
+Core
+
 # How to run script
 ```
-enter instructions here
+Call the script.
+
+Press "w" to move up
+Press "s" to move back
 ```
 
 # Sample output
 ```
-paste output here
+![Sample of Game](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/hypermanganate/day023/not_frogger.png)
 ```
