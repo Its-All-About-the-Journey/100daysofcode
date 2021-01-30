@@ -9,7 +9,7 @@ Today's video went over exercise on creating a password manager.
 
 OS: OS X
 
-Python version: 3.7.6
+Python version: 3.9.1
 
 # Dependencies
 None
@@ -19,4 +19,3 @@ None
 ```
 python main.py
 ```
-
