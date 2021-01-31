@@ -2,29 +2,59 @@
     "www.amazon.com": [
         {
             "username": "username@gmail.com",
-            "password": "F6cI6uscMp!&"
+            "password": "2d&k!#1zUusK!XZY1SxjBfh6n"
         },
         {
             "username": "username2@gmail.com",
-            "password": "O6FGYD*)to5oW"
-        }
-    ],
-    "www.discord.com": [
-        {
-            "username": "username@gmail.com",
-            "password": "7A0$QPEs7S)nFBD"
+            "password": "mVNYYfV!gWZw%6REtqzCkO9OG"
         }
     ],
     "www.nomas.pass": [
         {
-            "username": "username@gmail.com",
-            "password": "*77mR%4V&VsVD0(t"
+            "username": "username2@gmail.com",
+            "password": "S!1(KCMu&ePH8i(eaNZyFnGRJ"
+        }
+    ],
+    "www.guessmy.pass": [
+        {
+            "username": "username2@gmail.com",
+            "password": "AbmsOMi78fdEiIdi&c%tSFO0e"
         }
     ],
     "www.udemy.com": [
         {
             "username": "username@gmail.com",
-            "password": "EeHf$zf94$4Y*s"
+            "password": "BvcRXL2LEi+lhb6P0CxT!9H%n"
+        }
+    ],
+    "www.youtube.com": [
+        {
+            "username": "username@gmail.com",
+            "password": "oDoM&PnY(eyShPa9gwT(y*Qh9"
+        }
+    ],
+    "www.twitter.com": [
+        {
+            "username": "username@gmail.com",
+            "password": "TqQ%JutSROTL9I+P0%3jqSEf5"
+        }
+    ],
+    "www.instagram.com": [
+        {
+            "username": "username@gmail.com",
+            "password": "5YhpHG$QMul!6FH(2W(jRJ6Xm"
+        }
+    ],
+    "www.mypass.py": [
+        {
+            "username": "username@gmail.com",
+            "password": "WGG7vpC3bZ!uf3f9b(RUbOZrn"
+        }
+    ],
+    "www.twitch.com": [
+        {
+            "username": "username@gmail.com",
+            "password": "CfMxUeGqvPvK*H$06WKQvJ+7*"
         }
     ]
 }

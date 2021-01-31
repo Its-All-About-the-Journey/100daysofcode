@@ -1,9 +1,21 @@
 import json
 from random import choice, randint, shuffle
+import re
 
-import pyperclip
-from tkinter import *
-from tkinter import messagebox
+try: 
+    import pyperclip
+    PYPERCLIP_INSTALLED = True
+
+except ImportError:
+    PYPERCLIP_INSTALLED = False
+
+try:
+    from tkinter import *
+    from tkinter import messagebox
+
+except ImportError:
+    print("Python 3 Tkinter package is not present on your system.")
+    exit()
 
 import constants as CONST
 
@@ -13,22 +25,36 @@ clipboard_schedule = None
 database = dict()
 
 
-def clear_clipboard() -> None:
+def clipboard_clear() -> None:
+    if not PYPERCLIP_INSTALLED:
+        return None
+    
     pyperclip.copy("")
 
 
-def copy_clipboard(data: str) -> None:
+def clipboard_copy(data: str) -> None:
     global clipboard_schedule
 
-    # TODO: NOT WORKING ON UBUNTU, APPEARS TO REQUIRE SOME DEPENDENCY xclip or xsel.
-    #       Code needs to verify if Module does not cause a ModuleNotFoundError on import.
-    #       If not imported, then do not use pyperclip.copy
+    if not PYPERCLIP_INSTALLED:
+        return None
     
     # Copy password to clipboard
     pyperclip.copy(data)
 
     #Schedule callback to reset clipboard after 1 min
-    clipboard_schedule = window.after(CONST.CLEAR_CLIPBOARD_TIME, clear_clipboard)
+    clipboard_schedule = window.after(CONST.CLEAR_CLIPBOARD_TIME, clipboard_clear)
+
+
+def clipboard_delete() -> None:
+    
+    if not PYPERCLIP_INSTALLED:
+        return None
+
+    if clipboard_schedule:
+        window.after_cancel(clipboard_schedule)
+    
+    # Clear clipboard so no password lives in clipboard
+    clipboard_clear()
 
 
 def credentials_str(credentials: list) -> str:
@@ -71,15 +97,6 @@ def database_update(site: str, credentials: dict) -> None:
     database_dump()
 
 
-def delete_clipboard() -> None:
-    # If the after
-    if clipboard_schedule:
-        window.after_cancel(clipboard_schedule)
-    
-    # Clear clipboard so no password lives in clipboard
-    clear_clipboard()
-
-
 def find_pass(site: str) -> list:
     if site in database:
         return database[site]
@@ -89,10 +106,9 @@ def find_pass(site: str) -> list:
 
 
 def generate_pass() -> None:
-    # TODO: Generate passwords based on rules
-    nr_letters = randint(8, 10)
     nr_symbols = randint(2, 4)
     nr_numbers = randint(2, 4)
+    nr_letters = CONST.PASSWORD_MIN_LEN - nr_symbols - nr_numbers
 
     password_list = [choice(CONST.LETTERS)  for _ in range(nr_letters)]
     password_list += [choice(CONST.SYMBOLS) for _ in range(nr_symbols)]
@@ -104,10 +120,24 @@ def generate_pass() -> None:
     txt_password.insert(0, "".join(password_list))
 
 
-def is_data_valid() -> bool:
-    # TODO: Validate password length, and site syntax via regex.
+def is_data_valid(site: str, username: str, password: str) -> tuple:
     # validate fields are not empty
-    return len(txt_site.get()) and len(txt_username.get()) and len(txt_password.get())
+    return is_site_valid(txt_site.get()), bool(len(txt_username.get())), is_password_valid(txt_password.get())
+
+
+def is_password_valid(password: str) -> bool:
+    # Passwords requires at least one letter, number, and symbol
+    # Password length must be greater than or equal to PASSWORD_MIN_LEN
+    letters = sum([password.count(char) for char in CONST.LETTERS])
+    numbers = sum([password.count(char) for char in CONST.NUMBERS])
+    symbols = sum([password.count(char) for char in CONST.SYMBOLS])
+
+    return letters and numbers and symbols and (letters + numbers + symbols >= CONST.PASSWORD_MIN_LEN)
+
+
+def is_site_valid(site: str) -> bool:
+    # TODO: Validate site syntax via regex.
+    return bool(len(site))
 
 
 def msg_box(method: str, title: str, message: str) -> bool:
@@ -127,30 +157,41 @@ def save_pass() -> None:
     username = txt_username.get()
     password = txt_password.get()
 
-    if is_data_valid():
+    valid_site, valid_username, valid_password = is_data_valid(site, username, password)
+
+    if valid_password and valid_username and valid_password:
         # TODO: Encrypt password
         
         # Update data dictionary
         database_update(site, {"username": username, "password": password})
-        copy_clipboard(password)
+        clipboard_copy(password)
         reset_text_boxes()
 
     else:
         # Data is not acceptable
-        # TODO: Show information of what caused error.
+        valid_prefix = "   "
+        invalid_prefix = "* "
+
         message = (
             f"These are the details entered:\n\n"
-            f"  Site: {site}\n"
-            f"  Username: {username}\n"
-            f"  Password: {password}"
+            f"{valid_prefix if valid_site else invalid_prefix}Site: {site}\n"
+            f"{valid_prefix if valid_username else invalid_prefix}Username: {username}\n"
+            f"{valid_prefix if valid_password else invalid_prefix}Password: {password}\n\n"
         )
 
-        msg_box("showerror", "ERROR on data", message)
+        message += "Note: * --> invalid data"
+        msg_box("showerror", "Invalid data", message)
 
 
 def search_pass() -> None:
 
     site = txt_site.get()
+
+    if not is_site_valid(site):
+        msg_box("showerror", "Invalid website format", f"Invalid format:\n\n--> '{site}'")
+        
+        return None
+    
     credentials = find_pass(site)
     
     if credentials:
@@ -158,7 +199,7 @@ def search_pass() -> None:
         msg_box("showinfo", f"{site} credentials on file", credentials_str(credentials))
     
     else:
-        msg_box("showinfo", f"{site} search results", f"No credentials were found for {site}")
+        msg_box("showinfo", f"{site} search results", f"No credentials were found for website:\n\n--> {site}")
 
 
 if __name__ == '__main__':
@@ -214,4 +255,4 @@ if __name__ == '__main__':
     window.mainloop()
 
     # Clean up clipboard
-    delete_clipboard()
+    clipboard_delete()

@@ -5,7 +5,8 @@ FONT = "arial"
 FONT_CFG = (FONT, 12, "bold")
 IMAGE_FILENAME = "logo.png"
 DATABASE_FILENAME = "hushhushpass.json"
-PASSWORD_LEN = 25
+PASSWORD_MIN_LEN = 25 
+REGEX_EMAIL = r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
 
 
 LETTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
