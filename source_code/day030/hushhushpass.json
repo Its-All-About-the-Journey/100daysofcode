@@ -1,0 +1,30 @@
+{
+    "www.amazon.com": [
+        {
+            "username": "username@gmail.com",
+            "password": "F6cI6uscMp!&"
+        },
+        {
+            "username": "username2@gmail.com",
+            "password": "O6FGYD*)to5oW"
+        }
+    ],
+    "www.discord.com": [
+        {
+            "username": "username@gmail.com",
+            "password": "7A0$QPEs7S)nFBD"
+        }
+    ],
+    "www.nomas.pass": [
+        {
+            "username": "username@gmail.com",
+            "password": "*77mR%4V&VsVD0(t"
+        }
+    ],
+    "www.udemy.com": [
+        {
+            "username": "username@gmail.com",
+            "password": "EeHf$zf94$4Y*s"
+        }
+    ]
+}
