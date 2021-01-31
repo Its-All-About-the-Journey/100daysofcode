@@ -113,7 +113,7 @@ def msg_box(method: str, title: str, message: str) -> bool:
     return func(title=title, message=message)
 
 
-def reset_text_boxes():
+def reset_text_boxes() -> None:
     txt_site.delete(0, END)
     txt_password.delete(0, END)
     txt_site.focus()
