@@ -3,19 +3,25 @@
 
 # Description
 
+Today's videos went over errors, exception handling, and working with JSON
+data.
+
 # Environment
+
 OS: OS X
 
-Python version: 3.7.6
+Python version: 3.9.1
 
 # Dependencies
 
+pandas
+pyperclip
+
 # How to run script
-```
-enter instructions here
+
+```console
+python sec30.xxx
+python mypass.py
 ```
 
-# Sample output
-```
-paste output here
-```
+where xxx is the sub section
