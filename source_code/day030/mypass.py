@@ -20,8 +20,11 @@ def clear_clipboard() -> None:
 def copy_clipboard(data: str) -> None:
     global clipboard_schedule
 
+    # TODO: NOT WORKING ON UBUNTU, APPEARS TO REQUIRE SOME DEPENDENCY xclip or xsel.
+    #       Code needs to verify if Module does not cause a ModuleNotFoundError on import.
+    #       If not imported, then do not use pyperclip.copy
+    
     # Copy password to clipboard
-    # TODO: NOT WORKING ON UBUNTU, APPEARS TO REQUIRE SOME DEPENDENCY xclip or xsel
     pyperclip.copy(data)
 
     #Schedule callback to reset clipboard after 1 min
@@ -124,14 +127,8 @@ def save_pass() -> None:
     username = txt_username.get()
     password = txt_password.get()
 
-    # TODO: Update if already exists
-
-    acceptable_data = is_data_valid()
-
     if is_data_valid():
         # TODO: Encrypt password
-        # TODO: Write serialized data.  JSON or YAML
-        # Append to file
         
         # Update data dictionary
         database_update(site, {"username": username, "password": password})
@@ -157,6 +154,7 @@ def search_pass() -> None:
     credentials = find_pass(site)
     
     if credentials:
+        # TODO: Allow user to copy password to clipboard
         msg_box("showinfo", f"{site} credentials on file", credentials_str(credentials))
     
     else:
