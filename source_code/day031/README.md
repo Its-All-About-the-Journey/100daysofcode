@@ -3,19 +3,20 @@
 
 # Description
 
+Today's video went over a Flash Card Capstone project
+
 # Environment
+
 OS: OS X
 
-Python version: 3.7.6
+Python version: 3.9.1
 
 # Dependencies
 
-# How to run script
-```
-enter instructions here
-```
+pandas
 
-# Sample output
-```
-paste output here
+# How to run script
+
+```console
+python main.py
 ```
