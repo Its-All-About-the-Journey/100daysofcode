@@ -126,6 +126,7 @@ def show_next_flash_card() -> None:
             flash_correct_cards = list()
         
         else:
+            csv_dump(CSV_FILE)
             exit()
 
     flash_card = choice(flash_cards)  
@@ -162,7 +163,7 @@ if __name__ == "__main__":
     btn_correct = Button(command=answered_correct, image=btn_correct_image, highlightthickness=0)
     btn_wrong = Button(command=answered_wrong, image=btn_wrong_image, highlightthickness=0)
     
-    # Setup 2X3 grid
+    # Setup 2X2 grid
     canvas.grid(row=0, column=0, columnspan=2)
     btn_wrong.grid(row=1, column=0)
     btn_correct.grid(row=1, column=1)
