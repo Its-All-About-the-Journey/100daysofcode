@@ -5,6 +5,8 @@ Phoenetic Alphabet Tool
 
 # Description
 
+Converts words to NATO alphabet
+
 # Environment
 OS: Ubuntu Bionic
 
@@ -14,7 +16,7 @@ Python version: 3.8.7
 
 # How to run script
 ```
-enter instructions here
+Run script, and enter a word you'd like translated to NATO words
 ```
 
 # Sample output
