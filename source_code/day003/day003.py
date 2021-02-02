@@ -42,7 +42,7 @@ else:
 			print('You have been eaten by beasts. Game Over.')
 			exit()
 		elif choice.lower() != 'yellow':
-			print('Invalid choice. You have died. Game Over.')
+			print('Invalid user_selection. You have died. Game Over.')
 			exit()
 		else:
 			print('You Win!')
