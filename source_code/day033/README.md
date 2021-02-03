@@ -3,19 +3,14 @@
 
 # Description
 
+Today's videos went over REST APIs and requests.
+
 # Environment
+
 OS: OS X
 
-Python version: 3.7.6
+Python version: 3.9.1
 
 # Dependencies
 
-# How to run script
-```
-enter instructions here
-```
-
-# Sample output
-```
-paste output here
-```
+requests
