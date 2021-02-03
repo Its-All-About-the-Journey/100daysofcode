@@ -24,5 +24,5 @@ if __name__ == "__main__":
     sunset = data["results"]["sunset"].split("T")[1].split(":")[0]
 
     print(f"Sunrise hour: {sunrise}")
-    print(f"nSunset hour: {sunset}")
+    print(f"Sunset hour: {sunset}")
     print(f"Current hour: {datetime.now().hour}")
