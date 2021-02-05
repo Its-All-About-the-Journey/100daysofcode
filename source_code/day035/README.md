@@ -3,19 +3,15 @@
 
 # Description
 
+Today's video went over API exercises.
+I skipped the sections with SMS and PythonAnywhere.
+
 # Environment
+
 OS: OS X
 
-Python version: 3.7.6
+Python version: 3.9.1
 
 # Dependencies
 
-# How to run script
-```
-enter instructions here
-```
-
-# Sample output
-```
-paste output here
-```
+requests
