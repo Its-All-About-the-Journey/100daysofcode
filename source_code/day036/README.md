@@ -3,19 +3,7 @@
 
 # Description
 
-# Environment
-OS: OS X
+Today's videos went over more REST APIs: stock, news, and sms.
 
-Python version: 3.7.6
-
-# Dependencies
-
-# How to run script
-```
-enter instructions here
-```
-
-# Sample output
-```
-paste output here
-```
+**I did not try this**  I did not want to create an account for
+each of the API services.
