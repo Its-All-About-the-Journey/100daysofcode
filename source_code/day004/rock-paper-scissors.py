@@ -32,10 +32,8 @@ options = [rock, paper, scissors]
 while True:
     try:
         choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper, or 2 for Scissors.\n"))
-        if choice < 3 and choice >= 0:
+        if -1 < choice < 3:
             break
-        else:
-            print("You typed an invalid number!")
     except:
         print("You typed an invalid number!")
 

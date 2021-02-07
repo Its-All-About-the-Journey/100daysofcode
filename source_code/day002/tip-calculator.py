@@ -20,10 +20,9 @@ while True:
 while True:
     try:        
         tip_percent  = int(input("What percentage tip would you like to give: 10, 12, or 15? "))
-        if tip_percent == 10 or tip_percent == 12 or tip_percent == 15:
+        if tip_percent in (10, 12, 15):
             break
-        else:
-            print('You must enter 10, 12, or 15.')
+        raise Exception
     except:
         print('You must enter 10, 12, or 15.')
     
