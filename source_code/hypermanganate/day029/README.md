@@ -16,6 +16,7 @@ Python version: 3.8.7
 # Dependencies
 
 Core
+Pyperclip
 
 # How to run script
 
