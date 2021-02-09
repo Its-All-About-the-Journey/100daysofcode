@@ -13,5 +13,3 @@ for i, key in enumerate(color_count['Fur Color']):
 color_df = pd.DataFrame(color_count)
 print(color_df)
 color_df.to_csv('color_count.csv')
-
-
