@@ -28,6 +28,8 @@ def check_for_bust(hand):
         return hand
 
 def the_winner_is():
+    print(f"Your final hand: {your_hand}, final score: {sum(your_hand)}")
+    print(f"Computer's final hand: {dealer_hand}, final score: {sum(dealer_hand)}")
     if sum(dealer_hand) == 21 and len(dealer_hand) == 2:
         print("Dealer has blackjack!")
     elif sum(your_hand) == 21 and len(your_hand) == 2:
@@ -42,10 +44,9 @@ def the_winner_is():
         print("You win!")
     else:
         print("It's a draw!")
-    print(f"Your final hand: {your_hand}, final score: {sum(your_hand)}")
-    print(f"Computer's final hand: {dealer_hand}, final score: {sum(dealer_hand)}")
     
 while input(f"Do you want to play a game of Blackjack? Type 'y' or 'n': ") == 'y'.lower():
+    system('cls')
     print(art.logo)
     bust = False
     dealer_hand = deal()
@@ -55,7 +56,6 @@ while input(f"Do you want to play a game of Blackjack? Type 'y' or 'n': ") == 'y
     else:
         current_score()
         while input("Type 'y' to get another card, type 'n' to pass: ") == 'y'.lower(): 
-            system('cls')
             your_hand.append(hit_me())
             your_hand = check_for_bust(your_hand)
             if bust == True:
@@ -66,5 +66,4 @@ while input(f"Do you want to play a game of Blackjack? Type 'y' or 'n': ") == 'y
             while sum(dealer_hand) < 17:
                 dealer_hand.append(hit_me())
                 dealer_hand = check_for_bust(dealer_hand)
-        system('cls')
         the_winner_is()
