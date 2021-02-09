@@ -2,8 +2,6 @@ import random
 from os import system
 import art
 
-dealer_hand = []
-your_hand = []
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 def deal():
