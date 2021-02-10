@@ -37,6 +37,4 @@ After you've learned all the words, the next time you open the application the d
 
 ![Sample of App](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/hypermanganate/day031/app.png)
 
-```
-paste output here
-```
+
