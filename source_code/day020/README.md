@@ -1,7 +1,8 @@
 
-# DAY 20
+# DAY 21
 
 # Description
+Play the classic snake game! Stole Anthony H's solution to the turn-crash issue.
 
 # Environment
 OS: Windows 10
@@ -12,10 +13,11 @@ Python version: 3.9.1
 
 # How to run script
 ```
-enter instructions here
+python snake-game.py
 ```
 
 # Sample output
 ```
-paste output here
+Pops up a snake game!
 ```
+

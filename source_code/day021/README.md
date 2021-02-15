@@ -2,6 +2,7 @@
 # DAY 21
 
 # Description
+See content in Day 20 for final project...
 
 # Environment
 OS: Windows 10
@@ -12,10 +13,10 @@ Python version: 3.9.1
 
 # How to run script
 ```
-enter instructions here
+python snake-game.py
 ```
 
 # Sample output
 ```
-paste output here
+Pops up a snake game!
 ```
