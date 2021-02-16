@@ -1,6 +1,6 @@
 
 # DAY 23
-
+Built a Turtle equivalent of Frogger! Further exploration of classes, inheritance, and structuring programs
 # Description
 
 # Environment
@@ -12,10 +12,10 @@ Python version: 3.9.1
 
 # How to run script
 ```
-enter instructions here
+python main.py
 ```
 
 # Sample output
 ```
-paste output here
+Pops up a Frogger game!
 ```

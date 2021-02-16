@@ -1,4 +1,4 @@
-from turtle import Turtle, Screen, heading
+from turtle import Turtle, Screen
 import time
 from snake import Snake
 from food import Food
@@ -25,13 +25,13 @@ game_over = False
 
 while not game_over:
     my_screen.update()
-    time.sleep(.15)
+    time.sleep(.1)
     snake.move()
     if snake.head.distance(food) <= 15:
         food.refresh()
         score.increase_score()
         snake.extend()
-
+    
     if snake.head.xcor() >= (GAME_BOARD_SIZE/2)+1 or snake.head.xcor() <= -((GAME_BOARD_SIZE/2)+1) or snake.head.ycor() >= (GAME_BOARD_SIZE/2)+1 or snake.head.ycor() <= -((GAME_BOARD_SIZE/2)+1):
         score.game_over()
         game_over = True
@@ -41,5 +41,4 @@ while not game_over:
             score.game_over()
             game_over = True      
 
-my_screen.listen()
 my_screen.exitonclick()

@@ -18,7 +18,6 @@ class Snake:
         self.can_turn = True
 
     def add_segment(self, position):
-        self.snake.append(Turtle())
         self.snake[position].shape(SHAPE)
         self.snake[position].color(COLOR)
         self.snake[position].penup()
@@ -27,6 +26,7 @@ class Snake:
 
     def extend(self):
         self.position = (len(self.snake))
+        self.snake.append(Turtle(visible=False))
         self.add_segment(self.position)
     
     def up(self):

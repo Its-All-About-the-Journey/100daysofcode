@@ -2,7 +2,7 @@
 # DAY 22
 
 # Description
-
+Play the classic pong game! Learning more about using class inheritance.
 # Environment
 OS: Windows 10
 
@@ -12,10 +12,10 @@ Python version: 3.9.1
 
 # How to run script
 ```
-enter instructions here
+python pong.py
 ```
 
 # Sample output
 ```
-paste output here
+Pops up a Pong game
 ```
