@@ -1,0 +1,48 @@
+a:link {
+    color: #3f72af;
+    background-color: transparent;
+    text-docoration: none;
+}
+
+a:visited {
+    color: #3f72af;
+    background-color: transparent;
+    text-docoration: none;
+}
+
+a:hover {
+    color: #a2d5f2;
+    background-color: transparent;
+    text-docoration: none;
+}
+
+a:active {
+    color: #3f72af;
+    background-color: transparent;
+    text-docoration: none;
+}
+
+body {
+    background-color: #222831;
+    color: #c9d6df;
+    margin: 5%;
+}
+
+h1 {
+    color: #3f72af;
+}
+
+h3 {
+    color: #3f72af;
+}
+
+hr {
+    border-style: none;
+    border-top-style: solid;
+    border-color: #393e46;
+    border-width: 6px;
+}
+
+table {
+    border-spacing: 15px;
+}
