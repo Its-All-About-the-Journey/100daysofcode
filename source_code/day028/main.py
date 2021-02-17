@@ -13,7 +13,7 @@ DARK_GREEN = "#379b46"
 YELLOW = "#f7f5dd"
 BRIGHT_YELLOW = '#FBFF02'
 FONT = "Courier"
-WORK_MIN = 25
+WORK_MIN = 10
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
@@ -27,16 +27,16 @@ def reset_timer():
 	window.after_cancel(timer)
 	canvas.itemconfig(timer_text, text='00:00')
 	timer_label.config(text="Timer", font=(FONT, 40, "bold"), fg=GREEN, bg=YELLOW)
-	checks_label.config(text="")
+	checks_label.config(text="", font=(FONT, 22, "bold"))
 	check_count = 0
 	reps = 0
 
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
 	global reps, check_count
-	work_sec = WORK_MIN * 60
-	short_break_sec = SHORT_BREAK_MIN * 60
-	long_break_sec = LONG_BREAK_MIN * 60
+	work_sec = WORK_MIN * 1
+	short_break_sec = SHORT_BREAK_MIN * 1
+	long_break_sec = LONG_BREAK_MIN * 1
 
 	# Use the canvas itemcget(objectID, 'text) method to get the canvas text
 	# In this case, we use the timer_text variable
@@ -47,16 +47,34 @@ def start_timer():
 		reps += 1
 		# What to do on work reps
 		if reps in [1, 3, 5, 7]:
+			# Bring the window to the front and focus window
+			window.lift()
+			window.attributes('-topmost', True)
+			window.after_idle(window.attributes, '-topmost', False)
+			window.focus_force()
+			# Configure canvas text, initiate work period countdown
 			timer_label.config(text="Work", font=(FONT, 40, "bold"), fg=GREEN, bg=YELLOW)
 			count_down(work_sec)
 		# What to do on small break reps
 		elif reps in [2, 4, 6]:
+			# Bring the window to the front and focus window
+			window.lift()
+			window.attributes('-topmost', True)
+			window.after_idle(window.attributes, '-topmost', False)
+			window.focus_force()
+			# Configure canvas text, increase checks, begin short break countdown
 			timer_label.config(text="Break", font=(FONT, 40, "bold"), fg=PINK, bg=YELLOW)
 			check_count += 1
 			checks_label.config(text="☑" * check_count)
 			count_down(short_break_sec)
 		# What to do on final large break
 		elif reps == 8:
+			# Bring the window to the front and focus window
+			window.lift()
+			window.attributes('-topmost', True)
+			window.after_idle(window.attributes, '-topmost', False)
+			window.focus_force()
+			# Configure canvas text, increase checks, begin long break countdown
 			check_count += 1
 			checks_label.config(text="⭐", font=(FONT, 40, "bold"), bg=YELLOW, fg=DARK_GREEN)
 			timer_label.config(text="Break", font=(FONT, 40, "bold"), fg=RED, bg=YELLOW)
