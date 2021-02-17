@@ -1,0 +1,44 @@
+body {
+    color: #c9d6df;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.top_container {
+    background-color: #1e212d;
+    border: solid 10px;
+    margin: 10px;
+    padding-top: 100px;
+    position: relative;
+}
+
+.middle_container {
+    background-color: red;
+    border-width: 0px 10px 20px 30px;
+    height: 200px;
+    padding: 20px;
+    width: 200px;
+}
+
+.bottom_container {
+    background-color: blue;
+    border-width: 0px 10px 20px 30px;
+    height: 200px;
+    padding: 20px;
+    width: 200px;
+}
+
+.top-cloud {
+    position: absolute;
+    right: 200px;
+    top: 50px
+}
+
+.bottom-cloud {
+    position: absolute;
+    left: 200px;
+    bottom: 300px;
+}
