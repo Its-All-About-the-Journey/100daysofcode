@@ -11,11 +11,10 @@ RED = "#e7305b"
 GREEN = "#9bdeac"
 DARK_GREEN = "#379b46"
 YELLOW = "#f7f5dd"
-BRIGHT_YELLOW = '#FBFF02'
 FONT = "Courier"
-WORK_MIN = 10
-SHORT_BREAK_MIN = 5
-LONG_BREAK_MIN = 20
+WORK_SECONDS = 1500  # 25 minutes
+SHORT_BREAK_SECONDS = 300  # 5 minutes
+LONG_BREAK_SECONDS = 1200  # 20 minutes
 reps = 0
 check_count = 0
 timer = None
@@ -34,9 +33,6 @@ def reset_timer():
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
 	global reps, check_count
-	work_sec = WORK_MIN * 1
-	short_break_sec = SHORT_BREAK_MIN * 1
-	long_break_sec = LONG_BREAK_MIN * 1
 
 	# Use the canvas itemcget(objectID, 'text) method to get the canvas text
 	# In this case, we use the timer_text variable
@@ -54,7 +50,7 @@ def start_timer():
 			window.focus_force()
 			# Configure canvas text, initiate work period countdown
 			timer_label.config(text="Work", font=(FONT, 40, "bold"), fg=GREEN, bg=YELLOW)
-			count_down(work_sec)
+			count_down(WORK_SECONDS)
 		# What to do on small break reps
 		elif reps in [2, 4, 6]:
 			# Bring the window to the front and focus window
@@ -66,7 +62,7 @@ def start_timer():
 			timer_label.config(text="Break", font=(FONT, 40, "bold"), fg=PINK, bg=YELLOW)
 			check_count += 1
 			checks_label.config(text="☑" * check_count)
-			count_down(short_break_sec)
+			count_down(SHORT_BREAK_SECONDS)
 		# What to do on final large break
 		elif reps == 8:
 			# Bring the window to the front and focus window
@@ -78,7 +74,7 @@ def start_timer():
 			check_count += 1
 			checks_label.config(text="⭐", font=(FONT, 40, "bold"), bg=YELLOW, fg=DARK_GREEN)
 			timer_label.config(text="Break", font=(FONT, 40, "bold"), fg=RED, bg=YELLOW)
-			count_down(long_break_sec)
+			count_down(LONG_BREAK_SECONDS)
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
