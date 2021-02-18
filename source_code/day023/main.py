@@ -12,7 +12,7 @@ player = Player()
 scoreboard = Scoreboard()
 cars = CarManager()
 
-choice = screen.textinput(f"Difficulty", "Choose your difficulty (easy, medium, hard): ".lower())
+choice = screen.textinput(f"Difficulty", "Choose your difficulty (easy, medium, hard): ").lower()
 
 screen.listen()
 screen.onkey(key="Up", fun=player.up)
