@@ -3,19 +3,5 @@
 
 # Description
 
-# Environment
-OS: OS X
-
-Python version: 3.7.6
-
-# Dependencies
-
-# How to run script
-```
-enter instructions here
-```
-
-# Sample output
-```
-paste output here
-```
+Today's videos continued with CSS.  The exercises included a re-design
+of my personal CV site.
