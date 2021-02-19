@@ -3,3 +3,4 @@ pandas==1.2.1
 pyperclip==1.8.1
 requests==2.25.1
 beautifulsoup4==4.9.3
+spotipy==2.16.1
