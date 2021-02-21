@@ -63,7 +63,7 @@ Yahoo requires authentication with address, and not username.
 
 
 # Sample output
-![Sample of App](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/hypermanganate/day034/app.png)
+![Sample of App](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/hypermanganate/day036/app.png)
 
 ```
 Checking stock price of AAPL (Apple, Inc.) between close 2021-02-17 and close 2021-02-18
