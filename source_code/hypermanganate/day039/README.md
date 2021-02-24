@@ -56,5 +56,5 @@ Call the script.
 
 # Sample output
 
-![Sample of App](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/hypermanganate/day038/app.png)
+![Sample of App](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/hypermanganate/day039/app.png)
 
