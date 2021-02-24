@@ -17,6 +17,19 @@ print(add(1, 2, 3))
 
 # Many keyword arguments with the **(can be any name) traditionally kwargs
 # Creates arguments as a dictionary
+def calculate(n, **kwargs):
+    # how to iterate through a dictionary
+    # for key, value in kwargs.items():
+    #     print(key)
+    #     print(value)
+    n += kwargs["add"]
+    n *= kwargs["multiply"]
+    print(n)
+
+
+calculate(2, add=3, multiply=5)
+
+
 class Car:
 
     def __init__(self, **kwargs):
@@ -25,6 +38,7 @@ class Car:
         self.make = kwargs.get("make")
         self.color = kwargs.get("color")
         self.seats = kwargs.get("seats")
+
 
 my_car = Car(make="Nissan", model="Pathfinder")
 print(my_car.model)
