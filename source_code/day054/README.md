@@ -3,19 +3,14 @@
 
 # Description
 
-# Environment
-OS: OS X
-
-Python version: 3.7.6
+Today's videos went over Flask, First Class objects, and decorators.
 
 # Dependencies
 
-# How to run script
-```
-enter instructions here
-```
+Flask
 
-# Sample output
+# How to run script
+
 ```
-paste output here
+python filename.py
 ```
