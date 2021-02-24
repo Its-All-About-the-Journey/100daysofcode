@@ -44,22 +44,5 @@ Requires app.cfg:
 Call the script, and provide input
 
 # Sample output
-```
-{
-    "app": {
-        "api": {
-            "nutritionix": {
-                "api_key": "eccfc7c8bcd026fe798f0dd891384e00",
-                "app_id": "c53692c8",
-                "endpoint": "https://trackapi.nutritionix.com/v2/natural/exercise"
-            },
-            "sheety": {
-                "api_key": "jjXHkLCtWyTH7btY2Buz",
-                "endpoint": "https://api.sheety.co/4265ac8fa5555f3f009b6520a022f5a2/myWorkouts/workouts"
-            }
-        }
-    }
-}
-```
 
 ![Sample of App](https://raw.githubusercontent.com/Its-All-About-the-Journey/100daysofcode/hypermanganate/source_code/hypermanganate/day038/app.png)
