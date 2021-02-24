@@ -50,6 +50,11 @@ def save_password():
         password_input.delete(0, 'end')
         messagebox.showinfo("Success", f"{website} account has been saved.")
 
+# ---------------------------- SEARCH WEBSITES ------------------------------- #
+
+def search_websites():
+    pass
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
@@ -65,16 +70,20 @@ canvas.grid(column=1,row=0)
 
 #Website Label
 website_label = Label(text="Website:", font=(FONT_NAME, 12, "normal"), fg=WHITE, bg=BLACK)
-website_label.grid(column=0, row=1, pady=5, sticky=E)
+website_label.grid(column=0, row=1, padx=5, pady=5, sticky=E)
 
 #Website Entry Box
-website_input = Entry()
+website_input = Entry(width=30)
 website_input.focus()
-website_input.grid(column=1, row=1, columnspan=2, sticky = W+E, pady=5)
+website_input.grid(column=1, row=1, sticky = W, pady=5)
+
+#Search Button
+search_button = Button(text="Search", command=search_websites, highlightthickness=0)
+search_button.grid(column=2, row=1, sticky = W+E, pady=5)
 
 #Email/Username Label
 account_label = Label(text="Email/Username:", font=(FONT_NAME, 12, "normal"), fg=WHITE, bg=BLACK)
-account_label.grid(column=0, row=2, pady=5, sticky=E)
+account_label.grid(column=0, row=2, padx=5, pady=5, sticky=E)
 
 #Account Entry Box
 account_input = Entry()
@@ -83,7 +92,7 @@ account_input.insert(0, EMAIL)
 
 #Password Label
 password_label = Label(text="Password:", font=(FONT_NAME, 12, "normal"), fg=WHITE, bg=BLACK)
-password_label.grid(column=0, row=3, pady=5, sticky=E)
+password_label.grid(column=0, row=3, padx=5, pady=5, sticky=E)
 
 #Password Entry Box
 password_input = Entry(width=30)

@@ -2,6 +2,7 @@
 # DAY 30
 
 # Description
+Learned how to read, write, and update JSON data, as well as try statements and exception handling. Updated our password manager to feed the account info into a JSON format, read from that file, and search the file for accounts when asked.
 
 # Environment
 OS: Windows 10
@@ -12,10 +13,10 @@ Python version: 3.9.1
 
 # How to run script
 ```
-enter instructions here
+python password-manager.py
 ```
 
 # Sample output
 ```
-paste output here
+Pops up our updated password manager!
 ```

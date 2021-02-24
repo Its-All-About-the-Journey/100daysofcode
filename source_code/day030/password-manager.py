@@ -1,13 +1,15 @@
+from json.decoder import JSONDecodeError
 from tkinter import *
 from tkinter import messagebox
 import random
 import pyperclip
+import json
 #import string
 
 BLACK = "#010101"
 WHITE = "#FFFFFF"
 FONT_NAME = "Calibri"
-PATH = "source_code/day029/"
+PATH = "source_code/day030/"
 SYMBOLS = "!@#$%?+*!@#$%?+*"
 LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 NUMBERS = "0123456789"
@@ -29,6 +31,19 @@ def gen_password():
     #This is the "official" password copy-to-clipboard function
     pyperclip.copy(password)
 
+# ---------------------------- SEARCH ------------------------------- #
+
+def search_accounts():
+    website = website_input.get()
+    try:
+        with open (f"{PATH}data.json", "r") as file:
+            data = json.load(file)
+            messagebox.showinfo(website, f"Username: {data[website]['account']}\nPassword: {data[website]['password']}")
+    except FileNotFoundError:
+        messagebox.showerror("Error", "No data exists yet.")
+    except KeyError:
+        messagebox.showinfo("Not Found", "Account Not Found.")
+
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
 def save_password():
@@ -42,10 +57,23 @@ def save_password():
     elif password == "":
         messagebox.showerror("Error", "Password field is blank.")
     else:
-        passlist = {}
-        passlist[website] = [account, password]
-        with open (f"{PATH}data.txt", "a+") as file:
-            file.write(f"{website} | {account} | {password}\n")
+        passlist = {
+            website: {
+                "account" : account,
+                "password" : password
+            }
+        }
+        try:
+            with open (f"{PATH}data.json", "r") as file:
+                data = json.load(file)
+        except FileNotFoundError:
+            with open (f"{PATH}data.json", "w") as file:
+                json.dump(passlist,file, indent=4)
+        else:
+            data.update(passlist)
+            with open (f"{PATH}data.json", "w") as file:
+                json.dump(data,file, indent=4)
+
         website_input.delete(0, 'end')
         password_input.delete(0, 'end')
         messagebox.showinfo("Success", f"{website} account has been saved.")
@@ -68,9 +96,13 @@ website_label = Label(text="Website:", font=(FONT_NAME, 12, "normal"), fg=WHITE,
 website_label.grid(column=0, row=1, pady=5, sticky=E)
 
 #Website Entry Box
-website_input = Entry()
+website_input = Entry(width=30)
 website_input.focus()
-website_input.grid(column=1, row=1, columnspan=2, sticky = W+E, pady=5)
+website_input.grid(column=1, row=1, sticky = W, pady=5)
+
+#Search Button
+search_button = Button(text="Search", command=search_accounts, highlightthickness=0)
+search_button.grid(column=2, row=1, sticky = W+E, pady=5)
 
 #Email/Username Label
 account_label = Label(text="Email/Username:", font=(FONT_NAME, 12, "normal"), fg=WHITE, bg=BLACK)
