@@ -1,0 +1,39 @@
+Function called: a_function
+    arguments: (1, 2, 3)
+    Return value: 6
+
+Function called: a_function
+    arguments: (2, 4, 6)
+    Return value: 48
+
+Function called: a_function
+    arguments: (3, 6, 9)
+    Return value: 162
+
+Function called: a_function
+    arguments: (1,)
+    kwargs: {'num2': 2, 'num3': 3}
+    Return value: 6
+
+Function called: a_function
+    arguments: (2,)
+    kwargs: {'num2': 4, 'num3': 6}
+    Return value: 48
+
+Function called: a_function
+    arguments: (3,)
+    kwargs: {'num2': 6, 'num3': 9}
+    Return value: 162
+
+Function called: a_function
+    kwargs: {'num1': 1, 'num2': 2, 'num3': 3}
+    Return value: 6
+
+Function called: a_function
+    kwargs: {'num1': 2, 'num2': 4, 'num3': 6}
+    Return value: 48
+
+Function called: a_function
+    kwargs: {'num1': 3, 'num2': 6, 'num3': 9}
+    Return value: 162
+
