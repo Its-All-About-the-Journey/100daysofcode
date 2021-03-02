@@ -3,19 +3,8 @@
 
 # Description
 
-# Environment
-OS: OS X
-
-Python version: 3.7.6
+Today's videos went exercises using Jinja templates in Flask
 
 # Dependencies
 
-# How to run script
-```
-enter instructions here
-```
-
-# Sample output
-```
-paste output here
-```
+Flask

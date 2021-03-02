@@ -27,5 +27,16 @@ def guess(name):
     year = datetime.datetime.now().year
     return render_template("index.html", age=age.json()["age"], gender=gender.json()["gender"], year=year)
 
+
+@app.route("/blog/<id>")
+def get_blog(id):
+    response = requests.get("https://api.npoint.io/f64e88a13a4b081fea8d")
+
+    if response.status_code != 200:
+        return "Error rendering page"
+  
+    return render_template("blog.html", posts=response.json(), id=id)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
