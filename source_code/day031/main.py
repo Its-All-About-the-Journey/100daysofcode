@@ -1,3 +1,8 @@
+# 100DaysToCode - Day031 Flashcard Learning Application
+# Author: Grant Armstrong
+# 03/02/2021
+
+
 from tkinter import *
 import pandas
 import random
@@ -12,12 +17,25 @@ def display_random_word():
 	global current_card, timer
 	# If button is pressed multiple times, cancel the previous timer before proceeding
 	window.after_cancel(timer)
-	current_card = random.choice(word_dict)
-	french_word = current_card['French']
-	canvas.itemconfig(canvas_image, image=front)
-	canvas.itemconfig(card_title, text='French', fill='black')
-	canvas.itemconfig(card_word, text=french_word, fill='black')
-	timer = window.after(3000, flip_card)
+
+	# Try to populate the card face with a new word from the word_dict
+	try:
+		current_card = random.choice(word_dict)
+		french_word = current_card['French']
+		canvas.itemconfig(canvas_image, image=front)
+		canvas.itemconfig(card_title, text='French', fill='black')
+		canvas.itemconfig(card_word, text=french_word, fill='black')
+		timer = window.after(3000, flip_card)
+	# If the word_dict is empty, user has completed deck -> notify them and delete words_to_learn.csv to start over
+	except IndexError:
+		canvas.itemconfig(canvas_image, image=front)
+		canvas.itemconfig(card_title, text='Congrats!', fill='green')
+		canvas.itemconfig(card_word, text='Deck is complete!', fill='green')
+		# Disable the buttons after completion
+		wrong_button.config(state="disabled")
+		right_button.config(state="disabled")
+		if os.path.exists('data/words_to_learn.csv'):
+			os.remove('data/words_to_learn.csv')
 
 # Flips flash card to back and displays english translation
 def flip_card():
@@ -30,15 +48,21 @@ def flip_card():
 # If user presses green check, function removes the word from the 'words_to_learn,csv' file
 def remove_word():
 	global current_card
-	word_dict.remove(current_card)
-	new_data = pandas.DataFrame(word_dict)
-	new_data.to_csv('data/words_to_learn.csv', index=False)
 
+	# Try to remove the dictionary from the list and write the new data to 'words_to_learn.csv'
+	# If the word can't be removed from the word_dict it is because the word dict is empty because the user finished
+	# the deck of flashcards -> try block will handle errors from users continuing to press buttons after finishing
+	try:
+		word_dict.remove(current_card)
+		new_data = pandas.DataFrame(word_dict)
+		new_data.to_csv('data/words_to_learn.csv', index=False)
+	except ValueError:
+		pass
 
 # ------------------------ Data Retrieval ----------------------------
 # If program is being run for the first time, use the french_words.csv for the base data
 # Otherwise, use words_to_learn.csv
-if os.path.exists('data/words_to_learn.csv'):
+if os.path.exists('data/words_to_learn.csv') and os.path.getsize('data/words_to_learn.csv') > 5:
 	data = pandas.read_csv('data/words_to_learn.csv')
 else:
 	data = pandas.read_csv('data/french_words.csv')
