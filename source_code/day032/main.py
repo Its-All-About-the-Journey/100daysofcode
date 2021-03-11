@@ -40,7 +40,7 @@ else:
 info = {name: email for name, email in zip(names, emails)}
 
 # Loop through each of the name/email pairs, construct the letter and email the person
-for name, email in info.items():
+for target_name, target_email in info.items():
 
 	# Pick random letter, open it and insert name
 	random_letter = random.choice(['letter_templates/letter_1.txt', 'letter_templates/letter_2.txt',
@@ -48,7 +48,7 @@ for name, email in info.items():
 	with open(random_letter) as letter:
 		formatted_letter = ''
 		for line in letter.readlines():
-			line = line.replace('[NAME]', name)
+			line = line.replace('[NAME]', target_name)
 			formatted_letter += line
 
 		# Email the letter to the recipient
@@ -56,6 +56,6 @@ for name, email in info.items():
 			connection.starttls()  # Secures our connection and encrypts our emails, should they be intercepted
 			connection.login(user=MY_EMAIL, password=MY_EMAIL_PASS)
 			connection.sendmail(from_addr=MY_EMAIL,
-			                    to_addrs=email,
-			                    msg=f"Subject:Happy Birthday {name}!\n\n{formatted_letter}"
+			                    to_addrs=target_email,
+			                    msg=f"Subject:Happy Birthday {target_name}!\n\n{formatted_letter}"
 			                    )
