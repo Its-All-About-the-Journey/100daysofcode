@@ -41,7 +41,7 @@ class QuizInterface:
 
 		self.window.mainloop()
 
-	# Function retrieves the next question from the QuizBrain object next_question() method
+	# Function retrieves the next question using the QuizBrain object next_question() method
 	def get_next_question(self) -> None:
 		# Turns canvas back to white from green/red, after player guess
 		self.canvas.config(bg='white')
@@ -49,7 +49,7 @@ class QuizInterface:
 		if self.quiz.still_has_questions():
 			q_text = self.quiz.next_question()
 			self.canvas.itemconfig(self.question_text, text=q_text)
-		# Otherwise, disable buttons and display final score
+		# Otherwise, if no questions remain, disable buttons and display final score
 		else:
 			self.true_button.config(state='disabled')
 			self.false_button.config(state='disabled')
@@ -58,7 +58,7 @@ class QuizInterface:
 
 	# Called if user clicks True/False buttons -> pass in user answer, either 'True' or 'False'
 	def answer(self, user_answer):
-		# Get the outcome (Right/Wrong), current player score and question num - update score
+		# Get the outcome (Right/Wrong) based on the player answer - update the score
 		outcome = self.quiz.check_answer(user_answer)
 		self.score_label.config(text=f'Score: {self.quiz.score}/{self.quiz.question_number}')
 		# If the user answered correctly, change the background to green
@@ -68,4 +68,4 @@ class QuizInterface:
 		else:
 			self.canvas.config(bg='red')
 		# After 0.5s delay, get and display the next question
-		self.window.after(500, self.get_next_question)
+		self.window.after(750, self.get_next_question)

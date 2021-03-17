@@ -8,6 +8,7 @@ class QuizBrain:
         self.question_bank = q_bank
         self.current_question = None
 
+    # Function returns True if therefore are questions remaining in the question bank
     # Added a Python Type Hint that the return value should be a Boolean
     def still_has_questions(self) -> bool:
         return self.question_number < len(self.question_bank)
@@ -20,7 +21,7 @@ class QuizBrain:
         unescaped_question_text = html.unescape(self.current_question.text)
         return f"Q.{self.question_number}: {unescaped_question_text}"
 
-    # Function checks user answer and returns the results (Correct/Incorrect), the users score and question number
+    # Function checks user answer and returns the outcome (Correct/Incorrect)
     def check_answer(self, user_answer: str) -> bool:
         correct_answer = self.current_question.answer
         # If the users answer matches the correct answer, add 1 to score and return True as outcome
@@ -31,5 +32,5 @@ class QuizBrain:
         else:
             outcome = False
 
-        # Return the outcome, user score and current question number
+        # Return the outcome
         return outcome
