@@ -67,5 +67,5 @@ class QuizInterface:
 		# If wrong, change background of canvas to red
 		else:
 			self.canvas.config(bg='red')
-		# After 0.5s delay, get and display the next question
+		# After 0.75s delay, get and display the next question
 		self.window.after(750, self.get_next_question)
