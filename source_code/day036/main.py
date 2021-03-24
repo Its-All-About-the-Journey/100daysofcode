@@ -36,10 +36,7 @@ daily_stock_prices = alpha_response.json()["Time Series (Daily)"] # see sample_d
 
 # Get most recent two date keys from resulting data (have to take into account weekends and same day
 # before 4:00pm EST are excluded from data)
-date_keys = []
-for day in daily_stock_prices:
-	date_keys.append(day)
-date_keys = date_keys[0:2]
+date_keys = [day for day in daily_stock_prices][0:2]
 print("Last 2 Date Keys: ", date_keys)
 
 # Use the date keys from the 2 most recent days get the closing values
@@ -52,7 +49,7 @@ print("Closing Price 2: ", closing_price_2)
 # If gain or loss > 5%, get the first 3 news pieces for the COMPANY_NAME.
 percent_difference = round(((closing_price_2 - closing_price_1)/closing_price_2) * 100, 2)
 print("Percent Difference:  ", percent_difference)
-if abs(percent_difference) >= 4:
+if abs(percent_difference) >= 5:
 
 	# Set parameters for call to news API
 	news_parameters = {
@@ -88,4 +85,3 @@ if abs(percent_difference) >= 4:
 # If the change wasn't >= 5% print to console
 else:
 	print("Didn't get News because change not >= 5%")
-
