@@ -1,0 +1,41 @@
+[
+  {
+    "source": {
+      "id": "engadget",
+      "name": "Engadget"
+    },
+    "author": "https://www.engadget.com/about/editors/steve-dent",
+    "title": "Tesla now accepts Bitcoin in the US",
+    "description": "As it promised earlier this year, Tesla now accepts payment in Bitcoin, according to Tesla"s website and a tweet from CEO Elon Musk.",
+    "url": "https://www.engadget.com/tesla-will-soon-let-you-buy-one-of-its-e-vs-with-bitcoin-082916783.html",
+    "urlToImage": "https://s.yimg.com/os/creatr-uploaded-images/2021-03/d3bc78e0-8116-11eb-87fb-7bddf8711d48",
+    "publishedAt": "2021-03-24T08:29:16Z",
+    "content": "As it promised earlier this year, Tesla now accepts payment in Bitcoin, according to Tesla\"s website and a tweet from CEO Elon Musk. In a subsequent tweet, Musk said that "Bitcoin paid to Tesla will … [+1390 chars]"
+  },
+  {
+    "source": {
+      "id": "techcrunch",
+      "name": "TechCrunch"
+    },
+    "author": "Darrell Etherington",
+    "title": "Elon Musk declares you can now buy a Tesla with Bitcoin in the U.S.",
+    "description": "Tesla made headlines earlier this year when it took out significant holdings in bitcoin, acquiring a roughly $1.5 billion stake at then-prices in early February. At the time, it also noted in an SEC filing disclosing the transaction that it could also eventua…",
+    "url": "http://techcrunch.com/2021/03/24/elon-musk-declares-you-can-now-buy-a-tesla-with-bitcoin-in-the-u-s/",
+    "urlToImage": "https://techcrunch.com/wp-content/uploads/2021/02/tesla-bitcoin-alt.jpg?w=711",
+    "publishedAt": "2021-03-24T11:55:49Z",
+    "content": "Tesla made headlines earlier this year when it took out significant holdings in bitcoin, acquiring a roughly $1.5 billion stake at then-prices in early February. At the time, it also noted in an SEC … [+2071 chars]"
+  },
+  {
+    "source": {
+      "id": "mashable",
+      "name": "Mashable"
+    },
+    "author": "Sasha Lekach",
+    "title": "Tesla stans dunk on Porsche Taycan’s slow software update",
+    "description": "The first electric Porsche Taycans are due for a software update, but it won"t be quick.\xa0\nDrivers won"t be able to push a button on the in-car screen, connect to WiFi, and update the car while in their own garage. Instead, the $100,000+ electric vehicle needs…",
+    "url": "https://mashable.com/article/porsche-taycan-software-update/",
+    "urlToImage": "https://mondrian.mashable.com/2021%252F03%252F23%252F55%252Ff9eeab4467b441a0a3d6b3fbef014b5e.64823.jpg%252F1200x630.jpg?signature=aKvo5cFJubStf5NROt_fjh4kSvM=",
+    "publishedAt": "2021-03-23T21:17:23Z",
+    "content": "The first electric Porsche Taycans are due for a software update, but it won"t be quick.\xa0\r\nDrivers won"t be able to push a button on the in-car screen, connect to WiFi, and update the car while in th… [+2261 chars]"
+  }
+]
