@@ -9,9 +9,10 @@ COMPANY_NAME = "Tesla"
 ALPHA_API_KEY = os.environ.get('ALPHA_API_KEY')
 ALPHA_ENDPOINT = 'https://www.alphavantage.co/query'
 
-# newsapi key and endpoint
+# newsapi key and endpoint + constant controlling number of articles you want to retrieve
 NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
 NEWS_ENDPOINT = 'https://newsapi.org/v2/everything'
+NUM_OF_ARTICLES = 3
 
 # Account SSID and token for Twilio
 TWILIO_SSID = os.environ.get('TWILIO_ACCOUNT_SSID')
@@ -49,7 +50,7 @@ print("Closing Price 2: ", closing_price_2)
 # If gain or loss > 5%, get the first 3 news pieces for the COMPANY_NAME.
 percent_difference = round(((closing_price_2 - closing_price_1)/closing_price_2) * 100, 2)
 print("Percent Difference:  ", percent_difference)
-if abs(percent_difference) >= 5:
+if abs(percent_difference) >= 2:
 
 	# Set parameters for call to news API
 	news_parameters = {
@@ -57,22 +58,22 @@ if abs(percent_difference) >= 5:
 		'qInTitle': COMPANY_NAME,
 		'from': date_keys[1],
 		'sortBy': 'popularity',
-		'pageSize': '3'
+		'pageSize': NUM_OF_ARTICLES
 	}
 
 	# Make call to news API and get relevant section of response
 	news_response = requests.get(url=NEWS_ENDPOINT, params=news_parameters)
 	news_response.raise_for_status()
-	top_3_articles = news_response.json()['articles']
+	top_articles = news_response.json()['articles']
 
 	# Compose message containing % change, news headlines + brief descriptions
-	up_or_down = f'🔺{percent_difference}%' if percent_difference > 0 else f'🔻{percent_difference}%'
-	sms_message = f'{STOCK}: {up_or_down}\n'
-	for index, article in enumerate(top_3_articles):
-		headline = article['title']
-		brief = article['description']
-		url = article['url']
-		sms_message += f'\nHeadline {index + 1}: {headline}\nBrief: {brief}\nArticle Link: {url}\n'
+	up_or_down_arrow = f'🔺{percent_difference}%' if percent_difference > 0 else f'🔻{percent_difference}%'
+	sms_message = f'{STOCK}: {up_or_down_arrow}'
+	for index, article in enumerate(top_articles):
+		headline, brief, url = article['title'], article['description'], article['url']
+		sms_message += f'\n\nHeadline {index + 1}: {headline}\nBrief: {brief}\nArticle Link: {url}'
+
+	# print(sms_message)
 
 	# Use twilio API to send composed message as an SMS text to my phone
 	client = Client(TWILIO_SSID, TWILIO_AUTH_TOKEN)
