@@ -1,0 +1,29 @@
+/*
+
+Color Scheme:
+
+Background: #f3f4ed
+Text: #536162
+Inset: #424642
+Highlight: #C06014
+
+*/
+
+body {
+  background-color: #f3f4ed;
+}
+
+hr {
+  border-top-color: #424642;
+  border-style: dotted none none none;
+  border-top-width: 10px;
+  width: 10%;
+}
+
+h1 {
+  color: #C06014
+}
+
+h3 {
+  color: #C06014
+}
