@@ -4,7 +4,7 @@ import random
 
 
 
-def choices():
+def options():
   choice_a = random.choice(list(data))
   choice_b = random.choice(list(data))
   while choice_a == choice_b:
@@ -32,7 +32,7 @@ def round():
   print(logo)
 
   # randomly pick two options from data
-  choice_a, choice_b = choices()
+  choice_a, choice_b = options()
 
   # print the two options
   print_round(choice_a, choice_b)
