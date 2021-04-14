@@ -14,18 +14,16 @@ class FlightData:
         # Get departure date from flight_data and format in Murica' format (MM/DD/YYYY without leading zeroes)
         self.departure_dates = []
         for destination in self.flight_data:
-            date_string = destination['local_departure'].split('T')[0]
-            formatted_date = datetime.strptime(date_string, '%Y-%m-%d').strftime('%#m/%#d/%Y')
+            departure_date_string = destination['route'][0]["local_departure"].split('T')[0]
+            formatted_date = datetime.strptime(departure_date_string, '%Y-%m-%d').strftime('%#m/%#d/%Y')
             self.departure_dates.append(formatted_date)
 
-        # Get return date from flight_data (departure date + nights in destination)
-        # and format in Murica' format (MM/DD/YYYY without leading zeroes)
+        # Get return date from flight_data and format in Murica' format (MM/DD/YYYY without leading zeroes)
         self.return_dates = []
-        for index, departure_date in enumerate(self.departure_dates):
-            nights_in_destination = self.nights_in_destinations[index]
-            formatted_departure_date = datetime.strptime(departure_date, '%m/%d/%Y')
-            return_date = (formatted_departure_date + timedelta(days=nights_in_destination)).strftime('%#m/%#d/%Y')
-            self.return_dates.append(return_date)
+        for destination in self.flight_data:
+            return_date_string = destination['route'][1]["local_departure"].split('T')[0]
+            formatted_date = datetime.strptime(return_date_string, '%Y-%m-%d').strftime('%#m/%#d/%Y')
+            self.return_dates.append(formatted_date)
 
         # Consolidate info for all flights into compact list
         self.formatted_flight_data = []
