@@ -38,9 +38,6 @@ resources = {
 
 bank = 0
 
-# TODO: refactor this to pull from MENU instead of a separate list
-
-
 OPTIONS_SECONDARY = [
     "off",
     "report",
