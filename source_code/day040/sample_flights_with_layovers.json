@@ -1,0 +1,334 @@
+[
+  {
+    "availability": {
+      "seats": 1
+    },
+    "baglimit": {
+      "hand_height": 37,
+      "hand_length": 50,
+      "hand_weight": 7,
+      "hand_width": 25,
+      "hold_dimensions_sum": 158,
+      "hold_height": 52,
+      "hold_length": 78,
+      "hold_weight": 23,
+      "hold_width": 28
+    },
+    "bags_price": {
+      "1": 87.4
+    },
+    "booking_token": "BvvnkWTgYvAMct9jn-KdwkZj6Km_LSzZluTlrB2HgzwzN4m6EdHCMfOtTz1ZwnD5hQANQUuqDIDmyB2Got9bJTfTwx2N8KxK8_3VswT4z049t5uI7wM6afc5rts_uQgus2SYBGZVGvro6l7ZJ7ib9v5fIC5rYcRUniGvKXWY68MDCZfCVafVf42pP0kG06l3wgrJeWmHg4wuKBPLqzfKg5AOIn38xTEZAqsB2fipmqXTyPbCv_INBSwlby3ypfJAYHjIC9IPm7K3j2PbE03TLpS9HWWoUYmC4j1yJz_-nj88xbFwDYloTpzH8PcymJW2NXztK6LhfKuFEyEZUnZ8rRtA0PIrGnc24nDM4xTLbR2unnqMHlZB8VHPZvrgyNTsZBT3XmRyjNTZIkbM4bIzTpq43hwBRwD9LA8s2_jW1ITX-_85p_wdfmwSxCojuPt1i1Y5cvvCLlolzt51P-2NmozDc_UOxy1l9WzGR8T9NwFx8uSB5ZkQQEhPcJV3REWb365eUCa-e5YYKNeviRJi1h3VQakFM6EVi_PLYQ8TW_bBXglEAyV7lt5Cfr0-E1QcBobBNikngimP04BrEqfZw0uoqQDJyXeeL0LIjzGmqIZCrbPPMzpgk8ns1mEjJ1JjimIvuuIhnMKj4kHaAPSOuUlI94DKAMW3hrJbJBFa4gegdSP1WKw5PCo6v1ciNtMND7ZiALnxlH6_iLdyrB5YLVluR0WSSxNPG1LDwER-I70LPVn8YUoRI_xqD7EHOC3lVu961uEsudrDVGBhydxbr2HmwANaPC8cSgKM4lXxzfP0=",
+    "airlines": [
+      "BA",
+      "QR"
+    ],
+    "cityFrom": "London",
+    "cityCodeFrom": "LON",
+    "cityTo": "Sydney",
+    "cityCodeTo": "SYD",
+    "conversion": {
+      "USD": 1866,
+      "EUR": 1559
+    },
+    "countryFrom": {
+      "code": "GB",
+      "name": "United Kingdom"
+    },
+    "countryTo": {
+      "code": "AU",
+      "name": "Australia"
+    },
+    "deep_link": "https://www.kiwi.com/deep?from=LGW&to=SYD&flightsId=22f5037249e10000a1f1bf5f_0%7C22f5037249e10000a1f1bf5f_1%7C03720f6449f600009e9a1f09_0&price=1559&passengers=1&affilid=grantarmy89flightsearch&lang=en&currency=USD&booking_token=BvvnkWTgYvAMct9jn-KdwkZj6Km_LSzZluTlrB2HgzwzN4m6EdHCMfOtTz1ZwnD5hQANQUuqDIDmyB2Got9bJTfTwx2N8KxK8_3VswT4z049t5uI7wM6afc5rts_uQgus2SYBGZVGvro6l7ZJ7ib9v5fIC5rYcRUniGvKXWY68MDCZfCVafVf42pP0kG06l3wgrJeWmHg4wuKBPLqzfKg5AOIn38xTEZAqsB2fipmqXTyPbCv_INBSwlby3ypfJAYHjIC9IPm7K3j2PbE03TLpS9HWWoUYmC4j1yJz_-nj88xbFwDYloTpzH8PcymJW2NXztK6LhfKuFEyEZUnZ8rRtA0PIrGnc24nDM4xTLbR2unnqMHlZB8VHPZvrgyNTsZBT3XmRyjNTZIkbM4bIzTpq43hwBRwD9LA8s2_jW1ITX-_85p_wdfmwSxCojuPt1i1Y5cvvCLlolzt51P-2NmozDc_UOxy1l9WzGR8T9NwFx8uSB5ZkQQEhPcJV3REWb365eUCa-e5YYKNeviRJi1h3VQakFM6EVi_PLYQ8TW_bBXglEAyV7lt5Cfr0-E1QcBobBNikngimP04BrEqfZw0uoqQDJyXeeL0LIjzGmqIZCrbPPMzpgk8ns1mEjJ1JjimIvuuIhnMKj4kHaAPSOuUlI94DKAMW3hrJbJBFa4gegdSP1WKw5PCo6v1ciNtMND7ZiALnxlH6_iLdyrB5YLVluR0WSSxNPG1LDwER-I70LPVn8YUoRI_xqD7EHOC3lVu961uEsudrDVGBhydxbr2HmwANaPC8cSgKM4lXxzfP0=",
+    "distance": 17040.29,
+    "duration": {
+      "departure": 84600,
+      "return": 84300,
+      "total": 168900
+    },
+    "facilitated_booking_available": "True",
+    "flyFrom": "LGW",
+    "has_airport_change": "False",
+    "id": "22f5037249e10000a1f1bf5f_0|22f5037249e10000a1f1bf5f_1|03720f6449f600009e9a1f09_0",
+    "nightsInDest": 20,
+    "pnr_count": 2,
+    "price": 1866,
+    "quality": 1958.332335,
+    "routes": [
+      [
+        "LGW",
+        "SYD"
+      ],
+      [
+        "SYD",
+        "LHR"
+      ]
+    ],
+    "route": [
+      {
+        "bags_recheck_required": "False",
+        "cityFrom": "London",
+        "cityCodeFrom": "LON",
+        "cityTo": "Doha",
+        "cityCodeTo": "DOH",
+        "combination_id": "22f5037249e10000a1f1bf5f",
+        "equipment": "None",
+        "fare_basis": "NLR7R1RO",
+        "fare_category": "M",
+        "fare_classes": "",
+        "fare_family": "",
+        "flight_no": 330,
+        "flyFrom": "LGW",
+        "guarantee": "False",
+        "id": "22f5037249e10000a1f1bf5f_0",
+        "last_seen": "2021-04-07T06:50:19.000Z",
+        "airline": "QR",
+        "operating_carrier": "QR",
+        "operating_flight_no": "330",
+        "refresh_timestamp": "2021-04-07T06:50:19.000Z",
+        "return": 0,
+        "flyTo": "DOH",
+        "vehicle_type": "aircraft",
+        "local_arrival": "2021-10-13T17:15:00.000Z",
+        "utc_arrival": "2021-10-13T14:15:00.000Z",
+        "local_departure": "2021-10-13T08:25:00.000Z",
+        "utc_departure": "2021-10-13T07:25:00.000Z"
+      },
+      {
+        "bags_recheck_required": "False",
+        "cityFrom": "Doha",
+        "cityCodeFrom": "DOH",
+        "cityTo": "Sydney",
+        "cityCodeTo": "SYD",
+        "combination_id": "22f5037249e10000a1f1bf5f",
+        "equipment": "None",
+        "fare_basis": "NLR7R1RO",
+        "fare_category": "M",
+        "fare_classes": "",
+        "fare_family": "",
+        "flight_no": 908,
+        "flyFrom": "DOH",
+        "guarantee": "False",
+        "id": "22f5037249e10000a1f1bf5f_1",
+        "last_seen": "2021-04-07T06:50:19.000Z",
+        "airline": "QR",
+        "operating_carrier": "QR",
+        "operating_flight_no": "908",
+        "refresh_timestamp": "2021-04-07T06:50:19.000Z",
+        "return": 0,
+        "flyTo": "SYD",
+        "vehicle_type": "aircraft",
+        "local_arrival": "2021-10-14T17:55:00.000Z",
+        "utc_arrival": "2021-10-14T06:55:00.000Z",
+        "local_departure": "2021-10-13T19:50:00.000Z",
+        "utc_departure": "2021-10-13T16:50:00.000Z"
+      },
+      {
+        "bags_recheck_required": "False",
+        "cityFrom": "Sydney",
+        "cityCodeFrom": "SYD",
+        "cityTo": "London",
+        "cityCodeTo": "LON",
+        "combination_id": "03720f6449f600009e9a1f09",
+        "equipment": "None",
+        "fare_basis": "VLNF00S2",
+        "fare_category": "M",
+        "fare_classes": "V",
+        "fare_family": "",
+        "flight_no": 16,
+        "flyFrom": "SYD",
+        "guarantee": "False",
+        "id": "03720f6449f600009e9a1f09_0",
+        "last_seen": "2021-04-15T17:46:13.000Z",
+        "airline": "BA",
+        "operating_carrier": "BA",
+        "operating_flight_no": "16",
+        "refresh_timestamp": "2021-04-15T17:46:13.000Z",
+        "return": 1,
+        "flyTo": "LHR",
+        "vehicle_type": "aircraft",
+        "local_arrival": "2021-11-04T04:55:00.000Z",
+        "utc_arrival": "2021-11-04T04:55:00.000Z",
+        "local_departure": "2021-11-03T16:30:00.000Z",
+        "utc_departure": "2021-11-03T05:30:00.000Z"
+      }
+    ],
+    "technical_stops": 0,
+    "flyTo": "SYD",
+    "tracking_pixel": "",
+    "transfers": [],
+    "type_flights": [
+      "deprecated"
+    ],
+    "virtual_interlining": "True",
+    "local_arrival": "2021-10-14T17:55:00.000Z",
+    "utc_arrival": "2021-10-14T06:55:00.000Z",
+    "local_departure": "2021-10-13T08:25:00.000Z",
+    "utc_departure": "2021-10-13T07:25:00.000Z"
+  },
+  {
+    "availability": {
+      "seats": 3
+    },
+    "baglimit": {
+      "hand_height": 40,
+      "hand_length": 55,
+      "hand_weight": 8,
+      "hand_width": 23,
+      "hold_dimensions_sum": 158,
+      "hold_height": 52,
+      "hold_length": 78,
+      "hold_weight": 23,
+      "hold_width": 28
+    },
+    "bags_price": {
+      "1": 255.9
+    },
+    "booking_token": "BbVHG99kUm4EBG1olXEuw7mBxFpjC4YWfMg3ZgR-H6gWrzTkXD71visB-P9B-VGOmAKYQhbkuesEGiQF1U7h7_-EOa6XtBC6URDGyzJX_JvyfKXW_wc39xt6ib5BDstP6r5B-8nxN2yq-DSNqQ68VRRHuF1hpv5e0JIKW8-xKx5WN61yfLcYaJA6ZcYVKJ0EwQUR_bf12KZ1veElD9slGAmO1bZsJrEScoQmw8lcjCPkqSs3ZUTBtEMU6gqBAYMOveHB9R6sIkzzuSlLeq9ZlhAUTX7GDVsIZnNYRFZvDCSgWtkUgmkDstcDCX7lMm--3UInH_9xill4TLbDYj14ulamu39jAuWvUN3ren8OsZj7vltMn2-WP08rfolTpPWbpUAB9eyJe0BrypkevlCUWV3hbCc3wWyMXBBzavSDXAGCPvuWJJAuMhfo3a9EoVVxcLO3JsExbDzAqPDPHIJNeZDHUVzgdvPERFW7rca57CICkXdF1so_nlzPFpqSekxoq0OHYF6uIUpiexLrFgox-1htYQ41w5COKv-aq2BbICMp1l6-b9HJJ1qn0hd1x0knKPlFfV6dJTftu-JlzGsTWbew1QEzEOOVOzOQq6jAzLnnUSNVjUq4n13Wuhqa5PL4UUpG_glmziG_HboHD5C3fnHL3yoFBafiagVqAfLN81Z_Wuv4iBBr5fUGvLJlesEYXV6bWnmFL5TxPa8JuoMtY286ilcbztJNxeS5M0tl-QesIWClFdaJqxZZpcEJ0PZLxT927GBYY0NVRQakGp8P4miRhbDLexIUr-JldlHWtMx6owOasxJEHV8nNb_WxQRAolxwvt4mR5Y_nStvNEoLUc-IyTSeov_Vp4fzxl5DY_H8f3n2s5qI5yhrFh0HiAJTY",
+    "airlines": [
+      "BA",
+      "SK"
+    ],
+    "cityFrom": "London",
+    "cityCodeFrom": "LON",
+    "cityTo": "Beijing",
+    "cityCodeTo": "BJS",
+    "conversion": {
+      "EUR": 1634,
+      "USD": 1955
+    },
+    "countryFrom": {
+      "code": "GB",
+      "name": "United Kingdom"
+    },
+    "countryTo": {
+      "code": "CN",
+      "name": "China"
+    },
+    "deep_link": "https://www.kiwi.com/deep?from=LHR&to=PEK&flightsId=0f6407bb49d8000080ee1ff8_0%7C07bb0ddc49d849e60a6ec1d8_0%7C07bb0ddc49d849e60a6ec1d8_1%7C03720f6449f50000b53e7390_0&price=1634&passengers=1&affilid=grantarmy89flightsearch&lang=en&currency=USD&booking_token=BbVHG99kUm4EBG1olXEuw7mBxFpjC4YWfMg3ZgR-H6gWrzTkXD71visB-P9B-VGOmAKYQhbkuesEGiQF1U7h7_-EOa6XtBC6URDGyzJX_JvyfKXW_wc39xt6ib5BDstP6r5B-8nxN2yq-DSNqQ68VRRHuF1hpv5e0JIKW8-xKx5WN61yfLcYaJA6ZcYVKJ0EwQUR_bf12KZ1veElD9slGAmO1bZsJrEScoQmw8lcjCPkqSs3ZUTBtEMU6gqBAYMOveHB9R6sIkzzuSlLeq9ZlhAUTX7GDVsIZnNYRFZvDCSgWtkUgmkDstcDCX7lMm--3UInH_9xill4TLbDYj14ulamu39jAuWvUN3ren8OsZj7vltMn2-WP08rfolTpPWbpUAB9eyJe0BrypkevlCUWV3hbCc3wWyMXBBzavSDXAGCPvuWJJAuMhfo3a9EoVVxcLO3JsExbDzAqPDPHIJNeZDHUVzgdvPERFW7rca57CICkXdF1so_nlzPFpqSekxoq0OHYF6uIUpiexLrFgox-1htYQ41w5COKv-aq2BbICMp1l6-b9HJJ1qn0hd1x0knKPlFfV6dJTftu-JlzGsTWbew1QEzEOOVOzOQq6jAzLnnUSNVjUq4n13Wuhqa5PL4UUpG_glmziG_HboHD5C3fnHL3yoFBafiagVqAfLN81Z_Wuv4iBBr5fUGvLJlesEYXV6bWnmFL5TxPa8JuoMtY286ilcbztJNxeS5M0tl-QesIWClFdaJqxZZpcEJ0PZLxT927GBYY0NVRQakGp8P4miRhbDLexIUr-JldlHWtMx6owOasxJEHV8nNb_WxQRAolxwvt4mR5Y_nStvNEoLUc-IyTSeov_Vp4fzxl5DY_H8f3n2s5qI5yhrFh0HiAJTY",
+    "distance": 8161.67,
+    "duration": {
+      "departure": 57300,
+      "return": 84300,
+      "total": 141600
+    },
+    "facilitated_booking_available": "True",
+    "flyFrom": "LHR",
+    "has_airport_change": "False",
+    "id": "0f6407bb49d8000080ee1ff8_0|07bb0ddc49d849e60a6ec1d8_0|07bb0ddc49d849e60a6ec1d8_1|03720f6449f50000b53e7390_0",
+    "nightsInDest": 28,
+    "pnr_count": 3,
+    "price": 1955,
+    "quality": 1972.66582,
+    "routes": [
+      [
+        "LHR",
+        "PEK"
+      ],
+      [
+        "SYD",
+        "LHR"
+      ]
+    ],
+    "route": [
+      {
+        "bags_recheck_required": "False",
+        "cityFrom": "London",
+        "cityCodeFrom": "LON",
+        "cityTo": "Copenhagen",
+        "cityCodeTo": "CPH",
+        "combination_id": "0f6407bb49d8000080ee1ff8",
+        "equipment": "32Q",
+        "fare_basis": "OPZ0RO/AP00",
+        "fare_category": "M",
+        "fare_classes": "O",
+        "fare_family": "",
+        "flight_no": 816,
+        "flyFrom": "LHR",
+        "guarantee": "False",
+        "id": "0f6407bb49d8000080ee1ff8_0",
+        "last_seen": "2021-04-14T01:31:31.000Z",
+        "airline": "BA",
+        "operating_carrier": "BA",
+        "operating_flight_no": "816",
+        "refresh_timestamp": "2021-04-14T01:31:31.000Z",
+        "return": 0,
+        "flyTo": "CPH",
+        "vehicle_type": "aircraft",
+        "local_arrival": "2021-10-04T15:55:00.000Z",
+        "utc_arrival": "2021-10-04T13:55:00.000Z",
+        "local_departure": "2021-10-04T13:00:00.000Z",
+        "utc_departure": "2021-10-04T12:00:00.000Z"
+      },
+      {
+        "bags_recheck_required": "True",
+        "cityFrom": "Copenhagen",
+        "cityCodeFrom": "CPH",
+        "cityTo": "Beijing",
+        "cityCodeTo": "BJS",
+        "combination_id": "07bb0ddc49d849e60a6ec1d8",
+        "equipment": "None",
+        "fare_basis": "WLDKECO",
+        "fare_category": "M",
+        "fare_classes": "W",
+        "fare_family": "",
+        "flight_no": 995,
+        "flyFrom": "CPH",
+        "guarantee": "True",
+        "id": "07bb0ddc49d849e60a6ec1d8_0",
+        "last_seen": "2021-04-15T13:59:48.000Z",
+        "airline": "SK",
+        "operating_carrier": "SK",
+        "operating_flight_no": "995",
+        "refresh_timestamp": "2021-04-15T13:59:48.000Z",
+        "return": 0,
+        "flyTo": "PEK",
+        "vehicle_type": "aircraft",
+        "local_arrival": "2021-10-05T11:55:00.000Z",
+        "utc_arrival": "2021-10-05T03:55:00.000Z",
+        "local_departure": "2021-10-04T21:00:00.000Z",
+        "utc_departure": "2021-10-04T19:00:00.000Z"
+      },
+      {
+        "bags_recheck_required": "False",
+        "cityFrom": "Sydney",
+        "cityCodeFrom": "SYD",
+        "cityTo": "London",
+        "cityCodeTo": "LON",
+        "combination_id": "03720f6449f50000b53e7390",
+        "equipment": "789",
+        "fare_basis": "VLNF00S2",
+        "fare_category": "M",
+        "fare_classes": "V",
+        "fare_family": "",
+        "flight_no": 16,
+        "flyFrom": "SYD",
+        "guarantee": "False",
+        "id": "03720f6449f50000b53e7390_0",
+        "last_seen": "2021-04-14T03:23:48.000Z",
+        "airline": "BA",
+        "operating_carrier": "BA",
+        "operating_flight_no": "16",
+        "refresh_timestamp": "2021-04-14T03:23:48.000Z",
+        "return": 1,
+        "flyTo": "LHR",
+        "vehicle_type": "aircraft",
+        "local_arrival": "2021-11-03T04:55:00.000Z",
+        "utc_arrival": "2021-11-03T04:55:00.000Z",
+        "local_departure": "2021-11-02T16:30:00.000Z",
+        "utc_departure": "2021-11-02T05:30:00.000Z"
+      }
+    ],
+    "technical_stops": 0,
+    "flyTo": "PEK",
+    "tracking_pixel": "",
+    "transfers": [],
+    "type_flights": [
+      "deprecated"
+    ],
+    "virtual_interlining": "True",
+    "local_arrival": "2021-10-05T11:55:00.000Z",
+    "utc_arrival": "2021-10-05T03:55:00.000Z",
+    "local_departure": "2021-10-04T13:00:00.000Z",
+    "utc_departure": "2021-10-04T12:00:00.000Z"
+  }
+]

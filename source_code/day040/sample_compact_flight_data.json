@@ -1,0 +1,82 @@
+[
+  {
+    "departure_city": "London",
+    "departure_airport_code": "LGW",
+    "arrival_city": "Paris",
+    "arrival_airport_code": "CDG",
+    "price": 142,
+    "departure_date": "5/21/2021",
+    "return_date": "5/31/2021",
+    "nights_in_destination": 10
+  },
+  {
+    "departure_city": "London",
+    "departure_airport_code": "LGW",
+    "arrival_city": "Berlin",
+    "arrival_airport_code": "BER",
+    "price": 147,
+    "departure_date": "5/3/2021",
+    "return_date": "5/20/2021",
+    "nights_in_destination": 17
+  },
+  {
+    "departure_city": "London",
+    "departure_airport_code": "LGW",
+    "arrival_city": "Istanbul",
+    "arrival_airport_code": "SAW",
+    "price": 170,
+    "departure_date": "4/26/2021",
+    "return_date": "5/16/2021",
+    "nights_in_destination": 20
+  },
+  {
+    "departure_city": "London",
+    "departure_airport_code": "LGW",
+    "arrival_city": "New York",
+    "arrival_airport_code": "JFK",
+    "price": 516,
+    "departure_date": "5/24/2021",
+    "return_date": "5/31/2021",
+    "nights_in_destination": 7
+  },
+  {
+    "departure_city": "London",
+    "departure_airport_code": "LGW",
+    "arrival_city": "San Francisco",
+    "arrival_airport_code": "SFO",
+    "price": 522,
+    "departure_date": "6/23/2021",
+    "return_date": "6/30/2021",
+    "nights_in_destination": 7
+  },
+  {
+    "departure_city": "London",
+    "departure_airport_code": "LGW",
+    "arrival_city": "Cape Town",
+    "arrival_airport_code": "CPT",
+    "price": 900,
+    "departure_date": "5/20/2021",
+    "return_date": "5/27/2021",
+    "nights_in_destination": 7
+  },
+  {
+    "departure_city": "London",
+    "departure_airport_code": "LGW",
+    "arrival_city": "Kuala Lumpur",
+    "arrival_airport_code": "KUL",
+    "price": 940,
+    "departure_date": "4/30/2021",
+    "return_date": "5/17/2021",
+    "nights_in_destination": 17
+  },
+  {
+    "departure_city": "London",
+    "departure_airport_code": "LGW",
+    "arrival_city": "Tokyo",
+    "arrival_airport_code": "HND",
+    "price": 1304,
+    "departure_date": "9/20/2021",
+    "return_date": "10/13/2021",
+    "nights_in_destination": 23
+  }
+]
