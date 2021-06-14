@@ -24,21 +24,19 @@ You can use build_source_code_structure.py to update README.md file specific to 
 
 ````markdown
 readme_contents = '''
-# DAY {}
+# DAY {1}
 
 # Description
-
+Mkutka's Attempt at #100daysofcode
+Doubt i'll consistently make it, but will try to do as much as possible
 # Environment
-OS:
+OS: Mac OSX
 
-Python version:
+Python version: 3.9.0
 
 # Dependencies
 
 # How to run script
-```
-enter instructions here
-```
 
 # Sample output
 ```
