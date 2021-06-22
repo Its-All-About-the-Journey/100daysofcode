@@ -83,7 +83,6 @@ def start_timer():
 			# Configure canvas text, initiate work period countdown
 			timer_label.config(text="Work", font=(FONT, 40, "bold"), fg=GREEN, bg=YELLOW)
 
-
 			# If starting new timer or new phase, initiate count_down() with constants
 			if started_flag:
 				count_down(WORK_SECONDS)
