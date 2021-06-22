@@ -6,7 +6,7 @@ THEME_COLOR = "#375362"
 
 class QuizInterface:
 
-	# We pass the QuizBrain object we created in main.py into the initialization of our Quiz Interface -> used later
+	# We pass the QuizBrain object we created in add_user.py into the initialization of our Quiz Interface -> used later
 	# We also declare that the object we pass in must be of type QuizBrain (called Python Typing)
 	def __init__(self, quiz_brain: QuizBrain):
 		self.quiz = quiz_brain
