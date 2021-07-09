@@ -1,0 +1,35 @@
+/******************TAG SELECTORS******************/
+
+h1{
+    color: red;
+    font-size: 50px;
+}
+
+img{
+    background-color: red;
+}
+
+/* Pseudoclasses */
+img:hover{
+    background-color: gold;
+}
+
+/******************CLASS SELECTORS******************/
+
+.bacon{
+    background-color: green;
+}
+
+.broccoli{
+    background-color: red;
+}
+
+.circular{
+    border-radius: 100%;
+}
+
+/******************ID SELECTORS******************/
+
+#heading{
+    color: blue;
+}
