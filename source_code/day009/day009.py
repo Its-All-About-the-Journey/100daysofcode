@@ -18,13 +18,18 @@ def clear():
 # Function to get the highest bid and that bidders name
 def get_highest_bid(bidders_dict):
 	highest_bid = max(bidders_dict.values())
-	highest_bidder = [k for k, v in bidders_dict.items() if v == highest_bid]
+	highest_bidder = {k: v for k, v in bidders_dict.items() if v == highest_bid}
+	num_highest_bidders = len(highest_bidder)
 	# If only 1 person has the highest bid, else if 2 or more people bid the same highest bid
-	if len(highest_bidder) == 1:
-		print(f'The winner is {highest_bidder[0]} with a bid of ${highest_bid:,.2f}')
+	if num_highest_bidders == 1:
+		print(f'\nThe winner is {list(highest_bidder.keys())[0]} with a bid of ${highest_bid:,.2f}')
+	# If more than 1 highest bidder, have each of those bidders submit new bid
 	else:
-		print(f'The winners are {" and ".join(highest_bidder)} each with a bid of ${highest_bid:,.2f}')
-
+		print(f'\nThere are {num_highest_bidders} bidders tied for highest bid! {" and ".join(highest_bidder.keys())} each '
+		      f'bid ${highest_bid:,.2f}. These {num_highest_bidders} bidders will bid again.\n')
+		for k, v in highest_bidder.items():
+			highest_bidder[k] = float(input(f"Enter {k}'s new bid: "))
+		get_highest_bid(highest_bidder)
 
 # Function asks for bidder name and amount and adds to bidders list as dictionary item
 def add_bid():
