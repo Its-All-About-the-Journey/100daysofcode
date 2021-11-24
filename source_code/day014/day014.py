@@ -1,7 +1,7 @@
 import random
 import os
 from game_data import data
-from source_code.day014.art import logo, versus
+from art import logo, versus
 
 
 # Function will clear command prompt window on Linux and Windows machines
@@ -19,7 +19,7 @@ def get_person():
 # Function to get users guess and validate it
 def get_guess():
 	while True:
-		user_guess = input("Who has more followers? Type 'A' or 'B': ")
+		user_guess = input("\nWho has more followers? Type 'A' or 'B': ")
 		if user_guess.lower() in ['a', 'b']:
 			break
 		else:
@@ -32,7 +32,7 @@ def get_guess():
 def compare_people(pa, pb):
 	print(f"Compare A: {print_person_info(pa)}")
 	print(versus)
-	print(f"Against B: {print_person_info(pb)}")
+	print(f"B: {print_person_info(pb)}")
 	return person_A['follower_count'], person_B['follower_count']
 
 
@@ -45,12 +45,11 @@ score = 0
 person_A = None
 person_B = None
 
+print(logo)
 while True:
-	print(logo)
-
 	# If it is first round, get 2 new people, otherwise switch B to A and get new B
 	if score != 0:
-		print(f"You're right! Current score: {score}")
+		print(f"\nYou're right! Current score: {score}\n")
 		person_A = person_B
 		person_B = get_person()
 	elif score == 0:
@@ -69,7 +68,7 @@ while True:
 		clear()
 	else:
 		clear()
-		print(f"Sorry, that's wrong. Final score: {score}")
+		print(f"\nSorry, that's wrong. Final score: {score}")
 		break
 
 
