@@ -11,6 +11,8 @@ import cards
 points = {'ace': 11, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9,
           'ten': 10, 'jack': 10, 'queen': 10, 'king': 10}
 
+wl = {'wins': 0, 'losses': 0, 'ties': 0}
+
 
 # Function will clear command prompt window on Linux and Windows machines
 def clear():
@@ -25,7 +27,8 @@ def deal_card(current_deck):
 
 
 # Function returns the total score of the handed that is passed in (returns multiple scores if hand includes an Ace)
-def score_hand(hand):
+# Will return final score if final=True
+def score_hand(hand, final=False):
     hand_sum = 0
     high_sum = 0
     # Return sum of hand that doesn't contain an Ace
@@ -38,40 +41,28 @@ def score_hand(hand):
         for card in hand:
             high_sum += points[card]
         low_sum = high_sum - 10
-        return low_sum, high_sum
-
-
-# Function returns the total score of hand passed to it. If Aces are present it returns the highest score <= 21
-def score_final_hand(hand):
-    hand_sum = 0
-    high_sum = 0
-    # Return sum of hand that doesn't contain an Ace
-    if 'ace' not in hand:
-        for card in hand:
-            hand_sum += points[card]
-        return hand_sum
-    # Return tuple of potential scores if hand contains an Ace
-    elif 'ace' in hand:
-        for card in hand:
-            high_sum += points[card]
-        low_sum = high_sum - 10
-        return high_sum if high_sum <= 21 else low_sum
+        # Return both scores if this isn't the final scoring
+        if not final:
+            return low_sum, high_sum
+        # Return highest score that is <= 21 if this is the final scoring
+        else:
+            return high_sum if high_sum <= 21 else low_sum
 
 
 # Function to display the final cards and scores
 def display_final_scores(players_hand, computers_hand):
     cards.display_all_cards(players_hand)
     print('Players Final Cards')
-    print(f'Players Final Score: {score_final_hand(players_hand)}')
+    print(f'Players Final Score: {score_hand(players_hand, final=True)}')
 
     cards.display_all_cards(computers_hand)
     print('Dealers Final Cards')
-    print(f'Dealers Final Score: {score_final_hand(computers_hand)}')
+    print(f'Dealers Final Score: {score_hand(computers_hand, final=True)}')
 
 
 # Function that checks if hand is Blackjack or not
 def is_blackjack(hand):
-    if score_final_hand(hand) == 21 and len(hand) == 2:
+    if score_hand(hand, final=True) == 21 and len(hand) == 2:
         return True
     else:
         return False
@@ -142,21 +133,24 @@ while playing.lower() in ['y', 'yes']:
         # If either the player or the dealer has Blackjack right away, grant them the win
         if is_blackjack(player_hand) and not is_blackjack(computer_hand):
             print_msg('\nSomeone got lucky...\n', 'g')
-            time.sleep(3)
+            time.sleep(2)
             display_final_scores(player_hand, computer_hand)
             print_msg('Blackjack! You win the round! Much fast, so wow.', 'w')
+            wl.update({'wins': wl.get('wins') + 1})
             break
         elif not is_blackjack(player_hand) and is_blackjack(computer_hand):
             print_msg('\nSomeone got lucky...\n', 'g')
-            time.sleep(3)
+            time.sleep(2)
             display_final_scores(player_hand, computer_hand)
             print_msg('Dealer has Blackjack. You lost! That was fast...', 'l')
+            wl.update({'losses': wl.get('losses') + 1})
             break
         elif is_blackjack(player_hand) and is_blackjack(computer_hand):
             print_msg("\nAs luck would have it...\n")
-            time.sleep(3)
+            time.sleep(2)
             display_final_scores(player_hand, computer_hand)
             print_msg('Both you and the dealer have Blackjack! The round is a push!', 't')
+            wl.update({'ties': wl.get('ties') + 1})
             break
 
         # Ask the player if they wish to hit or stay
@@ -175,19 +169,20 @@ while playing.lower() in ['y', 'yes']:
             time.sleep(3)
 
             # If the user busts they lose immediately
-            if score_final_hand(player_hand) > 21:
+            if score_hand(player_hand, final=True) > 21:
                 print_msg('\nUh oh...', 'g')
                 time.sleep(3)
                 display_final_scores(player_hand, computer_hand)
                 print_msg('You went over. You lose!', 'l')
+                wl.update({'losses': wl.get('losses') + 1})
                 break
 
         # The sequence if the player chooses to stay
         elif hit.lower() in ['stay', 'no', 'n']:
             stay_message = random.choice(["\nThat's a bold strategy Cotton. Let's see if it pays off...",
             "\nYou have chosen to stay...", "You are staying..."])
-            if score_final_hand(player_hand) <= 15:
-                stay_message = f"Staying on {score_final_hand(player_hand)}, eh? Good luck..."
+            if score_hand(player_hand, final=True) <= 15:
+                stay_message = f"Staying on {score_hand(player_hand, final=True)}, eh? Good luck..."
             print_msg(stay_message, 'g')
             time.sleep(1.5)
 
@@ -198,38 +193,43 @@ while playing.lower() in ['y', 'yes']:
             time.sleep(3)
 
             # Let the computer hit until its satisfied with its hand (17 or over)
-            while score_final_hand(computer_hand) < 17:
+            while score_hand(computer_hand, final=True) < 17:
                 print_msg("\nThe dealer hits...", 'g')
                 computer_hand.append(deal_card(game_deck))
                 time.sleep(1.5)
                 cards.display_all_cards(computer_hand)
                 print("Dealers Cards")
                 time.sleep(3)
-            if score_final_hand(computer_hand) <= 21:
+            if score_hand(computer_hand, final=True) <= 21:
                 print_msg("\nThe dealer is staying...", 'g')
             time.sleep(1.5)
 
             # Finally, compare the computers hand to the players hand and report outcome
-            player_final_score = score_final_hand(player_hand)
-            computer_final_score = score_final_hand(computer_hand)
+            player_final_score = score_hand(player_hand, final=True)
+            computer_final_score = score_hand(computer_hand, final=True)
             display_final_scores(player_hand, computer_hand)
 
             if player_final_score <= 21 >= computer_final_score:
                 if player_final_score == computer_final_score:
                     print_msg("\nYou have tied. The round is a push!", 't')
+                    wl.update({'ties': wl.get('ties') + 1})
                 elif player_final_score > computer_final_score:
                     print_msg('\nYou beat the dealer!', 'w')
+                    wl.update({'wins': wl.get('wins') + 1})
                 else:
                     print_msg('\nThe dealer wins!', 'l')
+                    wl.update({'losses': wl.get('losses') + 1})
                 break
 
             elif player_final_score <= 21 < computer_final_score:
                 print_msg('\nThe dealer busted! You win!', 'w')
+                wl.update({'wins': wl.get('wins') + 1})
                 break
             elif computer_final_score <= 21 < player_final_score:
                 print_msg('\nYou busted! The dealer wins!', 'l')
+                wl.update({'losses': wl.get('losses') + 1})
                 break
 
     playing = input("\nDo you want to play another game of Blackjack? Type 'y' or 'n': ")
 
-print("\nThank you for playing!")
+print(f"\nTotal Wins: {wl.get('wins')} \nTotal Losses: {wl.get('losses')} \nTotal Draws: {wl.get('ties')}")
