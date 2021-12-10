@@ -14,7 +14,9 @@ class QuizBrain:
 		self.question_number += 1
 
 	def check_answer(self, answer, correct):
-		if answer.lower() == correct.lower():
+		new_correct = []
+		new_correct = ['true', 't'] if correct.lower() == 'true' else ['false', 'f']
+		if answer.lower() in new_correct:
 			self.score += 1
 			print("You got it right!")
 			print(f"The correct answer was: {correct}")
