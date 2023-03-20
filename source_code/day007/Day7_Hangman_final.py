@@ -48,7 +48,8 @@ while not end_of_game:
       print(hangman_art.logo + "\n")
       #Testing code
       print(f'Pssst, the solution is {chosen_word}.')
-      
+      print(hangman_art.stages[lives])
+	  
       #Check if user is wrong.
       if guess not in chosen_word:
           print(f"'{guess}', is not a letter in the word, you lose a life.")
@@ -62,7 +63,6 @@ while not end_of_game:
           end_of_game = True
           print("You win.")
            
-      print(hangman_art.stages[lives])
       #Join all the elements in the list and turn it into a String.
       print(f"{' '.join(display)}")
 
