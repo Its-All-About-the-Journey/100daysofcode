@@ -11,6 +11,7 @@ chosen_word = random.choice(hangman_words.word_list)
 word_length = len(chosen_word)
 
 end_of_game = False
+win = False
 lives = 6
 
 if sysos[0] == "Windows":
@@ -64,7 +65,6 @@ while not end_of_game:
           lives -= 1
           if lives == 0:
               end_of_game = True
-              print("You lose.")
       else:
           print(f"\nYou got a letter! {guess}")
 
@@ -73,8 +73,13 @@ while not end_of_game:
       #Check if user has got all letters.
       if "_" not in display:
           end_of_game = True
-          print("You win.")
+          win = True
            
       #Join all the elements in the list and turn it into a String.
       print(f"{' '.join(display)}")
+	  if end_of_game:
+	      if win:
+		      print("\nYou win.")
+		  else:
+		      print("\nYou lose.")
 
