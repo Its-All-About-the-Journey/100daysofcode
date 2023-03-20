@@ -13,16 +13,22 @@ word_length = len(chosen_word)
 end_of_game = False
 lives = 6
 
+if sysos[0] == "Windows":
+  os.system('cls')
+else:
+  os.system('clear')
 #TODO-3: - Import the logo from hangman_art.py and print it at the start of the game.
 print(hangman_art.logo + "\n")
 #Testing code
 print(f'Pssst, the solution is {chosen_word}.')
+print(hangman_art.stages[lives])
 
 #Create blanks
 display = []
 for _ in range(word_length):
     display += "_"
 prior_guesses = []
+
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
     if sysos[0] == "Windows":
@@ -38,6 +44,7 @@ while not end_of_game:
       print(f"Letters guessed: {prior_guesses}")
       print(f"\nYou've already guessed {guess}, please guess a different letter.")
       print(hangman_art.stages[lives])
+      print(f"{' '.join(display)}")
     else:
       prior_guesses += guess
     #Check guessed letter
@@ -59,7 +66,7 @@ while not end_of_game:
               end_of_game = True
               print("You lose.")
       else:
-          print("\nYou got a letter! {guess}")
+          print(f"\nYou got a letter! {guess}")
 
       print(hangman_art.stages[lives])
 
