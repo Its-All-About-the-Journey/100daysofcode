@@ -33,9 +33,11 @@ while not end_of_game:
     #TODO-4: - If the user has entered a letter they've already guessed, print the letter and let them know.
     if guess in prior_guesses:
       print(hangman_art.logo + "\n")
-      print(f"You've already guessed {guess}, please guess a different letter.")
       #Testing code
       print(f'Pssst, the solution is {chosen_word}.')
+      print(f"Letters guessed: {prior_guesses}")
+      print(f"\nYou've already guessed {guess}, please guess a different letter.")
+      print(hangman_art.stages[lives])
     else:
       prior_guesses += guess
     #Check guessed letter
@@ -43,22 +45,24 @@ while not end_of_game:
           letter = chosen_word[position]
           if letter == guess:
               display[position] = letter
-
       #TODO-3: - Import the logo from hangman_art.py and print it at the start of the game. 
       print(hangman_art.logo + "\n")
       #Testing code
       print(f'Pssst, the solution is {chosen_word}.')
       print(f"Letters guessed: {prior_guesses}")
-      print(hangman_art.stages[lives])
-      
+  
       #Check if user is wrong.
       if guess not in chosen_word:
-          print(f"'{guess}', is not a letter in the word, you lose a life.")
+          print(f"\n'{guess}', is not a letter in the word, you lose a life.")
           lives -= 1
           if lives == 0:
               end_of_game = True
               print("You lose.")
-  
+      else:
+          print("\nYou got a letter! {guess}")
+
+      print(hangman_art.stages[lives])
+
       #Check if user has got all letters.
       if "_" not in display:
           end_of_game = True
