@@ -77,9 +77,9 @@ while not end_of_game:
            
       #Join all the elements in the list and turn it into a String.
       print(f"{' '.join(display)}")
-	  if end_of_game:
-	      if win:
-		      print("\nYou win.")
-		  else:
-		      print("\nYou lose.")
+      if end_of_game:
+          if win:
+              print("\nYou win.")
+          else:
+              print("\nYou lose.")
 
