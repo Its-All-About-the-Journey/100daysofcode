@@ -48,6 +48,7 @@ while not end_of_game:
       print(hangman_art.logo + "\n")
       #Testing code
       print(f'Pssst, the solution is {chosen_word}.')
+	  print(f"Letters guessed: {prior_guesses}")
       print(hangman_art.stages[lives])
 	  
       #Check if user is wrong.
