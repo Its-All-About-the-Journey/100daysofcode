@@ -20,7 +20,7 @@ else:
 #TODO-3: - Import the logo from hangman_art.py and print it at the start of the game.
 print(hangman_art.logo + "\n")
 #Testing code
-print(f'Pssst, the solution is {chosen_word}.')
+print(f'Pssst, the solution is {chosen_word}.\n\n\n')
 print(hangman_art.stages[lives])
 
 #Create blanks
@@ -28,9 +28,9 @@ display = []
 for _ in range(word_length):
     display += "_"
 prior_guesses = []
-
+print(f"{' '.join(display)}")
 while not end_of_game:
-    guess = input("Guess a letter: ").lower()
+    guess = input("\nGuess a letter: ").lower()
     if sysos[0] == "Windows":
       os.system('cls')
     else:
