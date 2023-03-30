@@ -27,5 +27,5 @@ for name in bids:
     highestbidder = name
 clear()
 print(art.logo)
-print(f"The highest bidder is: {highestbidder} with a bid of: ${highestbid}")
+print(f"The highest bidder is {highestbidder} with a bid of: ${highestbid}")
 
