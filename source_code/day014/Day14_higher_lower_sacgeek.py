@@ -32,7 +32,12 @@ def distinct_item(item = None):
 #Step 5: Check if user is correct
 def check_response(response):
   """Submit a letter resonse of 'A' or 'B' (not case sensitive) and return will be True if response is correct or False if not."""
-  if response.lower == "a":
+  #another way to do it:
+  #if dataitem1["follower_count"] > dataitem2["follower_count"]:
+  #  return response.lower() == "a"   #response.lower() == "a" with evaluate to True or False and be returned
+  #else:
+  #  return response.lower() == "b"   #response.lower() == "b" with evaluate to True or False and be returned
+  if response.lower() == "a":
     if dataitem1["follower_count"] > dataitem2["follower_count"]:
       return True
     else:
@@ -43,11 +48,11 @@ def check_response(response):
     else:
       return False
 
+
 #Step 4: Display random item 1 vs random item 2 and ask user which one has more followers  
 def get_response():
   response = input("Who has more followers? Type 'A' or 'B': ")
   while response.lower() != "a" and response.lower() != "b":
-    print(response.lower())
     print("Bad value, try again", end='\r')
     time.sleep(1)
     print("                    ", end='\r')
