@@ -71,6 +71,7 @@ while correct == True:
   if correct == True:
     dataitem1 = dataitem2
     score += 1
-clear()
-print(logo)
-print(f"Sorry, that's wrong. Final score: {score}")
+  else:
+    clear()
+    print(logo)
+    print(f"Sorry, that's wrong. Final score: {score}")
