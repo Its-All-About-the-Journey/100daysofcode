@@ -135,7 +135,7 @@ def refill():
             print("Bad value, try again.")
             time.sleep(1)
             blank_line(len(item) + 60)
-			blank_line(len(item) + 60)
+            blank_line(len(item) + 60)
 
 
 def blank_line(length):
