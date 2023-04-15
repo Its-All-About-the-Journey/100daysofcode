@@ -120,8 +120,8 @@ def prices():
 
 def refill():
     """Asks user for item to be refilled and refills that item to max."""
-    item = input("What would you like to refill? ('Water', 'Milk', 'Coffee'): ").lower()
     while True:
+	    item = input("What would you like to refill? ('Water', 'Milk', 'Coffee'): ").lower()
         if item == "water":
             resources["water"] = 300
             break
