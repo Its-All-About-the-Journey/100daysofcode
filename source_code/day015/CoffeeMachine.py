@@ -122,15 +122,15 @@ def refill():
     """Asks user for item to be refilled and refills that item to max."""
     item = input("What would you like to refill? ('Water', 'Milk', 'Coffee'): ").lower()
     while True:
-    	if item == "water":
+        if item == "water":
             resources["water"] = 300
-			break
+            break
         elif item == "milk":
             resources["milk"] = 200
-			break
+            break
         elif item == "coffee":
             resources["coffee"] = 100
-			break
+            break
         else:
             print("Bad value, try again.")
             time.sleep(1)
