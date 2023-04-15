@@ -121,7 +121,7 @@ def prices():
 def refill():
     """Asks user for item to be refilled and refills that item to max."""
     while True:
-	    item = input("What would you like to refill? ('Water', 'Milk', 'Coffee'): ").lower()
+        item = input("What would you like to refill? ('Water', 'Milk', 'Coffee'): ").lower()
         if item == "water":
             resources["water"] = 300
             break
@@ -134,8 +134,7 @@ def refill():
         else:
             print("Bad value, try again.")
             time.sleep(1)
-            print("                    ", end='\r')
-            print("\x1b[1A", end='\r')
+            blank_line(len(item) + 60)
 
 
 def blank_line(length):
